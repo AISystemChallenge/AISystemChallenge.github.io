@@ -11,11 +11,11 @@ Coming soon!
 (SAIT)
 <div class="layerPopup" id="layer_popup0" style="visibility: visible;">
     <div class="layerBox" style="width:40%;">
-        <h5 class="title"> <b> Samsung Computer Engineering Challenge 2024 결과 발표 </b></h5>
+        <h5 class="title"> <b> Samsung AI System Challenge 2026 결과 발표 </b></h5>
         <div class="cont">
 	     <p>
               긴 시간 동안 대회에 참가하신 모든 참가자 여러분 고생 많으셨습니다.</p>
-	      <p> 'Samsung Computer Engineering Challenge 2024' 최종 수상팀을 안내드립니다. </p>
+	      <p> 'Samsung AI System Challenge 2026' 최종 수상팀을 안내드립니다. </p>
 	      <p></p>
 	      <h5> [최우수상] </h5>
 		 <p>OOOOO</p>
