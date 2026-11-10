@@ -1,7 +1,7 @@
 ---
 title:
 feature_text: |
-  # Samsung Computer Engineering Challenge 2025
+  # Samsung AI System Challenge 2026
 feature_image: "/assets/logos/banner_last.png"
 ---
 
@@ -31,26 +31,7 @@ Furthermore, Computer Engineering (CE) Challenge will provide an opportunity to 
         <h5 class="title"> <b> &lt;Samsung Computer Engineering Challenge 2025 결과 발표&gt; </b></h5>
         <div class="cont">
         <p>
-	      안녕하세요 <br>
-	      긴 시간 동안 대회에 참가하신 모든 참가자 여러분 고생 많으셨습니다. <br>
-        'Samsung Computer Engineering Challenge 2025' 최종 수상팀을 안내드립니다. <br>
-        <br>
-        <b>&lt;최우수상&gt;</b> <br>
-	      codelab <br>
-        <br>
-        <b>&lt;우수상&gt;</b> <br>
-        JHL <br>
-        <br>
-        <b>&lt;장려상&gt;</b> <br>
-        심컴조 <br>
-        <br>
-        수상을 진심으로 축하드립니다! <br>
-        <br>
-        Computer Engineering Challenge에 참여해 주신 모든 분들께 깊은 감사의 말씀을 전하며, <br>
-        이번 챌린지가 뜻깊은 경험이 되셨기를 바랍니다. <br>
-        내년에도 많은 관심과 참여를 부탁드립니다. <br>
-        <br>
-        감사합니다. <br>
+	       업데이트 중비중입니다.<br>
         </p>
         <form name="pop_form0">
           <div id="check">
