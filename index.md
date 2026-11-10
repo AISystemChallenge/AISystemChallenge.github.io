@@ -14,7 +14,7 @@ The popularization of large-scale language models is increasingly revealing syst
 
 <div class="layerPopup" id="layer_popup0" style="visibility: visible;">
     <div class="layerBox" style="width:40%;">
-        <h5 class="title"> <b> &lt;Samsung Computer Engineering Challenge 2025 결과 발표&gt; </b></h5>
+        <h5 class="title"> <b> &lt;Samsung AI System Challenge 2026&gt; </b></h5>
         <div class="cont">
         <p>
 	       업데이트 중비중입니다.<br>
