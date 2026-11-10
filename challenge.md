@@ -1,7 +1,7 @@
 ---
 title:
 feature_text: |
-  # Samsung Computer Engineering Challenge 2025
+  # Samsung AI System Challenge 2026
 feature_image: "/assets/logos/banner_last.png"
 excerpt:
 ---
@@ -16,8 +16,8 @@ Computer Engineering(CE) Challenge 참가하시려면, Submssion 페이지에서
 
 
 #### 참가 자격
-1.&nbsp;'25년 7월 21일 현재 국내 대학에 재학 중인 대학생 및 대학원생 <br>
-&ensp;※ 수상은 아래 조건을 충족해야 합니다. (‘25년 7월 21일 기준) <br>
+1.&nbsp;'26년 11월 11일 현재 국내 대학에 재학 중인 대학생 및 대학원생 <br>
+&ensp;※ 수상은 아래 조건을 충족해야 합니다. (‘26년 11월 11일 기준) <br>
 &emsp;&ensp;학적 상태가 재학 상태이어야 하고, 졸업유예생은 참여불가 <br>
 &emsp;&ensp;산업체, 연구소 등에 재직 중인 사람은 수상 불가 (학술 연수중인 사람, 산업정부출연연구소 소속 학생연구원 포함) <br>
 &emsp;&ensp;최종 수상후보 팀은 재학증명서 또는 대체인증서류 제출 필수 <br>
@@ -51,7 +51,7 @@ baseline 실행 시간 대비 성능 개선도(speedup)를 기하 평균(geometr
 3.&nbsp;Private repository의 main branch에 push된 latest commit을 기준으로 Leaderboard에 주기적으로 채점 결과가 반영됩니다. <br>
 4.&nbsp;Leaderboard 제출은 1일 3회까지 한정됩니다. 3회를 초과하는 경우 채점이 진행되지 않으며 에러 발생도 채점 횟수에 포함됩니다. Main branch에 commit을 push 하면 자동으로 제출로 간주됩니다. <br>
 5.&nbsp;Leaderboard의 제출 횟수는 0시(KST)를 기준으로 초기화 됩니다. <br>
-6.&nbsp;최종 평가는 대회 종료 일시인 2025년 09월 19일(금) 13:59 이전 main branch의 가장 최신 commit을 기준으로 진행됩니다. <br>
+6.&nbsp;최종 평가는 대회 종료 일시인 2027년 01월 01일(금) ??:?? 이전 main branch의 가장 최신 commit을 기준으로 진행됩니다. <br>
 <br>
 
 
