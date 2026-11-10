@@ -1,7 +1,7 @@
 ---
 title:
 feature_text: |
-  # Samsung Computer Engineering Challenge 2025
+  # Samsung AI System Challenge 2026
 feature_image: "/assets/logos/banner_last.png"
 excerpt:
 ---
@@ -10,25 +10,25 @@ excerpt:
     <table class="table table-sm" width="100%">
     <tr>
         <td colspan="1"> 대회 기간 </td>
-        <td colspan="1"> 2025년 07월 21일(월) 11:00 ~ 2025년 09월 19일(금) 13:59 </td>
+        <td colspan="1"> 2026년 11월 11일(월) 11:00 ~ 2027년 01월 01일(금) 13:59 </td>
     </tr>
     <tr>
         <td colspan="1"> 대회 종료 </td>
-        <td colspan="1"> 2025년 09월 19일(금) 13:59 <br>
+        <td colspan="1"> 2027년 01월 01일(금) 13:59 <br>
                          (main branch의 가장 최신 commit 기준) </td>
     </tr>
     <tr>
         <td colspan="1"> 최종 결과 제출 </td>
-        <td colspan="1"> ~ 2025년 09월 22일(월) 23:59 <br>
+        <td colspan="1"> ~ 2027년 01월 01일(금) 23:59 <br>
 		                 ※ 리더보드 상위 10개 팀 </td>
     </tr>
     <tr>
         <td colspan="1"> 최종 결과 발표 </td>
-        <td colspan="1"> 2025년 9월 26일(금) </td>
+        <td colspan="1"> 2027년 01월 01일(금) </td>
     </tr>
     <tr>
         <td colspan="1"> 시상식 및 수상자캠프</td>
-        <td colspan="1"> 2025년 10월 1일(수) </td>
+        <td colspan="1"> 2027년 01월 01일(금) </td>
     </tr>
     </table>
 </P>
