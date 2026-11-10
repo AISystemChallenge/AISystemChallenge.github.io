@@ -1,7 +1,7 @@
 ---
 title:
 feature_text: |
-  # Samsung Computer Engineering Challenge 2025
+  # Samsung AI System Challenge 2026
 feature_image: "/assets/logos/banner_last.png"
 excerpt:
 ---
@@ -189,8 +189,8 @@ excerpt:
         // 웹훅 URL 설정 (실제 URL로 변경하세요)
         const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
         
-        // 오픈 시간 설정 (2025년 8월 1일 00:00:00 KST)
-        const OPEN_TIME = new Date('2025-08-01T00:00:00+09:00');
+        // 오픈 시간 설정 (2026년 xx월 xx일 00:00:00 KST)
+        const OPEN_TIME = new Date('2026-xx-xxT00:00:00+09:00');
         
         let countdownInterval;
         let refreshInterval;
