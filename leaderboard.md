@@ -6,8 +6,8 @@ feature_image: "/assets/logos/banner_last.png"
 excerpt:
 ---
 
-<!-- <html lang="ko"> -->
-<!-- <head> -->
+<html lang="ko">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
@@ -136,8 +136,8 @@ excerpt:
             }
         }
     </style>
-<!-- </head> -->
-<!-- <body class="bg-light"> -->
+</head>
+<body class="bg-light">
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -361,5 +361,5 @@ excerpt:
             }
         });
     </script>
-<!-- </body> -->
-<!-- </html> -->
+</body>
+</html>
