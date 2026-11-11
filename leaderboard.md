@@ -137,19 +137,13 @@ excerpt:
         }
 
         .nav a {
-          color: #05bf85;
+          <!-- color: #05bf85; -->
+          color: #a8adac;
           text-decoration: none;
           font-size: 17px;
           font-family: samsung, serif;
           font-weight: 400;
           line-height: 30px;
-        }
-        .nav a[aria-current="page"] {
-          color: #a8adac;
-        }
-        .nav a.active,
-        .nav .active a {
-          color: #a8adac;
         }
 
         header .container {
