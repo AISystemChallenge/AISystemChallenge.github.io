@@ -143,8 +143,8 @@ excerpt:
           font-size: 17px;
           line-height: 30px;
           /*color: #384743;*/
-          padding-top: 18px;
-          padding-bottom: 18px;
+          padding-top: 18px !important;
+          padding-bottom: 18px !important;
         }
         header .container a {
           color: #05bf85;
