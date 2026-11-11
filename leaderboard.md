@@ -153,6 +153,9 @@ excerpt:
         header .container a[href="/leaderboard/"] {
           color: #a8adac;
         }
+        header .container a:hover {
+          color: #384743;
+        }
     </style>
 </head>
 <body class="bg-light">
