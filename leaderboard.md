@@ -17,6 +17,7 @@ excerpt:
           color: #05bf85;
           text-decoration: none;
           font-size: 17px;
+          font-family: samsung, serif;
         }
       
         .leaderboard-card {
