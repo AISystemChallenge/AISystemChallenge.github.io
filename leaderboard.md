@@ -136,6 +136,7 @@ excerpt:
             }
         }
 
+        /*
         .nav a {
           color: #05bf85;
           text-decoration: none;
@@ -144,6 +145,7 @@ excerpt:
           font-weight: 400;
           line-height: 30px;
         }
+        */
 
         header .container {
           max-width: 1400px;
