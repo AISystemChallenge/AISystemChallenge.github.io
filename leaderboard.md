@@ -18,6 +18,8 @@ excerpt:
           text-decoration: none;
           font-size: 17px;
           font-family: samsung, serif;
+          font-weight: 400;
+          line-height: 30px;
         }
       
         .leaderboard-card {
