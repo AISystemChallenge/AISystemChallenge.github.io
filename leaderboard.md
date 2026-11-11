@@ -13,6 +13,11 @@ excerpt:
     <title>Leaderboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        .nav a {
+          color: #05bf85;
+          font-size: 17px;
+        }
+      
         .leaderboard-card {
             background: white;
             border-radius: 12px;
