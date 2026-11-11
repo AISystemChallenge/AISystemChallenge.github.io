@@ -137,7 +137,8 @@ excerpt:
         }
     </style>
 </head>
-<body class="bg-light">
+<!-- <body class="bg-light"> -->
+<body>
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
