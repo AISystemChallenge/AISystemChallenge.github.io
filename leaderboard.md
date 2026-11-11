@@ -150,11 +150,13 @@ excerpt:
           color: #05bf85;
           text-decoration: none;
         }
-        header .container a[href="/leaderboard/"] {
-          color: #a8adac;
-        }
         header .container a:hover {
           color: #384743;
+        }
+        /* Leaderboard는 마우스를 올려도 회색 유지 */
+        header .container a[href="/leaderboard/"],
+          header .container a[href="/leaderboard/"]:hover {
+          color: #a8adac;
         }
     </style>
 </head>
