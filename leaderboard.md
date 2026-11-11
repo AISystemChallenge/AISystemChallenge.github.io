@@ -190,7 +190,8 @@ excerpt:
         const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
         
         // 오픈 시간 설정 (2026년 12월 01일 00:00:00 KST)
-        const OPEN_TIME = new Date('2026-12-01T00:00:00+09:00');
+        //const OPEN_TIME = new Date('2026-12-01T00:00:00+09:00');
+        const OPEN_TIME = new Date('2026-11-11T00:00:00+09:00');
         
         let countdownInterval;
         let refreshInterval;
