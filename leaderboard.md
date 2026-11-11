@@ -136,25 +136,17 @@ excerpt:
             }
         }
 
-        /*
-        .nav a {
-          color: #05bf85;
-          text-decoration: none;
-          font-size: 17px;
-          font-family: samsung, serif;
-          font-weight: 400;
-          line-height: 30px;
-        }
-        */
-
         header .container {
           max-width: 1400px;
           width: 90%;
-          text-decoration: none;
           font-family: samsung, serif;
           font-size: 17px;
           line-height: 30px;
-          color: #384743;
+          /*color: #384743;*/
+        }
+        header .container a {
+          color: #05bf85;
+          text-decoration: none;
         }
     </style>
 </head>
