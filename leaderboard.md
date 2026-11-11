@@ -21,6 +21,9 @@ excerpt:
           font-weight: 400;
           line-height: 30px;
         }
+        .nav a[aria-current="page"] {
+          color: #a8adac;
+        }
       
         .leaderboard-card {
             background: white;
