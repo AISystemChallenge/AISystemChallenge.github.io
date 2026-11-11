@@ -156,7 +156,7 @@ excerpt:
                             <span id="time-display">00:00:00.000</span>
                             <span class="dday" id="dday-display">D-0</span>
                         </div>
-                        <div class="open-info">8/1 00시 오픈</div>
+                        <div class="open-info">12/01 00시 오픈</div>
                         <p class="text-muted">Coming soon!</p>
                     </div>
                 </div>
@@ -189,8 +189,8 @@ excerpt:
         // 웹훅 URL 설정 (실제 URL로 변경하세요)
         const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
         
-        // 오픈 시간 설정 (2026년 xx월 xx일 00:00:00 KST)
-        const OPEN_TIME = new Date('2026-xx-xxT00:00:00+09:00');
+        // 오픈 시간 설정 (2026년 12월 01일 00:00:00 KST)
+        const OPEN_TIME = new Date('2026-12-01T00:00:00+09:00');
         
         let countdownInterval;
         let refreshInterval;
