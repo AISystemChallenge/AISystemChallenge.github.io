@@ -6,14 +6,13 @@ feature_image: "/assets/logos/banner_last.png"
 excerpt:
 ---
 
-//<html lang="ko">
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <!-- <style>
         .leaderboard-card {
             background: white;
             border-radius: 12px;
@@ -136,7 +135,7 @@ excerpt:
                 margin-top: 0.5rem;
             }
         }
-    </style>
+    </style> -->
 </head>
 <body class="bg-light">
     <div class="container mt-4">
@@ -152,12 +151,12 @@ excerpt:
                 
                 <div id="preparing" class="d-none">
                     <div class="preparing-card">
-                        <h2>🚧 리더보드 준비 중입니다</h2>
+                        <h2>🚧 준비 중입니다</h2>
                         <div class="countdown-timer" id="countdown">
                             <span id="time-display">00:00:00.000</span>
                             <span class="dday" id="dday-display">D-0</span>
                         </div>
-                        <div class="open-info">12/01 00시 오픈</div>
+                        <div class="open-info">12/14 10시 오픈</div>
                         <p class="text-muted">Coming soon!</p>
                     </div>
                 </div>
@@ -191,7 +190,7 @@ excerpt:
         //const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
         const WEBHOOK_URL = '/rank/rank2026.csv';
         
-        // 오픈 시간 설정 (2026년 12월 01일 00:00:00 KST)
+        // 오픈 시간 설정 (2026년 12월 14일 10:00:00 KST)
         const OPEN_TIME = new Date('2026-12-14T10:00:00+09:00');
         
         let countdownInterval;
