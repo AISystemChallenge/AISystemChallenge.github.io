@@ -13,18 +13,6 @@ excerpt:
     <title>Leaderboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .nav a {
-          color: #05bf85;
-          text-decoration: none;
-          font-size: 17px;
-          font-family: samsung, serif;
-          font-weight: 400;
-          line-height: 30px;
-        }
-        .nav a[aria-current="page"] {
-          color: #a8adac;
-        }
-      
         .leaderboard-card {
             background: white;
             border-radius: 12px;
@@ -135,7 +123,7 @@ excerpt:
             width: 1rem;
             height: 1rem;
         }
-        
+
         @media (max-width: 768px) {
             .countdown-timer {
                 font-size: 1.5rem;
@@ -146,6 +134,27 @@ excerpt:
                 margin-left: 0;
                 margin-top: 0.5rem;
             }
+        }
+
+        .nav a {
+          color: #05bf85;
+          text-decoration: none;
+          font-size: 17px;
+          font-family: samsung, serif;
+          font-weight: 400;
+          line-height: 30px;
+        }
+        .nav a[aria-current="page"] {
+          color: #a8adac;
+        }
+
+        header .container {
+          max-width: 1400px;
+          width: 90%;
+          font-family: samsung, serif;
+          font-size: 17px;
+          line-height: 30px;
+          color: #384743;
         }
     </style>
 </head>
