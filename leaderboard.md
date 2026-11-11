@@ -204,7 +204,7 @@ excerpt:
         const WEBHOOK_URL = '/rank/rank2026.csv';
         
         // 오픈 시간 설정 (2026년 12월 14일 10:00:00 KST)
-        const OPEN_TIME = new Date('2026-12-14T10:00:00+09:00');
+        const OPEN_TIME = new Date('2026-10-14T10:00:00+09:00');
         
         let countdownInterval;
         let refreshInterval;
