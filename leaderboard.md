@@ -142,8 +142,8 @@ excerpt:
           font-family: samsung, serif;
           font-size: 17px;
           line-height: 30px;
-          /*padding-top: 18px !important;*/
-          /*padding-bottom: 18px !important;*/
+          padding-top: 18px !important;
+          padding-bottom: 18px !important;
         }
         /* Header font color */
         header .container a {
