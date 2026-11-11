@@ -147,6 +147,10 @@ excerpt:
         .nav a[aria-current="page"] {
           color: #a8adac;
         }
+        .nav a.active,
+        .nav .active a {
+          color: #a8adac;
+        }
 
         header .container {
           max-width: 1400px;
