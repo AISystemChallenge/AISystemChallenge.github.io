@@ -150,6 +150,7 @@ excerpt:
         header .container {
           max-width: 1400px;
           width: 90%;
+          text-decoration: none;
           font-family: samsung, serif;
           font-size: 17px;
           line-height: 30px;
