@@ -187,7 +187,8 @@ excerpt:
 
     <script>
         // 웹훅 URL 설정 (실제 URL로 변경하세요)
-        const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
+        //const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
+        const WEBHOOK_URL = '/rank/rank2026.csv';
         
         // 오픈 시간 설정 (2026년 12월 01일 00:00:00 KST)
         //const OPEN_TIME = new Date('2026-12-01T00:00:00+09:00');
