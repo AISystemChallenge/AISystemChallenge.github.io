@@ -6,12 +6,13 @@ feature_image: "/assets/logos/banner_last.png"
 excerpt:
 ---
 
-<html lang="ko">
+//<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    //<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .leaderboard-card {
             background: white;
@@ -191,8 +192,7 @@ excerpt:
         const WEBHOOK_URL = '/rank/rank2026.csv';
         
         // 오픈 시간 설정 (2026년 12월 01일 00:00:00 KST)
-        //const OPEN_TIME = new Date('2026-12-01T00:00:00+09:00');
-        const OPEN_TIME = new Date('2026-11-11T00:00:00+09:00');
+        const OPEN_TIME = new Date('2026-12-14T10:00:00+09:00');
         
         let countdownInterval;
         let refreshInterval;
