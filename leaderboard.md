@@ -150,6 +150,9 @@ excerpt:
           color: #05bf85;
           text-decoration: none;
         }
+        header .container a[href="/leaderboard/"] {
+          color: #a8adac;
+        }
     </style>
 </head>
 <body class="bg-light">
