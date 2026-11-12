@@ -12,8 +12,8 @@ excerpt:
   * 평가 산식 : **Score = saturation 스테이지 req/s**<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**= 성공 요청 수 / (스테이지 시작 ~ 마지막 응답 완료 시간)**
   * 순위 인정 조건 (모두 충족)<br>
-    &emsp;① 오류 0건 (HTTP 오류, 연결 끊김, 600초 타임아웃 모두 오류로 집계)<br>
-    &emsp;② 전체 정확도 ≥ Baseline 정확도 − 0.02
+    ① 오류 0건 (HTTP 오류, 연결 끊김, 600초 타임아웃 모두 오류로 집계)<br>
+    ② 전체 정확도 ≥ Baseline 정확도 − 0.02
   * Baseline: vLLM v0.32.0 기본 설정 (제공 예제 team_baseline)
   * 참고 지표 (순위 미반영): TTFT·TPOT p50/p99, 출력 tok/s, 태스크별 정확도
   * 모든 시간은 클라이언트 측 wall-clock으로 측정하며, 출력 토큰 수는 클라이언트 토크나이저로 계산합니다 (서버 usage 값 미사용).
