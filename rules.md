@@ -60,8 +60,7 @@ excerpt:
 아래의 제한 사항을 위반하면 실격처리 됩니다.<br>
   * <허용>
     * 서빙 프레임워크의 선택·수정 (스케줄러, 메모리 관리자, attention 백엔드), 커스텀 CUDA/Triton 커널
-    * KV cache 관리 기법 일체: paging, prefix caching, CPU offloading, KV 양자화, eviction, chunked prefill, admission control<br>
-    (단, 정확도 조건 충족 필요)
+    * KV cache 관리 기법 일체: paging, prefix caching, CPU offloading, KV 양자화, eviction, chunked prefill, admission control 등 (단, 정확도 조건 충족 필요)
     * 오픈소스 라이브러리 사용 (LMCache, FlashInfer 등). 출처와 라이선스 명기 필요
   * <금지>
     * 지정 모델 교체, 추가 학습·증류, 별도 draft/proxy 모델 도입
