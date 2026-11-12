@@ -145,11 +145,11 @@ excerpt:
         }
         /* Header font color */
         header .container a {
-          color: #01FEFE;
+          color: #37B9F8;
           text-decoration: none;
         }
         header .container a:hover {
-          color: #018080;
+          color: #206B8F;
         }
         /* Leaderboard는 마우스를 올려도 회색 유지 */
         header .container a[href="/leaderboard/"],
