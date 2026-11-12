@@ -129,7 +129,8 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
     * longbench_v2
       * LongBench-v2 long-context four-choice questions, context transmitted without truncation (several thousand to 1M tokens), output ≤ 128 tokens
       * Evaluated using The correct answer is (X)
-  * &lt;Load Schedule&gt; open-loop: requests are sent at predetermined times regardless of responses
+  * &lt;Load Schedule&gt;
+    * open-loop: requests are sent at predetermined times regardless of responses
     * low / mid / high: Poisson 2 / 8 / 24 req/s, with 60 / 240 / 720 requests, respectively
     * saturation: 600 requests submitted concurrently after all preceding requests have completed
 <br>
@@ -162,7 +163,3 @@ Violations of the following restrictions will result in disqualification.<br>
 9. Competition organizers and related personnel are not eligible to participate.
 10. Any conduct that undermines trust or constitutes unfair behavior may result in disqualification, even if it does not explicitly violate the rules above.
 <br>
-
-8. Each participating team may consist of up to three members, and participating teams must verify that their members are not participating in other teams in this competition.
-9. Organizers and related parties involved in the competition are not eligible to participate.
-10. Even if the above rules are not violated, disqualification may occur if there is a breach of trust or unfair conduct. 
