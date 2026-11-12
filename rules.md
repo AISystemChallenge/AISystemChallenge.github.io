@@ -34,15 +34,6 @@ excerpt:
     * GET /v1/models, 모델 이름 submission
     * 환경변수 MODEL_PATH, SERVED_MODEL_NAME, PORT 제공
     * 요청은 채팅 템플릿이 이미 적용된 raw prompt이며, temperature=0, max_tokens가 지정되어 들어옵니다.
-   
-<ul class="compact-list">
-  <li>&lt;인터페이스 규약&gt;
-    <ul class="compact-list">
-      <li>이미지 ENTRYPOINT로 서버 기동 (추가 인자 없음), 0.0.0.0:8000</li>
-      <li>POST /v1/completions : stream=true (SSE) 필수</li>
-    </ul>
-  </li>
-</ul>
 <br>
    
 ### 벤치마크
