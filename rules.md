@@ -86,7 +86,7 @@ excerpt:
 
 ### Evaluation Criteria
 The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios to measure throughput, latency, and accuracy. Rankings are determined by throughput during the maximum-load (saturation) stage.<br>
-  * Scoring Formula : **Score = saturation-stage req/s**<br>
+  * Formula : **Score = saturation-stage req/s**<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**= Number of successful requests / (Stage start time ~ Completion time of the last response)**
   * Ranking Eligibility Requirements (all must be satisfied)<br>
     ① Zero errors (HTTP errors, disconnections, and 600-second timeouts are all counted as errors)<br>
