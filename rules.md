@@ -20,7 +20,7 @@ excerpt:
 <br>
 
 ### 평가 환경
-참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).<br>
+참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).
   * &lt;하드웨어 / 격리&gt;
     * GPU 1장: NVIDIA H100 80GB (TBD)
     * GPU 메모리 사용 상한: XX GiB (모델 weight 포함, TBD)
@@ -38,7 +38,7 @@ excerpt:
 <br>
    
 ### 벤치마크
-평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.<br>
+평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.
 ※ 본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.<br>
   * &lt;태스크&gt;
     * kv_retrieval
@@ -57,7 +57,7 @@ excerpt:
 <br>
 
 ### 제한 사항
-아래의 제한 사항을 위반하면 실격처리 됩니다.<br>
+아래의 제한 사항을 위반하면 실격처리 됩니다.
   * &lt;허용&gt;
     * 서빙 프레임워크의 선택·수정 (스케줄러, 메모리 관리자, attention 백엔드), 커스텀 CUDA/Triton 커널
     * KV cache 관리 기법 일체: paging, prefix caching, CPU offloading, KV 양자화, eviction, chunked prefill, admission control 등 (단, 정확도 조건 충족 필요)
@@ -87,7 +87,7 @@ excerpt:
 <hr />
 
 ### Evaluation Criteria
-The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios to measure throughput, latency, and accuracy. Rankings are determined by throughput during the maximum-load (saturation) stage.<br>
+The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios to measure throughput, latency, and accuracy. Rankings are determined by throughput during the maximum-load (saturation) stage.
   * &lt;Details&gt;
     * Formula : **Score = saturation-stage req/s**<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**= Number of successful requests / (Stage start time ~ Completion time of the last response)**
@@ -100,7 +100,7 @@ The organizing committee's evaluation client sends requests to participating tea
 <br>
 
 ### Evaluation Environment
-Participating teams submit their serving servers as Docker-images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).<br>
+Participating teams submit their serving servers as Docker-images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).
   * &lt;Hardware / Isolation&gt;
     * One GPU: NVIDIA H100 80GB (TBD)
     * GPU memory usage limit: XX GiB (including model weights, TBD)
@@ -119,7 +119,7 @@ Participating teams submit their serving servers as Docker-images, which are exe
    
 ### Benchmark
 The evaluation client (bench.py) and example scenarios are provided through a GitHub repository. Problems are regenerated using a new seed for each evaluation, so answers cannot be memorized or responses cached.<br>
-※ The official evaluation uses private seeds and scenarios; scores measured using public scenarios may differ from leaderboard scores.<br>
+※ The official evaluation uses private seeds and scenarios; scores measured using public scenarios may differ from leaderboard scores.
   * &lt;Tasks&gt;
     * kv_retrieval
         * Retrieve values from a key-value list of approximately 3.1k tokens, output ≤ 24 tokens
@@ -137,7 +137,7 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
 <br>
 
 ### Restrictions
-Violations of the following restrictions will result in disqualification.<br>
+Violations of the following restrictions will result in disqualification.
   * &lt;Permitted&gt;
     * Selection and modification of serving frameworks (schedulers, memory managers, attention backends), custom CUDA/Triton kernels
     * All KV cache management techniques: paging, prefix caching, CPU offloading, KV quantization, eviction, chunked prefill, admission control, etc. (accuracy requirements must be satisfied)
