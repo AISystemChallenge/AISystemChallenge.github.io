@@ -8,7 +8,6 @@ excerpt:
 
 #### 평가 기준
 사무국 평가 클라이언트가 참가팀 서버에 정해진 시나리오의 요청을 보내 처리량·지연시간·정확도를 측정하며, 최대 부하 구간(saturation)의 처리량으로 순위를 정합니다.<br>
-*
   * 평가 산식 : **Score = saturation 스테이지 req/s**<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**= 성공 요청 수 / (스테이지 시작 ~ 마지막 응답 완료 시간)**
   * 순위 인정 조건 (모두 충족)<br>
@@ -18,25 +17,23 @@ excerpt:
   * 참고 지표 (순위 미반영): TTFT·TPOT p50/p99, 출력 tok/s, 태스크별 정확도
   * 모든 시간은 클라이언트 측 wall-clock으로 측정하며, 출력 토큰 수는 클라이언트 토크나이저로 계산합니다 (서버 usage 값 미사용).
 <br>
-<br>
 
 #### 평가 환경
-참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).
+참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).<br>
+  * <하드웨어 / 격리>
+    * GPU 1장: NVIDIA H100 80GB (TBD)
+    * GPU 메모리 사용 상한: XX GiB (모델 weight 포함, TBD)
+    * CPU 8코어 고정 (cpuset), Host 메모리 128 GiB, shm 16 GiB
+    * 인터넷 차단, 평가 클라이언트 접속만 허용, 컨테이너 권한 제한 (--cap-drop ALL)
+    * 모델: Qwen3-8B (BF16). /model 에 읽기 전용으로 마운트
+    * 기동 제한 15분: /v1/models 응답과 1토큰 생성이 모두 성공해야 준비 완료로 판정
 
-  <하드웨어 / 격리>
-  * GPU 1장: NVIDIA H100 80GB (TBD)
-  * GPU 메모리 사용 상한: XX GiB (모델 weight 포함, TBD)
-  * CPU 8코어 고정 (cpuset), Host 메모리 128 GiB, shm 16 GiB
-  * 인터넷 차단, 평가 클라이언트 접속만 허용, 컨테이너 권한 제한 (--cap-drop ALL)
-  * 모델: Qwen3-8B (BF16). /model 에 읽기 전용으로 마운트
-  * 기동 제한 15분: /v1/models 응답과 1토큰 생성이 모두 성공해야 준비 완료로 판정
-
-  <인터페이스 규약>
-  * 이미지 ENTRYPOINT로 서버 기동 (추가 인자 없음), 0.0.0.0:8000
-  * POST /v1/completions : stream=true (SSE) 필수
-  * GET /v1/models, 모델 이름 submission
-  * 환경변수 MODEL_PATH, SERVED_MODEL_NAME, PORT 제공
-  * 요청은 채팅 템플릿이 이미 적용된 raw prompt이며, temperature=0, max_tokens가 지정되어 들어옵니다.
+  * <인터페이스 규약>
+    * 이미지 ENTRYPOINT로 서버 기동 (추가 인자 없음), 0.0.0.0:8000
+    * POST /v1/completions : stream=true (SSE) 필수
+    * GET /v1/models, 모델 이름 submission
+    * 환경변수 MODEL_PATH, SERVED_MODEL_NAME, PORT 제공
+    * 요청은 채팅 템플릿이 이미 적용된 raw prompt이며, temperature=0, max_tokens가 지정되어 들어옵니다.
 <br>
 
    
