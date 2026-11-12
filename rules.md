@@ -84,94 +84,83 @@ excerpt:
 <br>
 <hr />
 
-#### Evaluation Criteria
-The goal of this competition is to minimize the execution time of a specified benchmark on the given Gem5 simulator, and the score is evaluated by averaging the performance improvement (speedup) compared to the baseline execution time using the geometric mean.
-* Evaluation formula: <br>
-&emsp;&emsp;**GAP_GEOMEAN(ref_time/candidate_time)  + TSVC_GEOMEAN(ref_time/candidate_time)**
-  * Baseline Branch Predictor: TournamentBP
-  * Baseline Compiler: Compilation options in the Makefile of the provided Docker image
-    * GAP Compilation Optimization Baseline: clang -O3 -fno-vectorize  -fno-slp-vectorize
-    * TSVC Compilation Optimization Baseline: clang -O3
+### Evaluation Criteria
+The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios to measure throughput, latency, and accuracy. Rankings are determined by throughput during the maximum-load (saturation) stage.<br>
+  * Scoring Formula : **Score = saturation-stage req/s**<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**= Number of successful requests / (Stage start time ~ Completion time of the last response)**
+  * Ranking Eligibility Requirements (all must be satisfied)<br>
+    ① Zero errors (HTTP errors, disconnections, and 600-second timeouts are all counted as errors)<br>
+    ② Overall accuracy ≥ Baseline accuracy − 0.02
+  * Baseline: vLLM v0.32.0 default settings (provided example: team_baseline)
+  * Reference Metrics (not included in rankings): TTFT·TPOT p50/p99, output tok/s, per-task accuracy
+  * All times are measured using client-side wall-clock time, and output token counts are calculated using the client-side tokenizer (server usage values are not used).
 <br>
 
+### Evaluation Environment
+Participating teams submit their serving servers as Docker images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).<br>
+  * &lt;Hardware / Isolation&gt;
+    * One GPU: NVIDIA H100 80GB (TBD)
+    * GPU memory usage limit: XX GiB (including model weights, TBD)
+    * 8 dedicated CPU cores (cpuset), 128 GiB host memory, 16 GiB shm
+    * Internet access disabled, only evaluation-client connections permitted, restricted container privileges (--cap-drop ALL)
+    * Model: Qwen3-8B (BF16), mounted read-only at /model
+    * 15-minute startup limit: both a successful /v1/models response and successful one-token generation are required for readiness
 
-#### Evaluation Environment
-The same environment is provided through Docker images, and the submitted source code must run and terminate normally in that environment. <br>
-**※ Docker images : [ghcr.io/cechallenge/ce_challenge_2025](https://ghcr.io/cechallenge/ce_challenge_2025)** <br>
-* Gem5 version 25.0.0 (The latest stable version)
-  * 1GHz single core
-  * fetch_width=8
-  * width=4
-  * rob_size=128
-  * int_regs=128, fp_regs=128
-  * lq_entries=32, sq_entries=32
-  * L1 Cache=8-way 32KB
-  * L2 Cache=8-way 512KB
-  * RVV enabled, VLEN=256 bits, ELEN=64 bits
-* LLVM version 19.1.7 (stable version)
+  * &lt;Interface Requirements&gt;
+    * Start the server using the image ENTRYPOINT (no additional arguments), listening on 0.0.0.0:8000
+    * POST /v1/completions : stream=true (SSE) required
+    * GET /v1/models, model name submission
+    * Environment variables MODEL_PATH, SERVED_MODEL_NAME, PORT are provided
+    * Requests contain raw prompts with the chat template already applied, with temperature=0 and max_tokens specified.
 <br>
-
    
-#### Benchmark
-The benchmark is provided through a Docker image, and the benchmark source code cannot be modified arbitrarily. <br>
-**※ Benchmarks are included in the CE challenge [Github repository](https://github.com/cechallenge/2025).** <br>
-**※ Provided benchmarks and those actually used during the evaluation are not identical.** <br>
-  * GAP (\<repo directory\>/gapbs)
-    * GAP consists of 8 benchmarks, and the type and size of the graph data performed for each benchmark, as well as the number of iterations, are selected differently to reflect the characteristics and execution time of each benchmark.
-    * bfs, cc, cc_sv, sssp, tc, pr, pr_spmv, bc
-  * TSVC (\<repo directory\>/tsvc)
-    * A total of 20 benchmarks representing each category have been selected.
-    * s000, s121, s131, s171, s1213, s2244, s251, s1281, s311, s351, s491, s442, s212, s222, s231, s281, s341, s352, s4114, s321
+### Benchmark
+The evaluation client (bench.py) and example scenarios are provided through a GitHub repository. Problems are regenerated using a new seed for each evaluation, so answers cannot be memorized or responses cached.<br>
+※ The official evaluation uses private seeds and scenarios; scores measured using public scenarios may differ from leaderboard scores.<br>
+  * &lt;Tasks&gt;
+    * kv_retrieval
+        * Retrieve values from a key-value list of approximately 3.1k tokens, output ≤ 24 tokens
+        * Four questions share one document, allowing prefix reuse
+    * arith_chain
+      * Approximately 110-token, eight-step arithmetic problem, output ≤ 768 tokens
+      * Evaluated using the final ANSWER: &lt;n&gt; format
+    * longbench_v2
+      * LongBench-v2 long-context four-choice questions, context transmitted without truncation (several thousand to 1M tokens), output ≤ 128 tokens
+      * Evaluated using The correct answer is (X)
+  * &lt;Load Schedule&gt; open-loop: requests are sent at predetermined times regardless of responses
+    * low / mid / high: Poisson 2 / 8 / 24 req/s, with 60 / 240 / 720 requests, respectively
+    * saturation: 600 requests submitted concurrently after all preceding requests have completed
 <br>
 
-
-#### Restrictions
-###### Gem5
-  * You can modify or add branch predictors under the \<repo directory\>/gem5/cpu/pred directory.
-    * The branch predictor to be submitted to the MyCeChallengeBP class in \<repo directory\>/ce_challenge_2025/components/processors_ce_challenge.py must be connected and function normally in the evaluation environment.
-    * The total size of the branch predictor is limited to 128KB.
-    * The branchPred parameter of the existing RiscvO3CPU model will be changed to the submitted branch predictor for evaluation, and only the interface provided in the BranchPredictor class will be used.   
-    * You can modify the BranchPredictor provided in gem5 or create a branch predictor in C++.
-      * If you add a new branch predictor in C++, you must add the path to the file to \<repo directory\>/gem5/cpu/pred/SConscript and then rebuild gem5.
-    * You must submit an explanation of the modifications or additions, and describe the hardware size consumed by the branch predictor to remember the branch history in bits.
-  * All other modules cannot be modified.
+### Restrictions
+Violations of the following restrictions will result in disqualification.<br>
+  * &lt;Permitted&gt;
+    * Selection and modification of serving frameworks (schedulers, memory managers, attention backends), custom CUDA/Triton kernels
+    * All KV cache management techniques: paging, prefix caching, CPU offloading, KV quantization, eviction, chunked prefill, admission control, etc. (accuracy requirements must be satisfied)
+    * Use of open-source libraries (LMCache, FlashInfer, etc.). Sources and licenses must be acknowledged
+  * &lt;Prohibited&gt;
+    * Replacing the designated model, additional training or distillation, introducing separate draft/proxy models
+    * <b>Changing model weight precision (BF16 must be maintained)</b>
+    * Precomputation based on evaluation problems: response caching or including precomputed KV caches in the image (prefix caching during request processing is permitted)
+    * Ignoring or modifying request parameters (prompt, max_tokens, temperature), falsifying streaming timing (dummy first tokens, etc.)
+    * Circumventing GPU memory limits: UVM/managed memory, concealing memory usage in separate processes, etc.
+    * Using multiple GPUs, external nodes, or networks; manipulating the evaluation client or harness
 <br>
 
-###### LLVM
-  * The LLVM build script is provided as llvm_build.sh in the \<repo directory\>/llvm directory. This build script cannot be modified.
-  * You can implement the pass by modifying and adding files in the following subdirectories.
-    * \<repo directory\>/llvm/llvm/lib
-      * Directory: Analysis, Transforms, Target/RISCV, Passes
-    * \<repo directory\>/llvm/llvm/include/llvm
-      * Directory: Analysis, Transforms, Passes
-  * You must submit a description of any modifications or additions you make.
-  * All other modules cannot be modified.
+### Competition Rules
+<strong>This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.</strong>
+1. Submissions must be reproducible in the evaluation environment, and source code will be used to investigate misconduct and reproduce results.
+2. Participating teams must submit any materials requested for evaluation.
+3. Source code developed by participating teams must remain confidential throughout the competition.
+4. Submissions must not use copyrighted or proprietary data, patents, trademarks, code, or confidential source content without authorization. Data or content that violates service agreements or another company's trade secrets is not permitted.
+5. The organizer assumes no responsibility for submissions that infringe third-party intellectual property rights.
+6. The organizer will use submissions solely to verify sharing or copying between participating teams and will not use them commercially or retain them after the competition. Participating teams are solely responsible for damages arising from third-party intellectual property infringement caused by their submissions.
+7. Using external implementations without attribution or copying another team's implementation will result in disqualification.
+8. Each team may have no more than three members and must demonstrate that no member participates in another team.
+9. Competition organizers and related personnel are not eligible to participate.
+10. Any conduct that undermines trust or constitutes unfair behavior may result in disqualification, even if it does not explicitly violate the rules above.
 <br>
 
-
-###### Benchmarks
-  * You can compile using the make command in each benchmark directory and run ./RUN_SELF_TEST in \<repo directory\>/ce_challenge_2025 to test it.
-    * <ins>The provided SELF_TEST script runs each benchmark once for evaluation purposes. In actual evaluations, the number of repetitions and parameters may vary, and evaluation settings are not disclosed. Therefore, the scores generated by SELF_TEST may differ from those on the Leaderboard.</ins>
-    * <ins>If an error occurs in the evaluation environment, we will notify you via email of the benchmark where the error occurred and the error message.</ins>
-  * Except for the following restrictions, you can add compilation options for the implemented path to the “OPT_FLAGS” in each benchmark's Makefile.
-    * GAP benchmark: Do not insert vectorization-related options (e.g., --vectorize-slp).
-    * Do not insert hints related to RISC-V vector length (e.g., -force-vector-width, -mrvv-vector-bits).
-  * No other parts of the Makefile except for “OPT_FLAGS” can be modified.
-<br>You cannot arbitrarily modify the environment and scripts for other tests.<br>
-<br>
-**Violation of the above restrictions will result in disqualification.**
-<br>
-
-
-#### Competition Rules
-* The goal of this competition is to ensure fair evaluation and reproducible results. To this end, the following rules must be observed.
-1. Submissions must be reproducible in the test environment, and source code will be used to verify the absence of cheating and to reproduce results.
-2. Participating teams must submit the requested materials for evaluation.
-3. Source code written by participating teams during the competition period will be kept confidential.
-4. Submissions must not use copyrighted or proprietary data, patents, trademarks, code, or confidential source content. The use of data or content that violates service agreements or other companies' trade secrets is not permitted.
-5. We are not responsible for any infringement of third-party intellectual property rights contained in submissions.
-6. We will use submissions solely for the purpose of verifying sharing and copying prevention among participating teams. After the competition ends, we will not use or store the results for commercial purposes under any circumstances. If a third party's intellectual property rights are infringed upon due to a submission, the participating team will be held responsible for all damages resulting from such infringement.
-7. Using external implementations without attribution or copying another participating team's implementation will result in disqualification.
 8. Each participating team may consist of up to three members, and participating teams must verify that their members are not participating in other teams in this competition.
 9. Organizers and related parties involved in the competition are not eligible to participate.
 10. Even if the above rules are not violated, disqualification may occur if there is a breach of trust or unfair conduct. 
