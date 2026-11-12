@@ -88,16 +88,16 @@ excerpt:
 The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios to measure throughput, latency, and accuracy. Rankings are determined by throughput during the maximum-load (saturation) stage.<br>
   * Formula : **Score = saturation-stage req/s**<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**= Number of successful requests / (Stage start time ~ Completion time of the last response)**
-  * Ranking Eligibility Requirements (all must be satisfied)<br>
+  * Ranking eligibility requirements (all must be satisfied)<br>
     ① Zero errors (HTTP errors, disconnections, and 600-second timeouts are all counted as errors)<br>
     ② Overall accuracy ≥ Baseline accuracy − 0.02
   * Baseline: vLLM v0.32.0 default settings (provided example: team_baseline)
-  * Reference Metrics (not included in rankings): TTFT·TPOT p50/p99, output tok/s, per-task accuracy
+  * Reference metrics (not included in rankings): TTFT·TPOT p50/p99, output tok/s, per-task accuracy
   * All times are measured using client-side wall-clock time, and output token counts are calculated using the client-side tokenizer (server usage values are not used).
 <br>
 
 ### Evaluation Environment
-Participating teams submit their serving servers as Docker images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).<br>
+Participating teams submit their serving servers as Docker-images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).<br>
   * &lt;Hardware / Isolation&gt;
     * One GPU: NVIDIA H100 80GB (TBD)
     * GPU memory usage limit: XX GiB (including model weights, TBD)
