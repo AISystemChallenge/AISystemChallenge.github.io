@@ -35,7 +35,6 @@ excerpt:
     * 환경변수 MODEL_PATH, SERVED_MODEL_NAME, PORT 제공
     * 요청은 채팅 템플릿이 이미 적용된 raw prompt이며, temperature=0, max_tokens가 지정되어 들어옵니다.
 <br>
-
    
 ### 벤치마크
 평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.<br>
@@ -55,7 +54,6 @@ excerpt:
     * saturation: 앞 요청이 모두 끝난 뒤 600건 동시 투입
 <br>
 
-
 ### 제한 사항
 아래의 제한 사항을 위반하면 실격처리 됩니다.<br>
   * <허용>
@@ -71,7 +69,6 @@ excerpt:
     * 다중 GPU·외부 노드·네트워크 사용, 평가 클라이언트·하네스 조작
 <br>
 
-
 ### 대회 규칙
 <strong>이번 대회에서는 공정한 평가 및 재현 가능한 결과를 보장하는 것을 목표로 합니다. 이를 위해 다음 사항을 준수해야 합니다.</strong>
 1. 제출물은 테스트 환경에서 재현할 수 있어야 하며, 소스 코드는 부정 행위 및 결과 재현을 위해 사용됩니다.
@@ -84,10 +81,8 @@ excerpt:
 8. 한 참가팀은 3명 이하로 구성할 수 있으며, 참가팀에서는 팀원이 이 대회의 다른 팀에 중복 참가하지 않음을 스스로 입증해야 합니다.
 9. 대회와 관련된 주최자 및 관련자는 참가할 수 없습니다.
 10. 상기 규칙을 위배하지 않더라도 신뢰에 반하거나 부당 행위를 하는 경우 실격 처리될 수 있습니다. 
-
-
+<br>
 <hr />
-
 
 #### Evaluation Criteria
 The goal of this competition is to minimize the execution time of a specified benchmark on the given Gem5 simulator, and the score is evaluated by averaging the performance improvement (speedup) compared to the baseline execution time using the geometric mean.
