@@ -145,7 +145,7 @@ excerpt:
         }
         /* Header font color */
         header .container a {
-          color: #05bf85;
+          color: #31EBBA;
           text-decoration: none;
         }
         header .container a:hover {
