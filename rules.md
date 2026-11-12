@@ -37,7 +37,7 @@ excerpt:
    
 <ul class="compact-list">
   <li>&lt;인터페이스 규약&gt;
-    <ul>
+    <ul class="compact-list">
       <li>이미지 ENTRYPOINT로 서버 기동 (추가 인자 없음), 0.0.0.0:8000</li>
       <li>POST /v1/completions : stream=true (SSE) 필수</li>
     </ul>
