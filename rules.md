@@ -50,7 +50,8 @@ excerpt:
     * longbench_v2
       * LongBench-v2 장문 4지선다, 컨텍스트를 자르지 않고 전송 (수k ~ 1M 토큰), 출력 ≤ 128 토큰
       * The correct answer is (X) 로 채점
-  * &lt;부하 스케줄&gt; open-loop: 응답과 무관하게 미리 정한 시각에 전송
+  * &lt;부하 스케줄&gt;
+    * open-loop: 응답과 무관하게 미리 정한 시각에 전송
     * low / mid / high: Poisson 2 / 8 / 24 req/s, 각 60 / 240 / 720건
     * saturation: 앞 요청이 모두 끝난 뒤 600건 동시 투입
 <br>
