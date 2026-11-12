@@ -7,80 +7,75 @@ excerpt:
 ---
 
 #### 평가 기준
-Gem5 시뮬레이터에서 사무국에서 선정한 벤치마크의 실행 시간을 최소화하는 것을 목표로 하며, baseline 실행 시간 대비 성능 개선도(speedup)를 기하 평균(geometric mean)을 내어 합산한 점수를 평가합니다.
-* 평가 산식 : <br>
-&emsp;&emsp;**GAP_GEOMEAN(ref_time/candidate_time)  + TSVC_GEOMEAN(ref_time/candidate_time)**
-  * Baseline Branch Predictor: TournamentBP
-  * Baseline Compiler: 제공된 Docker 이미지의 Makefile 컴파일 옵션
-    * GAP 컴파일 최적화 baseline: clang -O3 -fno-vectorize  -fno-slp-vectorize
-    * TSVC 컴파일 최적화 baseline: clang -O3
+사무국 평가 클라이언트가 참가팀 서버에 정해진 시나리오의 요청을 보내 처리량·지연시간·정확도를 측정하며, 최대 부하 구간(saturation)의 처리량으로 순위를 정합니다.
+  * 평가 산식 : Score = saturation 스테이지 req/s<br>
+&emsp;&emsp;**= 성공 요청 수 / (스테이지 시작 ~ 마지막 응답 완료 시간)**
+    * 순위 인정 조건 (모두 충족)
+      ① 오류 0건 (HTTP 오류, 연결 끊김, 600초 타임아웃 모두 오류로 집계)
+      ② 전체 정확도 ≥ Baseline 정확도 − 0.02
+    * Baseline: vLLM v0.32.0 기본 설정 (제공 예제 team_baseline)
+    * 참고 지표 (순위 미반영): TTFT·TPOT p50/p99, 출력 tok/s, 태스크별 정확도
+    * 모든 시간은 클라이언트 측 wall-clock으로 측정하며, 출력 토큰 수는 클라이언트 토크나이저로 계산합니다 (서버 usage 값 미사용).
 <br>
 
 
 #### 평가 환경
-Docker 이미지를 통해 동일 환경을 제공하며, 제출한 소스코드는 해당 환경에서 정상적으로 실행 및 종료되어야 합니다. <br>
-**※ Docker 이미지 : [ghcr.io/cechallenge/ce_challenge_2025](https://ghcr.io/cechallenge/ce_challenge_2025)** <br>
-* Gem5 version 25.0.0 (최신 stable version)
-  * 1GHz single core
-  * fetch_width=8
-  * width=4
-  * rob_size=128
-  * int_regs=128, fp_regs=128
-  * lq_entries=32, sq_entries=32
-  * L1 Cache=8-way 32KB
-  * L2 Cache=8-way 512KB
-  * RVV enabled, VLEN=256 bits, ELEN=64 bits
-* LLVM version 19.1.7 (stable version)
+참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).
+
+  <하드웨어 / 격리>
+  * GPU 1장: NVIDIA H100 80GB (TBD)
+  * GPU 메모리 사용 상한: XX GiB (모델 weight 포함, TBD)
+  * CPU 8코어 고정 (cpuset), Host 메모리 128 GiB, shm 16 GiB
+  * 인터넷 차단, 평가 클라이언트 접속만 허용, 컨테이너 권한 제한 (--cap-drop ALL)
+  * 모델: Qwen3-8B (BF16). /model 에 읽기 전용으로 마운트
+  * 기동 제한 15분: /v1/models 응답과 1토큰 생성이 모두 성공해야 준비 완료로 판정
+
+  <인터페이스 규약>
+  * 이미지 ENTRYPOINT로 서버 기동 (추가 인자 없음), 0.0.0.0:8000
+  * POST /v1/completions : stream=true (SSE) 필수
+  * GET /v1/models, 모델 이름 submission
+  * 환경변수 MODEL_PATH, SERVED_MODEL_NAME, PORT 제공
+  * 요청은 채팅 템플릿이 이미 적용된 raw prompt이며, temperature=0, max_tokens가 지정되어 들어옵니다.
 <br>
 
    
 #### 벤치마크
-Docker 이미지를 통해 벤치마크가 제공되며, 벤치마크의 소스 코드를 임의로 수정할 수 없습니다. <br>
-**※ CE challenge 에서 제공하는 [Github repository](https://github.com/cechallenge/2025) 에 벤치마크가 포함되어 있습니다.** <br>
-**※ 제공되는 벤치마크와 실제 평가시 사용되는 벤치마크는 동일하지 않습니다.** <br>
-  * GAP (\<repo directory\>/gapbs)
-    * GAP은 8개의 벤치마크로 구성되어 있고, 각 밴치마크 별 수행하는 그래프 데이터의 종류와 크기, 반복 횟수는 각 벤치마크의 특성과 실행시간을 반영해서 각각 다르게 선정됩니다.
-    * bfs, cc, cc_sv, sssp, tc, pr, pr_spmv, bc
-  * TSVC (\<repo directory\>/tsvc)
-    * 각 카테고리를 대표하는 총 20개의 벤치마크를 선정하였습니다.
-    * s000, s121, s131, s171, s1213, s2244, s251, s1281, s311, s351, s491, s442, s212, s222, s231, s281, s341, s352, s4114, s321
+평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.
+※ 본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.
+
+  <태스크>
+  * kv_retrieval
+      * 약 3.1k 토큰의 key-value 목록에서 값 찾기, 출력 ≤ 24 토큰
+      * 문서 하나를 질문 4개가 공유해 prefix가 재사용됨
+  * arith_chain
+    * 약 110 토큰의 8단계 산술 풀이, 출력 ≤ 768 토큰
+    * 마지막 ANSWER: <n> 으로 채점
+  * longbench_v2
+    * LongBench-v2 장문 4지선다, 컨텍스트를 자르지 않고 전송 (수k ~ 1M 토큰), 출력 ≤ 128 토큰
+    * The correct answer is (X) 로 채점
+  
+  <부하 스케줄> open-loop: 응답과 무관하게 미리 정한 시각에 전송
+  * low / mid / high: Poisson 2 / 8 / 24 req/s, 각 60 / 240 / 720건
+  * saturation: 앞 요청이 모두 끝난 뒤 600건 동시 투입
 <br>
 
 
 #### 제한 사항
-아래의 제한 사항을 위반하면 실격처리 됩니다. <br>
+아래의 제한 사항을 위반하면 실격처리 됩니다.
 
-###### Gem5
-  * \<repo directory\>/gem5/cpu/pred 디렉토리 하위의 branch predictor 들을 수정 또는 추가가 가능합니다
-    * **\<repo directory\>/ce_challenge_2025/components/processors_ce_challenge.py** 의 **MyCeChallengeBP** class에 제출할 branch predictor를 연결해서 평가 환경에서 정상 동작해야 합니다.
-    * Branch predictor의 총 크기는 128KB로 제한합니다.
-    * 기존 RiscvO3CPU 모델의 branchPred parameter만 제출 받은 branch predictor로 변경하여 평가하며, BranchPredictor class에 주어진 인터페이스만 사용합니다.
-    * gem5에 제공되어 있는 BranchPredictor를 수정해서 사용할 수 있고, C++로 branch predictor만들어서 사용도 가능합니다.
-      * C++로 새로운 branch predictor를 추가할 경우, **\<repo directory\>/gem5/cpu/pred/SConscript**에 해당 파일의 경로를 추가 후 gem5를 새로 build해야 합니다.
-    * 수정 또는 추가한 부분에 대해 설명을 제출해야 하며, branch predictor가 branch history를 기억하기 위해 소비하는 하드웨어 크기를 bit 단위로 기술해야 합니다.
-  * 그 외의 모든 모듈은 변경 및 수정이 허용되지 않습니다.
-<br>
-
-###### LLVM
-  * LLVM 빌드 스크립트는 \<repo directory\>/llvm 디렉토리 안에 llvm_build.sh로 제공됩니다.해당 빌드 스크립트는 수정이 허용되지 않습니다.
-  * 해당 하위 디렉토리에 파일 수정 및 추가를 통해 패스를 구현할 수 있습니다. 단, 수정 또는 추가한 부분에 대해 설명을 제출해야 합니다.
-    * \<repo directory\>/llvm/llvm/lib
-      * 디렉토리 이름: Analysis, Transforms, Target/RISCV, Passes
-    * \<repo directory\>/llvm/llvm/include/llvm
-      * 디렉토리 이름: Analysis, Transforms, Passes
-  * 그 외의 모든 부분은 변경 및 수정이 허용되지 않습니다.
-<br>
-
-
-###### 벤치마크
-  * 각 벤치마크 디렉토리에서 make 커맨드를 통해 컴파일하고, <repo directory>/ce_challenge_2025 의 ./RUN_SELF_TEST 를 실행하여 테스트해볼 수 있습니다.
-    * <ins>제공된 SELF_TEST 스크립트는 평가에 활용되는 모든 벤치마크를 각 1회 실행합니다. 실제 평가에서는 반복 횟수 및 파라미터가 달라지며 평가 설정은 공개하지 않습니다. 따라서 SELF_TEST의 산출 점수는 Leaderboard 점수와 다를 수 있습니다.</ins>
-    * <ins>평가 환경에서 오류 발생 시 오류가 발생한 벤치마크와 에러 메시지를 이메일로 알려드립니다.</ins>
-  * 다음 제한 사항을 제외하고, 각 벤치마크의 Makefile의 "OPT_FLAGS"에 구현한 패스에 대한 컴파일 옵션을 추가할 수 있습니다.
-    * GAP 벤치마크: vectorize 관련 옵션 삽입 금지 (--vectorize-slp 등)
-    * RISC-V vector length에 대한 hint 삽입 금지 (-force-vector-width, -mrvv-vector-bits 등)
-  * Makefile의 “OPT_FLAGS”를 제외한 다른 부분은 수정이 허용되지 않습니다.
-<br>이외 테스트를 위한 환경 및 스크립트를 임의 수정하는 것은 허용되지 않습니다.<br>
+<허용>
+  * 서빙 프레임워크의 선택·수정 (스케줄러, 메모리 관리자, attention 백엔드), 커스텀 CUDA/Triton 커널
+  * KV cache 관리 기법 일체: paging, prefix caching, CPU offloading, KV 양자화, eviction, chunked prefill, admission control
+    (단, 정확도 조건 충족 필요)
+  * 오픈소스 라이브러리 사용 (LMCache, FlashInfer 등). 출처와 라이선스 명기 필요
+    
+<금지>
+  * 지정 모델 교체, 추가 학습·증류, 별도 draft/proxy 모델 도입
+  * <b>모델 weight 정밀도 변경 (BF16 고정)</b>
+  * 평가 문제에 의존한 사전 계산: 응답 캐싱, 사전 계산한 KV를 이미지에 포함 (요청 처리 중의 prefix caching은 허용)
+  * 요청 파라미터(prompt, max_tokens, temperature) 무시·변경, 스트리밍 타이밍 위조 (더미 첫 토큰 등)
+  * GPU 메모리 상한 우회: UVM/managed memory, 별도 프로세스에 메모리 은닉 등
+  * 다중 GPU·외부 노드·네트워크 사용, 평가 클라이언트·하네스 조작
 <br>
 
 
