@@ -1,8 +1,8 @@
 ---
 title:
 feature_text: |
-  <!--# Samsung AI System Challenge 2026-->
-feature_image: "/assets/logos/banner_AISC2026.png"
+  # AI System Challenge 26/27
+feature_image: "/assets/logos/banner_AISC2026_13c.png"
 excerpt:
 ---
 ### 대회 일정
