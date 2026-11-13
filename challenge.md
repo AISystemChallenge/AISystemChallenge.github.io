@@ -5,8 +5,8 @@ feature_text: |
 
     <div style="
       font-family: Arial, sans-serif;
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 300;
       color: #222222;
       margin-bottom: 18px;
     ">
@@ -15,9 +15,9 @@ feature_text: |
 
     <div style="
       font-family: Arial, sans-serif;
-      font-size: clamp(32px, 4vw, 60px);
-      font-weight: 800;
-      color: #0057B8;
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 400;
+      color: #222222;
       line-height: 1.15;
       letter-spacing: -1px;
       margin-bottom: 20px;
@@ -27,8 +27,8 @@ feature_text: |
 
     <div style="
       font-family: Arial, sans-serif;
-      font-size: 15px;
-      font-weight: 300;
+      font-size: 12px;
+      font-weight: 200;
       color: #555555;
     ">
       Smarter Systems for a Better Tomorrow
