@@ -1,9 +1,9 @@
 ---
 title:
 feature_text: |
-  <!--# Samsung AI System Challenge 2026-->
-feature_image: "/assets/logos/banner_AISC2026.png"
-excerpt:
+  # AI System Challenge 26/27
+feature_image: "/assets/logos/banner_AISC2026_13d.png"
+excerpt
 ---
 ### 상금
 
