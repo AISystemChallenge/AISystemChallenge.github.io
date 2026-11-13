@@ -1,36 +1,35 @@
 ---
 title:
 feature_text: |
-  <div style="
-    text-align: left;
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: 2%;
-    margin: 0;
-  ">
+  <div style="text-align:left; padding-left:2%;">
 
     <div style="
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 16px;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #222222;
+      margin-bottom: 18px;
     ">
       SAMSUNG × 컴퓨터시스템 소사이어티
     </div>
 
     <div style="
-      font-size: clamp(32px, 4vw, 58px);
+      font-family: Arial, sans-serif;
+      font-size: clamp(32px, 4vw, 60px);
       font-weight: 800;
+      color: #0057B8;
       line-height: 1.15;
+      letter-spacing: -1px;
       margin-bottom: 20px;
     ">
-      AI System<br>
-      Challenge 26/27
+      AI SYSTEM CHALLENGE 26/27
     </div>
 
     <div style="
-      font-size: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
       font-weight: 300;
-      letter-spacing: 0.3px;
+      color: #555555;
     ">
       Smarter Systems for a Better Tomorrow
     </div>
