@@ -1,40 +1,6 @@
 ---
 title:
-feature_text: |
-  <div style="text-align:left; padding-left:2%;">
-
-    <div style="
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      font-weight: 300;
-      color: #222222;
-      margin-bottom: 18px;
-    ">
-      SAMSUNG × 컴퓨터시스템 소사이어티
-    </div>
-
-    <div style="
-      font-family: Arial, sans-serif;
-      font-size: clamp(20px, 4vw, 30px);
-      font-weight: 400;
-      color: #222222;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 20px;
-    ">
-      AI SYSTEM CHALLENGE 26/27
-    </div>
-
-    <div style="
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      font-weight: 200;
-      color: #555555;
-    ">
-      Smarter Systems for a Better Tomorrow
-    </div>
-
-  </div>
+feature_text:
 feature_image: "/assets/logos/banner_AISC2026.png"
 excerpt:
 ---
