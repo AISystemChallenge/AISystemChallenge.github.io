@@ -1,7 +1,41 @@
 ---
 title:
 feature_text: |
-  <!--# Samsung AI System Challenge 2026-->
+  <div style="
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 2%;
+    margin: 0;
+  ">
+
+    <div style="
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    ">
+      SAMSUNG × 컴퓨터시스템 소사이어티
+    </div>
+
+    <div style="
+      font-size: clamp(32px, 4vw, 58px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    ">
+      AI System<br>
+      Challenge 26/27
+    </div>
+
+    <div style="
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    ">
+      Smarter Systems for a Better Tomorrow
+    </div>
+
+  </div>
 feature_image: "/assets/logos/banner_AISC2026.png"
 excerpt:
 ---
