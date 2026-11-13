@@ -1,7 +1,7 @@
 ---
 title:
 feature_text: |
-  # AI System Challenge 26/27
+  <b># AI System Challenge 26/27</b>
 feature_image: "/assets/logos/banner_AISC2026_13c.png"
 excerpt:
 ---
