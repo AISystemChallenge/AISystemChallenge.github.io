@@ -9,9 +9,9 @@ excerpt:
 ### 평가 기준
 사무국 평가 클라이언트가 참가팀 서버에 정해진 시나리오의 요청을 보내 처리량·지연시간·정확도를 측정하며, 최대 부하 구간(saturation)의 처리량으로 순위를 정합니다.
   * &lt;상세&gt;
-    * **평가 산식 : Score = saturation 스테이지 req/s**
+    * **평가 산식 : Score = saturation 스테이지 req/s** <br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= 성공 요청 수 / (스테이지 시작 ~ 마지막 응답 완료 시간)
-    * **순위 인정 조건 (모두 충족)**
+    * **순위 인정 조건 (모두 충족)** <br>
       ① 오류 0건 (HTTP 오류, 연결 끊김, 600초 타임아웃 모두 오류로 집계)<br>
       ② 전체 정확도 ≥ Baseline 정확도 − 0.02
     * Baseline: vLLM v0.32.0 기본 설정 (제공 예제 team_baseline)
@@ -38,7 +38,7 @@ excerpt:
 <br>
    
 ### 벤치마크
-평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.
+평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.<br>
 ※ **본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**
   * &lt;태스크&gt;
     * kv_retrieval
@@ -89,9 +89,9 @@ excerpt:
 ### Evaluation Criteria
 The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios to measure throughput, latency, and accuracy. Rankings are determined by throughput during the maximum-load (saturation) stage.
   * &lt;Details&gt;
-    * **Formula : Score = saturation-stage req/s**
+    * **Formula : Score = saturation-stage req/s** <br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= Number of successful requests / (Stage start time ~ Completion time of the last response)
-    * **Ranking eligibility requirements (all must be satisfied)**
+    * **Ranking eligibility requirements (all must be satisfied)** <br>
       ① Zero errors (HTTP errors, disconnections, and 600-second timeouts are all counted as errors)<br>
       ② Overall accuracy ≥ Baseline accuracy − 0.02
     * Baseline: vLLM v0.32.0 default settings (provided example: team_baseline)
