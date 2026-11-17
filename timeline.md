@@ -54,7 +54,7 @@ excerpt:
         <td colspan="1"> Jan. 8, 2027 (Fri) </td>
     </tr>
     <tr>
-        <td colspan="1"> &emsp;※ Leaderboard Schedule </td>
+        <td colspan="1"> &emsp;※ Leaderboard </td>
         <td colspan="1"> Public: Dec. 10, 2026 (Thu) 10:00 ~ Dec. 20, 2026 (Sun) 23:59 <br>
                          Private: Dec. 21, 2026 (Mon) 00:00 ~ Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
