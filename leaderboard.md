@@ -177,7 +177,7 @@ excerpt:
                             <span id="time-display">00:00:00.000</span>
                             <span class="dday" id="dday-display">D-0</span>
                         </div>
-                        <div class="open-info">12/14 10시 오픈</div>
+                        <div class="open-info">12/10 10시 오픈</div>
                         <p class="text-muted">Coming soon!</p>
                     </div>
                 </div>
@@ -211,8 +211,8 @@ excerpt:
         //const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
         const WEBHOOK_URL = '/rank/rank2026.csv';
         
-        // 오픈 시간 설정 (2026년 12월 14일 10:00:00 KST)
-        const OPEN_TIME = new Date('2026-12-14T10:00:00+09:00');
+        // 오픈 시간 설정 (2026년 12월 10일 10:00:00 KST)
+        const OPEN_TIME = new Date('2026-12-10T10:00:00+09:00');
         
         let countdownInterval;
         let refreshInterval;
