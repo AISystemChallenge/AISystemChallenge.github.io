@@ -13,11 +13,11 @@ excerpt:
         <td colspan="1"> 2026년 12월 1일(화) 10:00 ~ 2027년 1월 2일(토) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> 1차 제출 마감 </td>
+        <td colspan="1"> &emsp;1차 제출 마감 </td>
         <td colspan="1"> 2027년 1월 2일(토) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> 1차 결과 발표 </td>
+        <td colspan="1"> &emsp;1차 결과 발표 </td>
         <td colspan="1"> 2027년 1월 8일(금) </td>
     </tr>
     <tr>
