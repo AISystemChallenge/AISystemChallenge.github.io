@@ -183,9 +183,6 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
 ### Competition Rules
 **This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.**
 
-### Competition Rules
-**This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.**
-
 #### 1. Evaluation Environment and Reproducibility
 Submissions must run properly in the hardware and software environment specified by the organizer, and their evaluation results must be reproducible. Evaluation results that cannot be reproduced will be invalidated.
 
