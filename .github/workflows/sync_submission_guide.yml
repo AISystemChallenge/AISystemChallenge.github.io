@@ -21,6 +21,40 @@ jobs:
             https://raw.githubusercontent.com/AISystemChallenge/submission-guide/main/README.md \
             -o _includes/submission_guide.md
 
+            - name: Convert H1 and H2 to H3
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path("_includes/submission_guide.md")
+          lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+          result = []
+          in_code = False
+          fence_char = ""
+          fence_len = 0
+
+          for line in lines:
+              fence = re.match(r"^ {0,3}(`{3,}|~{3,})", line)
+              if fence:
+                  marker = fence.group(1)
+                  if not in_code:
+                      in_code = True
+                      fence_char = marker[0]
+                      fence_len = len(marker)
+                  elif marker[0] == fence_char and len(marker) >= fence_len:
+                      in_code = False
+                  result.append(line)
+                  continue
+
+              if not in_code:
+                  line = re.sub(r"^( {0,3})#{1,2}(?=[ \t])", r"\1###", line)
+
+              result.append(line)
+
+          path.write_text("".join(result), encoding="utf-8")
+          PY
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
