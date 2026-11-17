@@ -1,13 +1,13 @@
-# 대회 제출 안내: GitHub release와 GHCR 이미지
+### 대회 제출 안내: GitHub release와 GHCR 이미지
 
 참가 팀은 **등록을 한 번** 마치면, 그 뒤로는 **GitHub release를 publish할 때마다** 제출 알림이 운영팀에 자동으로 전달됩니다. 이 문서는 참가자가 준비할 것과 시스템이 확인하는 것을 설명합니다.
 
-## 1. 전체 흐름
+### 1. 전체 흐름
 
 1. **등록 1회**: 대회 공지의 등록 링크에서 팀 정보를 입력하고, 안내 화면대로 저장소를 설정한 뒤 자동 연결 테스트를 통과합니다.
 2. **release마다 자동 알림**: release를 publish하면 시스템이 이미지를 찾아 확인하고 운영팀에 알립니다.
 
-## 2. 참가자 준비물
+### 2. 참가자 준비물
 
 | 준비물 | 내용 |
 |---|---|
@@ -49,7 +49,7 @@ Payload URL과 Secret은 **저장소마다 고정**입니다. 같은 저장소�
 2. **Dockerfile에 label 추가**: `LABEL org.opencontainers.image.source=https://github.com/<owner>/<repo>`를 넣고 push합니다.
 3. **패키지 페이지에서 직접 연결**: 패키지 페이지의 **Package settings → Connect repository**에서 저장소를 선택합니다.
 
-## 3. release 때 일어나는 일
+### 3. release 때 일어나는 일
 
 1. 참가자가 release를 **publish**합니다. pre-release도 포함됩니다. draft 저장, 수정, 삭제는 알림이 없습니다.
 2. 시스템이 webhook을 받고, 서명과 저장소를 확인합니다.
@@ -66,7 +66,7 @@ Payload URL과 Secret은 **저장소마다 고정**입니다. 같은 저장소�
 - 같은 계정은 release를 누른 개인이 아니라 **저장소를 소유한 계정**을 기준으로 합니다. 그래서 팀원 누구나 release를 할 수 있습니다.
 - 연결은 이미지가 그 저장소의 패키지로 묶여 있다는 뜻입니다(위 「이미지 연결 방법」).
 
-## 4. digest란?
+### 4. digest란?
 
 digest는 이미지 manifest의 `sha256` 지문(content address)입니다. tag(`v1.0.0` 같은 이름)는 나중에 다른 빌드로 옮겨갈 수 있지만, digest는 그 빌드 하나에 고정됩니다. 그래서 알림에는 digest가 함께 들어가고, 아래처럼 정확히 그 빌드를 받을 수 있습니다.
 
@@ -76,7 +76,7 @@ docker pull ghcr.io/<owner>/<image>@sha256:…
 
 multi-arch 이미지는 index의 digest를 씁니다.
 
-## 5. 거부되는 경우
+### 5. 거부되는 경우
 
 아래 경우에는 이미지가 거부됩니다. 거부된 주소는 운영팀 알림에 **경고로만** 표시되고 pull 대상에서 빠집니다.
 
@@ -85,7 +85,7 @@ multi-arch 이미지는 index의 digest를 씁니다.
 - tag가 없는 경우. 5분 뒤 재확인한 뒤에도 없을 때입니다.
 - 조회에 실패한 경우
 
-## 6. FAQ
+### 6. FAQ
 
 **release.yml만 있으면 되나요?**
 아니요. 등록 1회(collaborator 초대, webhook)는 따로 해야 합니다. release.yml은 release 때 이미지 빌드, push, 저장소 자동 연결을 맡습니다.
