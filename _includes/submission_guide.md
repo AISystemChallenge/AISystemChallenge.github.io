@@ -42,7 +42,7 @@
 
 Payload URL과 Secret은 **저장소마다 고정**입니다. 같은 저장소를 다시 등록해도 값이 같고, 이미 대회 webhook이 있다면 그대로 두면 됩니다. webhook은 **하나면 충분**합니다. 여러 개를 만들면 같은 알림이 그 수만큼 전달됩니다.
 
-#### 원클릭 복사 화면
+##### 원클릭 복사 화면
 
 등록 화면의 「원클릭 복사 화면 열기」 버튼을 누르면 `https://aisystemchallenge.github.io/submission-guide/copy/`가 새 탭으로 열립니다. 이 화면에서 Collaborator 사용자명, Payload URL, Secret을 버튼 하나로 복사할 수 있습니다.
 
@@ -56,7 +56,7 @@ Payload URL과 Secret은 **저장소마다 고정**입니다. 같은 저장소�
 
 commit message는 `chore: add AI System Challenge submission workflow (image ghcr.io/…)`입니다.
 
-#### workflow가 하는 일
+##### workflow가 하는 일
 
 - release를 발행(`published`)하면 실행합니다. workflow에 주어진 권한은 `contents: read`와 `packages: write`뿐입니다.
 - release tag가 docker tag 규칙에 맞는지 먼저 검사합니다(영문, 숫자, `_`, `.`, `-`만 쓰고 128자 이하이며, 첫 글자는 영문, 숫자, `_` 중 하나입니다).
@@ -65,7 +65,7 @@ commit message는 `chore: add AI System Challenge submission workflow (image ghc
 - `GITHUB_TOKEN`으로 push하므로 패키지가 이 저장소에 자동으로 연결됩니다.
 - pre-release도 빌드합니다(시험 빌드).
 
-#### workflow 파일의 값
+##### workflow 파일의 값
 
 | 값 | 내용 |
 |---|---|
@@ -74,14 +74,14 @@ commit message는 `chore: add AI System Challenge submission workflow (image ghc
 
 다시 등록하면 시스템이 파일을 공통 내용으로 되돌립니다(고친 값은 덮어씁니다). 고쳐서 쓰고 있다면 다시 등록한 뒤 한 번 더 고쳐 주세요.
 
-#### branch 보호 규칙이 commit을 막을 때
+##### branch 보호 규칙이 commit을 막을 때
 
 기본 branch에 branch 보호 규칙이나 ruleset이 있어 commit이 막히면 둘 중 하나를 한 뒤 다시 테스트하세요.
 
 1. `AISystemChallenge`를 허용(bypass)합니다.
 2. 공개 템플릿 [aisc-submission.yml](examples/aisc-submission.yml)을 저장소의 `.github/workflows/aisc-submission.yml`로 직접 추가합니다. 이때 `AISC_IMAGE` 줄을 등록한 이름으로 바꿉니다. 같은 내용이면 시스템이 commit을 건너뜁니다. 다른 줄까지 고쳐서 내용이 달라지면 시스템이 덮어쓰려고 하므로 다시 막힐 수 있습니다. `AISC_DOCKERFILE` 줄도 바꾸지 마세요. Dockerfile이 저장소 루트에 없다면 1번을 쓰세요.
 
-#### 등록을 끝내지 못해도
+##### 등록을 끝내지 못해도
 
 workflow 파일은 자동 연결 테스트 중에 commit됩니다. 그래서 이후 단계가 실패하거나 등록을 끝내지 못해도 파일은 저장소에 남습니다. 등록하지 않을 거라면 지워도 됩니다. 등록 commit이 저장소의 push 기반 CI를 실행할 수도 있습니다.
 
@@ -122,7 +122,7 @@ workflow 파일은 자동 연결 테스트 중에 commit됩니다. 그래서 이
 
 이미지 빌드가 약 5분보다 오래 걸리면 두 번째 확인 때도 이미지가 아직 없어서 알림에 이미지가 빠질 수 있습니다. 빌드가 오래 걸리는 이미지라면 pre-release로 걸리는 시간을 미리 확인해 두세요.
 
-#### 이미지 규칙
+##### 이미지 규칙
 
 **같은 계정 + 저장소에 연결 + tag 존재**, 세 가지를 모두 만족해야 합니다.
 
