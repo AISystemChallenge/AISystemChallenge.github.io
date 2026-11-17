@@ -21,7 +21,7 @@ jobs:
             https://raw.githubusercontent.com/AISystemChallenge/submission-guide/main/README.md \
             -o _includes/submission_guide.md
 
-            - name: Convert H1 and H2 to H3
+      - name: Convert H1 and H2 to H3
         run: |
           python3 - <<'PY'
           from pathlib import Path
