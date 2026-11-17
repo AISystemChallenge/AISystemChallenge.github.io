@@ -7,7 +7,7 @@ excerpt:
 ---
 ### Q&A
 
-Contact: aisys.info@samsung.com <br>
+#### Contact: aisys.info@samsung.com <br>
 NOTE: 대회와 관련 없는 글은 관리자에 의해 예고없이 임의 삭제될 수 있습니다.   
 &emsp;&ensp;&emsp;&ensp;Questions that are irrelevant or not related to the contest content can be deleted at will. <br>
 
