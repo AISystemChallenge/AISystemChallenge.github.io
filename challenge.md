@@ -32,10 +32,10 @@ excerpt:
 ### 최종 제출물
 준비 중 <br>
 
+<hr>
 
 ### Registration
 Cooking <br>
-
 
 ### Eligibility
 1.&nbsp;Students currently enrolled in Korean universities and graduate schools (as of Dec. 1, 2026). <br>
