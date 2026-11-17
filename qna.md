@@ -12,10 +12,10 @@ NOTE: 대회와 관련 없는 글은 관리자에 의해 예고없이 임의 삭
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="cechallenge/cechallenge.github.io"
-        data-repo-id="R_kgDOKCnhaw"
+        data-repo="AISystemChallenge/AISystemChallenge.github.io"
+        data-repo-id="NEW_REPO_ID"
         data-category="Q&A"
-        data-category-id="DIC_kwDOKCnha84Cgir1"
+        data-category-id="NEW_CATEGORY_ID"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
@@ -27,7 +27,7 @@ NOTE: 대회와 관련 없는 글은 관리자에 의해 예고없이 임의 삭
         async>
 </script>
 <div class="giscus">
-</div> 
+</div>
 
 
 <!--
