@@ -15,7 +15,8 @@
 | Collaborator | `AISystemChallenge`를 **Write 이상** 권한으로 초대합니다. 조직 저장소는 **Collaborators and teams**에서 초대합니다. 초대는 시스템이 자동으로 수락합니다. |
 | Webhook | 이벤트는 **Releases만** 선택합니다. Payload URL과 Secret은 등록 화면에서 복사합니다. |
 | GHCR 이미지 | 등록 저장소와 **같은 계정**의 `ghcr.io/<owner>/…`에 있고, 그 저장소에 **연결**돼 있어야 합니다. |
-<br>
+
+<div style="height: 8px;"></div>
 
 #### 등록 절차
 
