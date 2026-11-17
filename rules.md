@@ -112,6 +112,7 @@ excerpt:
 #### 11. 대회 규칙 변경 및 공지
 주최 측은 공정한 대회 운영을 위해 필요한 경우 규칙 및 평가 절차를 변경할 수 있으며, 변경 사항과 적용 시점은 대회 공식 홈페이지를 통해 공지합니다.
 <br>
+
 <hr />
 
 ### Evaluation Criteria
@@ -181,14 +182,45 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
 
 ### Competition Rules
 **This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.**
-1. Submissions must be reproducible in the evaluation environment, and source code will be used to investigate misconduct and reproduce results.
-2. Participating teams must submit any materials requested for evaluation.
-3. Source code developed by participating teams must remain confidential throughout the competition.
-4. Submissions must not use copyrighted or proprietary data, patents, trademarks, code, or confidential source content without authorization. Data or content that violates service agreements or another company's trade secrets is not permitted.
-5. The organizer assumes no responsibility for submissions that infringe third-party intellectual property rights.
-6. The organizer will use submissions solely to verify sharing or copying between participating teams and will not use them commercially or retain them after the competition. Participating teams are solely responsible for damages arising from third-party intellectual property infringement caused by their submissions.
-7. Using external implementations without attribution or copying another team's implementation will result in disqualification.
-8. Each team may have no more than three members and must demonstrate that no member participates in another team.
-9. Competition organizers and related personnel are not eligible to participate.
-10. Any conduct that undermines trust or constitutes unfair behavior may result in disqualification, even if it does not explicitly violate the rules above.
+
+### Competition Rules
+**This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.**
+
+#### 1. Evaluation Environment and Reproducibility
+Submissions must run properly in the hardware and software environment specified by the organizer, and their evaluation results must be reproducible. Evaluation results that cannot be reproduced will be invalidated.
+
+#### 2. Submission of Evaluation Materials
+Participating teams must provide all materials requested by the organizer for evaluation and verification, including source code, execution instructions, and environment configurations. Failure to provide the requested materials will result in the invalidation of the corresponding submission's evaluation results.
+
+#### 3. Confidentiality and Use of Submissions
+The organizer will not disclose participating teams' submissions or source code to third parties and will use them solely for competition evaluation, result reproduction, and misconduct verification. Submissions will not be used for commercial purposes without the participating team's separate consent and will be deleted after evaluation and verification are completed.
+
+#### 4. External Open Source and Intellectual Property Rights
+Publicly available open-source software, libraries, and third-party implementations may be used in compliance with their applicable licenses and terms of use. Teams must properly acknowledge the sources of any external implementations used. Participating teams are responsible for obtaining all necessary rights and permissions for materials and technologies included in their submissions. If a submission infringes upon a third party's intellectual property rights, the participating team shall bear full legal responsibility for the infringement, and the organizer shall not be held liable.
+
+#### 5. Prohibition of Code and Implementation Sharing Between Teams
+During the competition, participating teams must not disclose or share their source code, implementations, or submissions with other participating teams. Unauthorized copying of another team's implementation is also prohibited. However, the use of publicly available research papers, open-source software, and technical resources is permitted.
+
+#### 6. Eligibility and Team Composition
+Each team may consist of up to three members, and each participant may belong to only one team. Participation in multiple teams by the same individual is not permitted.
+
+#### 7. Restrictions on Participation by Competition Personnel
+Individuals representing the organizer who are directly involved in competition operations or evaluation are not eligible to participate.
+
+#### 8. Prohibition of Evaluation System Circumvention and Misconduct
+Unauthorized modification of evaluation programs or performance measurements, substitution of actual inference, or any other actions that improperly distort evaluation results are prohibited. <br>
+In particular, the following actions are not permitted:<br>
+- Precomputing or hardcoding outputs for evaluation inputs to replace actual inference
+- Manipulating performance measurements, including evaluation time and GPU memory usage
+- Unauthorized modification or circumvention of evaluation programs or measurement logic
+- Using unauthorized computational resources, including external GPUs or APIs
+
+#### 9. Misconduct and Disqualification
+Participants may be disqualified for violating the above rules or engaging in any other conduct that undermines the fairness and integrity of the competition, including manipulation of evaluation results or obtaining unfair advantages, even if such conduct is not explicitly covered by the stated rules.
+
+#### 10. Leaderboard and Final Evaluation
+Scores and rankings displayed on the leaderboard are provisional. Final evaluation results will be confirmed only after verifying the reproducibility of submissions and their compliance with competition rules.
+
+#### 11. Changes to Competition Rules and Announcements
+The organizer reserves the right to modify competition rules and evaluation procedures when necessary to ensure fair competition. Any changes and their effective dates will be announced on the official competition website.
 <br>
