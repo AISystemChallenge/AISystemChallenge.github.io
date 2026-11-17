@@ -6,7 +6,7 @@ feature_image: "/assets/logos/banner_AISC2026_13c.png"
 excerpt:
 ---
 
-#### 참가 등록
+### 참가 등록
 Computer Engineering(CE) Challenge 참가하시려면, Submssion 페이지에서 참가 신청서를 작성해주시기 바랍니다. <br>
 &ensp;※ Submission ([페이지로 이동](../submission/)) <br>
 
@@ -15,7 +15,7 @@ Computer Engineering(CE) Challenge 참가하시려면, Submssion 페이지에서
 <br>
 
 
-#### 참가 자격
+### 참가 자격
 1.&nbsp;'26년 11월 11일 현재 국내 대학에 재학 중인 대학생 및 대학원생 <br>
 &ensp;※ 수상은 아래 조건을 충족해야 합니다. (‘26년 11월 11일 기준) <br>
 &emsp;&ensp;학적 상태가 재학 상태이어야 하고, 졸업유예생은 참여불가 <br>
@@ -27,7 +27,7 @@ Computer Engineering(CE) Challenge 참가하시려면, Submssion 페이지에서
 <br>
 
 
-#### 대회 운영
+### 대회 운영
 최종 평가는 각 팀에서 제출하는 LLVM 컴파일러 및 Gem5 시뮬레이터 소스코드로  <br>
 사무국에서 선정한 벤치마크의 실행 시간을 최소화하는 것을 목표로 하며, <br>
 baseline 실행 시간 대비 성능 개선도(speedup)를 기하 평균(geometric mean)을 내어 합산한 점수를 평가합니다. <br>
@@ -45,7 +45,7 @@ baseline 실행 시간 대비 성능 개선도(speedup)를 기하 평균(geometr
 <br>
 
 
-#### Leaderboard 제출물
+### Leaderboard 제출물
 1.&nbsp;모든 참가팀은 [Submission Page](https://cechallenge.github.io/submission/) 설명에 따라 [참가 등록](https://naver.me/G8hZKrnE)을 해야 합니다. (최초 1회) <br>
 2.&nbsp;모든 참가팀은 private repository를 생성한 후, [CE Challenge Github Repository](https://github.com/cechallenge/2025)를 clone하여 생성한 private repository에 연결하여야 합니다. 그리고 Github 계정(cechallenge)을 private repository의 collaborator로 등록해야 합니다. <br>
 3.&nbsp;Private repository의 main branch에 push된 latest commit을 기준으로 Leaderboard에 주기적으로 채점 결과가 반영됩니다. <br>
@@ -55,7 +55,7 @@ baseline 실행 시간 대비 성능 개선도(speedup)를 기하 평균(geometr
 <br>
 
 
-#### 최종 제출물
+### 최종 제출물
 대회 종료 후 최종 평가 대상자는(리더보드 상위 10개 팀) 아래의 항목을 팀명과 함께 [cechallenge@samsung.com](mailto:cechallenge@samsung.com)으로 송부합니다. <br>
 &ensp;- 문제 해결을 위해 사용한 최적화 방법과 알고리즘을 설명하는 문서 (**docs**/**ppt**/**pdf** 등) <br>
 &ensp;- 팀원 전체의 재학증명서 또는 대체인증서류 <br>
@@ -64,7 +64,7 @@ baseline 실행 시간 대비 성능 개선도(speedup)를 기하 평균(geometr
 <hr />
 
 
-#### Registration
+### Registration
 To participate in the Computer Engineering(CE) Challenge, please fill out the application form on the Submission page. <br>
 &ensp;※ Submission ([Go to page](../submission/)) <br>
 
@@ -73,7 +73,7 @@ Once your submission is complete, you will receive a confirmation email, and you
 <br>
 
 
-#### Eligibility
+### Eligibility
 1.&nbsp;Students currently enrolled in Korean universities and graduate schools as of July 21, 2025. <br>
 &ensp;※ To be eligible for an award, the following conditions must be met <br>
 &emsp;&ensp;Must be currently enrolled; students on graduation deferment are not eligible to participate <br>
@@ -85,7 +85,7 @@ Once your submission is complete, you will receive a confirmation email, and you
 <br>
 
 
-#### Competition Operation
+### Competition Operation
 The final evaluation will be based on the LLVM compiler and Gem5 simulator source code submitted by each team, with the goal of minimizing the execution time of the benchmarks selected by the secretariat. The performance improvement (speedup) compared to the baseline execution time will be calculated using the geometric mean and the total score will be evaluated. <br>
 A leaderboard will be maintained based on the source code submitted by each team and will be updated periodically (starting August 1). <br>
 If you submit your source code multiple times, the last submission (execution time evaluation score) will be used for registration. <br>
@@ -101,7 +101,7 @@ If you submit your source code multiple times, the last submission (execution ti
 <br>
 
 
-#### Leaderboard Submission Guide
+### Leaderboard Submission Guide
 1.&nbsp;All participating teams must [register](https://naver.me/G8hZKrnE) according to the instructions on the [Submission Page](https://cechallenge.github.io/submission/). (Once only) <br>
 2.&nbsp;All participating teams must create a private repository, clone the [CE Challenge GitHub Repository](https://github.com/cechallenge/2025), and connect it to the private repository you created. All teams must also register the CE challenge GitHub account (cechallenge) as a collaborator of your private repository. <br>
 3.&nbsp;Scoring results will be periodically reflected on the Leaderboard based on the latest commit pushed to the main branch of the private repository. <br>
@@ -111,7 +111,7 @@ If you submit your source code multiple times, the last submission (execution ti
 <br>
 
 
-#### Final Submission
+### Final Submission
 After the competition ends, final evaluation candidates (the top 10 teams on the Leaderboard) must submit the following items along with their team name to [cechallenge@samsung.com](mailto:cechallenge@samsung.com) <br>
 &ensp;- A document explaining the optimization methods and algorithms used to solve the problem (docs/ppt/pdf, etc.) <br>
 &ensp;- Enrollment certificates or alternative certification documents for all team members <br>
