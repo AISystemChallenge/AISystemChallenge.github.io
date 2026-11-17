@@ -16,6 +16,8 @@
 | Webhook | 이벤트는 **Releases만** 선택합니다. Payload URL과 Secret은 등록 화면에서 복사합니다. |
 | GHCR 이미지 | 등록 저장소와 **같은 계정**의 `ghcr.io/<owner>/…`에 있고, 그 저장소에 **연결**돼 있어야 합니다. |
 
+<br>
+
 #### 등록 절차
 
 1. 등록 Form에 팀 정보, GitHub 저장소, GHCR 이미지 주소를 입력합니다. 이미지 주소에는 tag 또는 digest가 있어야 하고(예: `ghcr.io/<owner>/<image>:v1.0.0`), 등록 저장소와 같은 계정이어야 합니다.
