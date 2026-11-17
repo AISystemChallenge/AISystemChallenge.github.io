@@ -44,8 +44,8 @@ Cooking <br>
 &emsp;&ensp;Those currently employed by an industry or research institute are not eligible for awards (including those on academic training and student researchers affiliated with industry-government-funded research institutes) <br>
 &emsp;&ensp;Finalist teams must submit proof of enrollment or alternative certification documents. <br>
 
-2.&nbsp;Participation is possible as an individual or as a team, with a maximum of three members per team. <br>
-&ensp;※ Individuals/teams may submit only one result (the same person may not participate in multiple teams or as an individual). <br>
+2.&nbsp;Individual or team participation is possible, with maximum of three members per team. <br>
+&ensp;※ Individuals/teams may submit only one result (same person cannot participate as multiple teams or individual). <br>
 <br>
 
 
