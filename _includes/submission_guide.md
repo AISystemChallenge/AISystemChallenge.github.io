@@ -16,7 +16,7 @@
 | Webhook | 이벤트는 **Releases만** 선택합니다. Payload URL과 Secret은 등록 화면에서 복사합니다. |
 | GHCR 이미지 이름 | **tag 없이 이름만** 등록합니다. 이름은 `ghcr.io/<저장소 소유 계정>/<이름>`이며, 계정은 등록 저장소를 소유한 계정과 같아야 합니다. 권장은 저장소 이름과 같게 하는 것입니다(`github.com/owner/repo`이면 `ghcr.io/owner/repo`). `/`로 나눈 계층 이름도 쓸 수 있고, 대문자는 소문자로 바뀝니다. 등록할 때 이미지가 없어도 됩니다. |
 
-<h4 style="margin-top: 48px;">등록 절차</h4>
+<h5 style="margin-top: 48px;">등록 절차</h5>
 <!-- #### 등록 절차 -->
 
 1. 등록 Form에 팀 정보, GitHub 저장소 주소, GHCR 이미지 이름을 입력합니다. 이미지는 tag 없이 이름만 적습니다(예: `ghcr.io/<owner>/<repo>`).
