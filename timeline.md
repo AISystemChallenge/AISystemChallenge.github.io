@@ -9,18 +9,16 @@ excerpt:
 <p>
     <table class="table table-sm" width="100%">
     <tr>
-        <td colspan="1"> 대회 기간 </td>
-        <td colspan="1"> 2026년 11월 11일(월) 11:00 ~ 2027년 01월 01일(금) 13:59 </td>
+        <td colspan="1"> 1차 온라인 </td>
+        <td colspan="1"> 2026년 12월 1일(화) 10:00 ~ 2027년 1월 2일(토) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> 대회 종료 </td>
-        <td colspan="1"> 2027년 01월 01일(금) 13:59 <br>
-                         (main branch의 가장 최신 commit 기준) </td>
+        <td colspan="1"> 1차 제출 마감 </td>
+        <td colspan="1"> 2027년 1월 2일(토) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> 최종 결과 제출 </td>
-        <td colspan="1"> ~ 2027년 01월 01일(금) 23:59 <br>
-		                 ※ 리더보드 상위 10개 팀 </td>
+        <td colspan="1"> 1차 결과 발표 </td>
+        <td colspan="1"> 2027년 1월 8일(금) </td>
     </tr>
     <tr>
         <td colspan="1"> 최종 결과 발표 </td>
