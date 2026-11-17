@@ -13,9 +13,9 @@ NOTE: 대회와 관련 없는 글은 관리자에 의해 예고없이 임의 삭
 
 <script src="https://giscus.app/client.js"
         data-repo="AISystemChallenge/AISystemChallenge.github.io"
-        data-repo-id="NEW_REPO_ID"
+        data-repo-id="R_kgDOVozO_w"
         data-category="Q&A"
-        data-category-id="NEW_CATEGORY_ID"
+        data-category-id="DIC_kwDOVozO_84DLUtw"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
@@ -26,8 +26,6 @@ NOTE: 대회와 관련 없는 글은 관리자에 의해 예고없이 임의 삭
         crossorigin="anonymous"
         async>
 </script>
-<div class="giscus">
-</div>
 
 
 <!--
