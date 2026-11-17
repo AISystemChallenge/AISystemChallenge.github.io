@@ -46,11 +46,11 @@ excerpt:
         <td colspan="1"> Dec. 1, 2026 (Tue) 10:00 ~ Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> &emsp;Stage 1 Submission Deadline </td>
+        <td colspan="1"> &emsp;Stage 1 Deadline </td>
         <td colspan="1"> Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> &emsp;Stage 1 Results Announcement </td>
+        <td colspan="1"> &emsp;Stage 1 Results </td>
         <td colspan="1"> Jan. 8, 2027 (Fri) </td>
     </tr>
     <tr>
