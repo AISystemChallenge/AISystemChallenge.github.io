@@ -33,7 +33,7 @@ excerpt:
     </table>
 </P>
 
-#### ※ 세부 일정은 대회 운영상황에 따라 변동될 수 있습니다.
+##### ※ 세부 일정은 대회 운영상황에 따라 변동될 수 있습니다.
 <br>
 
 <hr />
@@ -66,4 +66,4 @@ excerpt:
     </table>
 </P>
 
-#### ※ Detailed schedule may be subject to change depending on the competition's operational circumstances.
+##### ※ Detailed schedule may be subject to change depending on the competition's operational circumstances.
