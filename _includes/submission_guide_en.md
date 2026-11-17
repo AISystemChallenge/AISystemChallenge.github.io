@@ -17,7 +17,7 @@ Once a participating team completes **one-time registration**, a submission noti
 | Webhook | Select **Releases only** as the event. Copy the Payload URL and Secret from the registration page. |
 | GHCR image | The image must be hosted at `ghcr.io/<owner>/…` under the **same account** that owns the registered repository and must be **linked** to that repository. |
 
-<div style="height: 8px;"></div>
+<div style="height: 8px; display: block; clear: both;">&nbsp;</div>
 
 #### Registration Procedure
 
