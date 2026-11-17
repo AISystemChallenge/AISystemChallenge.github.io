@@ -7,6 +7,6 @@ excerpt:
 ---
 {% include submission_guide.md %}
 
----
+<hr>
 
-test
+{% include submission_guide_en.md %}
