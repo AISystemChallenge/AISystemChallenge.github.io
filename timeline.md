@@ -33,7 +33,7 @@ excerpt:
     </table>
 </P>
 
-####※ 세부 일정은 대회 운영상황에 따라 변동될 수 있습니다.
+#### ※ 세부 일정은 대회 운영상황에 따라 변동될 수 있습니다.
 <br>
 
 <hr />
@@ -42,28 +42,28 @@ excerpt:
 <p>
     <table class="table table-sm" width="100%">
     <tr>
-        <td colspan="1"> Competition Period </td>
-        <td colspan="1"> July 21, 2025 (Mon) 11:00 AM to September 19, 2025 (Fri) 1:59 PM </td>
+        <td colspan="1"> Stage 1 (Online) </td>
+        <td colspan="1"> Dec. 1, 2026 (Tue) 10:00 ~ Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> Competition End </td>
-        <td colspan="1"> September 19, 2025 (Fri) 1:59 PM <br>
-                         (Based on the final result leaderboard upload time) </td>
+        <td colspan="1"> &emsp;Stage 1 Submission Deadline </td>
+        <td colspan="1"> Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> Final Results Submission </td>
-        <td colspan="1"> September 22, 2025 (Mon) 11:59 PM <br>
-		                 ※ Top 10 teams on the leaderboard </td>
+        <td colspan="1"> &emsp;Stage 1 Results Announcement </td>
+        <td colspan="1"> Jan. 8, 2027 (Fri) </td>
     </tr>
     <tr>
-        <td colspan="1"> Final Results Announcement </td>
-        <td colspan="1"> September 26, 2025 (Fri) </td>
+        <td colspan="1"> &emsp;※ Leaderboard Schedule </td>
+        <td colspan="1"> Public: Dec. 10, 2026 (Thu) 10:00 ~ Dec. 20, 2026 (Sun) 23:59 <br>
+                         Private: Dec. 21, 2026 (Mon) 00:00 ~ Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> Award Ceremony and Winners' Camp</td>
-        <td colspan="1"> Octuber 1, 2025 (Wed) </td>
+        <td colspan="1"> Stage 2 (Offline) </td>
+        <td colspan="1"> Jan. 17, 2026 (Sun) <br>
+                        Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
     </tr>
     </table>
 </P>
 
-####※ The detailed schedule may be subject to change depending on the competition's operational circumstances.
+#### ※ Detailed schedule may be subject to change depending on the competition's operational circumstances.
