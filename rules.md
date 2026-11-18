@@ -50,8 +50,9 @@ excerpt:
 
    
 ### 벤치마크
-평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.<br>
-※ **본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**
+평가 클라이언트(bench.py)와 예제 시나리오(scenarios/en_sum_sub.json)는 GitHub repository로 제공됩니다.<br>
+※ **본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**<br>
+제공되는 샘플 시나리오는 scenarios/en_sum_sub.json입니다. InfiniteBench En.Sum 데이터(ids로 고정)로 ~수십만 토큰 길이의 요청을 만들어 보냅니다.
   * ##### 태스크
     * kv_retrieval
         * 약 3.1k 토큰의 key-value 목록에서 값 찾기, 출력 ≤ 24 토큰
