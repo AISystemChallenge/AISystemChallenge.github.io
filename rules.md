@@ -168,23 +168,22 @@ Participating teams submit their serving servers as Docker-images, which are exe
     * Requests contain raw prompts with the chat template already applied, with temperature=0 and max_tokens specified.
 
    
-
 ### Benchmark
-The evaluation client (bench.py) and sample scenario (scenarios/en_sum_sub.json) are provided through a GitHub repository.<br>
-**※ The official evaluation uses private seeds and scenarios, so scores measured using public scenarios may differ from leaderboard scores.**<br><br>
-The provided sample scenario is scenarios/en_sum_sub.json. It generates and sends requests with context lengths of up to several hundred thousand tokens using the InfiniteBench En.Sum dataset (with fixed IDs).
+The evaluation client (bench.py) and example scenario (scenarios/en_sum_sub.json) are provided through a GitHub repository.<br>
+**※ This evaluation uses private seeds and scenarios, so scores measured using public scenarios may differ from leaderboard scores.**<br><br>
+The provided sample scenario is scenarios/en_sum_sub.json. It generates and sends requests with lengths of approximately up to hundreds of thousands of tokens using the InfiniteBench En.Sum dataset (fixed ids).
   * ##### Tasks
     * en_sum
       * Summarization, output ≤ 1,200 tokens
-      * A response is considered correct if its ROUGE-Lsum F1 score meets or exceeds the predefined threshold.
+      * A response is considered correct if its ROUGE-Lsum F1 score meets or exceeds the threshold.
     * en_sum_next
-      * Select the sentence that follows a quoted passage from four options (A–D), output ≤ 16 tokens
-      * Evaluated by matching the selected option letter.
+      * Select the sentence following a quoted passage from four options (A–D), output ≤ 16 tokens
+      * Evaluated by matching the option letter.
     * en_sum_blank
-      * Identify a single-word proper noun masked with ____ in a quoted sentence, output ≤ 16 tokens
-      * Evaluated by exact word matching.
+      * A single-word proper noun masked with ____ in a quoted sentence, output ≤ 16 tokens
+      * Evaluated by word matching.
   * ##### Load Schedule
-    * open-loop: Requests are sent at predetermined times, independently of previous response completion.
+    * open-loop: Requests are sent at predetermined times regardless of responses.
 
 
 ### Restrictions
