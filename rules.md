@@ -9,14 +9,24 @@ excerpt:
 ### 평가 기준
 사무국 평가 클라이언트가 사전 정의된 시나리오에 따라 참가팀 서버에 요청을 전송하고, **처리량(QPS), 응답 지연시간(SLO), 정확도(Accuracy)** 를 측정합니다.<br>
 정확도와 응답 지연시간에 대한 최소 품질 기준을 충족한 참가팀을 대상으로 측정한 처리량(QPS) 을 기준으로 최종 순위를 결정합니다.
-  * ##### 상세
-    * **평가 산식 : Score = saturation 스테이지 req/s** <br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= 성공 요청 수 / (스테이지 시작 ~ 마지막 응답 완료 시간)
-    * **순위 인정 조건 (모두 충족)** <br>
-      ① 오류 0건 (HTTP 오류, 연결 끊김, 600초 타임아웃 모두 오류로 집계)<br>
-      ② 전체 정확도 ≥ Baseline 정확도 − 0.02
-    * Baseline: vLLM v0.32.0 기본 설정 (제공 예제 team_baseline)
-    * 참고 지표 (순위 미반영): TTFT·TPOT p50/p99, 출력 tok/s, 태스크별 정확도
+  * ##### 최종 순위 산정 기준
+    * **핵심 평가 원칙:** 정확도와 응답 지연시간에 대한 최소 품질 기준을 보장하면서, 해당 조건을 충족하는 시스템 중 비공개 LLM serving 시나리오에서 가장 높은 처리량(QPS)을 달성한 참가팀을 우선 평가함.
+    * 정확도 (Accuracy)
+      * 각 Query의 정답 여부를 Pass / Fail로 판정
+        * 객관식: 정답 일치 여부에 따라 Pass Fail 판정
+        * 서술형: F1 score 기준으로 사무국에서 설정한 임계값 이상인 경우 Pass 판정
+      * 전체 Qurey 중 Pass로 판정 된 비율을 Accuracy Score로 산정
+      * Accuracy Score가 95% 이상인 경우 정확도 기준 충족      ① 오류 0건 (HTTP 오류, 연결 끊김, 600초 타임아웃 모두 오류로 집계)
+    * 서비스 수준 목표 (SLO)
+      * 응답 지연시간은 TTFT(Time To First Token)와 TPOT(Time Per Output Token)를 기준으로 평가
+      * TTFT p95 및 TPOT p95가 각각 사전에 정의된 임계값 이하인 경우 SLO 기준 충족
+    * 처리량 (QPS) 기반 Ranking
+      * Accuracy 및 SLO 기준을 모두 충족한 참가팀을 대상으로 최종 순위 산정
+      * QPS가 높은 순서대로 순위 부여
+    * 순위 인정 조건 (모두 충족)
+      * 오류 0건: HTTP 오류, 연결 끊김, Timeout, OOM(Out of Memory) 등 모든 오류가 발생하지 않아야 함.
+      * 정확도 기준 충족:Accuracy Score ≥ 95%
+      * SLO 기준 충족:  TTFT p95 및 TPOT p95가 각각 설정된 임계값 이하
     * 모든 시간은 클라이언트 측 wall-clock으로 측정하며, 출력 토큰 수는 클라이언트 토크나이저로 계산합니다 (서버 usage 값 미사용).
 
 
