@@ -41,7 +41,7 @@ excerpt:
 평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.<br>
 ※ **본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**
   * ##### 태스크
-    * **kv_retrieval**
+    * kv_retrieval
         * 약 3.1k 토큰의 key-value 목록에서 값 찾기, 출력 ≤ 24 토큰
         * 문서 하나를 질문 4개가 공유해 prefix가 재사용됨
     * arith_chain
@@ -74,28 +74,28 @@ excerpt:
 ### 대회 규칙
 **이번 대회에서는 공정한 평가 및 재현 가능한 결과를 보장하는 것을 목표로 합니다. 이를 위해 다음 사항을 준수해야 합니다.**
 
-#### 1. 평가 환경 및 재현성
+##### 1. 평가 환경 및 재현성
 제출물은 주최 측이 지정한 하드웨어 및 소프트웨어 환경에서 정상적으로 실행되고 평가 결과가 재현 가능해야 합니다. 재현에 실패한 제출물의 평가 결과는 무효 처리됩니다.
 
-#### 2. 평가 자료 제출
+##### 2. 평가 자료 제출
 참가팀은 평가 및 검증을 위해 주최 측이 요청하는 소스 코드, 실행 방법, 환경 설정 등 필요한 자료를 제출해야 합니다. 요청된 자료를 제출하지 않을 경우 해당 제출물의 평가 결과는 무효 처리됩니다.
 
-#### 3. 제출물 비공개 및 활용
+##### 3. 제출물 비공개 및 활용
 주최 측은 참가팀의 제출물 및 소스 코드를 외부에 공개하지 않으며, 대회 평가, 결과 재현 및 부정행위 검증 목적으로만 활용합니다. 참가팀의 별도 동의 없이 상업적 목적으로 사용하지 않으며, 평가 및 검증이 완료된 후 삭제합니다.
 
-#### 4. 외부 오픈소스 및 지식재산권
+##### 4. 외부 오픈소스 및 지식재산권
 공개된 오픈소스, 라이브러리 및 외부 구현은 관련 라이선스와 이용 조건을 준수하는 범위에서 사용할 수 있으며, 사용한 외부 구현의 출처를 명시해야 합니다. 참가팀은 제출물에 사용된 자료 및 기술에 대해 적법한 사용 권한을 확보해야 하며, 제출물로 인해 제3자의 지식재산권 침해가 발생하는 경우 이에 따른 모든 법적 책임은 해당 참가팀에 있으며, 주최 측은 이에 대한 책임을 지지 않습니다.
 
-#### 5. 참가팀 간 코드 및 구현 공유 금지
+##### 5. 참가팀 간 코드 및 구현 공유 금지
 참가팀은 대회 기간 중 자신의 소스 코드, 구현 내용 및 제출물을 다른 참가팀에 공개하거나 공유할 수 없으며, 다른 참가팀의 구현을 무단 복제하는 행위도 금지됩니다. 단, 공개된 논문, 오픈소스 및 기술 자료의 활용은 허용됩니다.
 
-#### 6. 참가 자격 및 팀 구성
+##### 6. 참가 자격 및 팀 구성
 참가팀은 최대 3명으로 구성할 수 있으며, 참가자는 하나의 팀에만 소속될 수 있습니다. 동일인이 복수의 팀에 중복 참가하는 것은 허용되지 않습니다.
 
-#### 7. 대회 관계자 참가 제한
+##### 7. 대회 관계자 참가 제한
 대회 운영 및 평가에 직접 관여하는 주최 측 관계자는 참가할 수 없습니다.
 
-#### 8. 평가 시스템 우회 및 부정행위 금지
+##### 8. 평가 시스템 우회 및 부정행위 금지
 평가 프로그램 또는 성능 측정 결과를 무단으로 변경하거나, 실제 추론을 대체하는 등 평가 결과를 부당하게 왜곡하는 행위를 금지합니다. <br>
 특히 다음 행위는 허용되지 않습니다.<br>
 - 평가 입력에 대한 출력값을 사전에 준비하거나 하드코딩하여 실제 추론을 대체하는 행위
@@ -103,13 +103,13 @@ excerpt:
 - 평가 프로그램 또는 측정 로직을 무단으로 변경하거나 우회하는 행위
 - 허용되지 않은 외부 GPU, API 등 연산 자원을 사용하는 행위
 
-#### 9. 부정행위 및 실격
+##### 9. 부정행위 및 실격
 상기 규칙을 위반하거나, 명시된 규칙 외에도 평가 결과 조작, 부정한 이익 취득 등 대회의 공정성과 신뢰성을 훼손하는 행위가 확인된 경우 실격 처리될 수 있습니다.
 
-#### 10. 리더보드 및 최종 평가
+##### 10. 리더보드 및 최종 평가
 리더보드에 표시된 점수와 순위는 잠정 결과이며, 최종 평가 결과는 제출물의 재현성 및 규정 준수 여부를 검증한 후 확정됩니다.
 
-#### 11. 대회 규칙 변경 및 공지
+##### 11. 대회 규칙 변경 및 공지
 주최 측은 공정한 대회 운영을 위해 필요한 경우 규칙 및 평가 절차를 변경할 수 있으며, 변경 사항과 적용 시점은 대회 공식 홈페이지를 통해 공지합니다.
 <br>
 
@@ -183,28 +183,28 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
 ### Competition Rules
 **This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.**
 
-#### 1. Evaluation Environment and Reproducibility
+##### 1. Evaluation Environment and Reproducibility
 Submissions must run properly in the hardware and software environment specified by the organizer, and their evaluation results must be reproducible. Evaluation results that cannot be reproduced will be invalidated.
 
-#### 2. Submission of Evaluation Materials
+##### 2. Submission of Evaluation Materials
 Participating teams must provide all materials requested by the organizer for evaluation and verification, including source code, execution instructions, and environment configurations. Failure to provide the requested materials will result in the invalidation of the corresponding submission's evaluation results.
 
-#### 3. Confidentiality and Use of Submissions
+##### 3. Confidentiality and Use of Submissions
 The organizer will not disclose participating teams' submissions or source code to third parties and will use them solely for competition evaluation, result reproduction, and misconduct verification. Submissions will not be used for commercial purposes without the participating team's separate consent and will be deleted after evaluation and verification are completed.
 
-#### 4. External Open Source and Intellectual Property Rights
+##### 4. External Open Source and Intellectual Property Rights
 Publicly available open-source software, libraries, and third-party implementations may be used in compliance with their applicable licenses and terms of use. Teams must properly acknowledge the sources of any external implementations used. Participating teams are responsible for obtaining all necessary rights and permissions for materials and technologies included in their submissions. If a submission infringes upon a third party's intellectual property rights, the participating team shall bear full legal responsibility for the infringement, and the organizer shall not be held liable.
 
-#### 5. Prohibition of Code and Implementation Sharing Between Teams
+##### 5. Prohibition of Code and Implementation Sharing Between Teams
 During the competition, participating teams must not disclose or share their source code, implementations, or submissions with other participating teams. Unauthorized copying of another team's implementation is also prohibited. However, the use of publicly available research papers, open-source software, and technical resources is permitted.
 
-#### 6. Eligibility and Team Composition
+##### 6. Eligibility and Team Composition
 Each team may consist of up to three members, and each participant may belong to only one team. Participation in multiple teams by the same individual is not permitted.
 
-#### 7. Restrictions on Participation by Competition Personnel
+##### 7. Restrictions on Participation by Competition Personnel
 Individuals representing the organizer who are directly involved in competition operations or evaluation are not eligible to participate.
 
-#### 8. Prohibition of Evaluation System Circumvention and Misconduct
+##### 8. Prohibition of Evaluation System Circumvention and Misconduct
 Unauthorized modification of evaluation programs or performance measurements, substitution of actual inference, or any other actions that improperly distort evaluation results are prohibited. <br>
 In particular, the following actions are not permitted:<br>
 - Precomputing or hardcoding outputs for evaluation inputs to replace actual inference
@@ -212,12 +212,12 @@ In particular, the following actions are not permitted:<br>
 - Unauthorized modification or circumvention of evaluation programs or measurement logic
 - Using unauthorized computational resources, including external GPUs or APIs
 
-#### 9. Misconduct and Disqualification
+##### 9. Misconduct and Disqualification
 Participants may be disqualified for violating the above rules or engaging in any other conduct that undermines the fairness and integrity of the competition, including manipulation of evaluation results or obtaining unfair advantages, even if such conduct is not explicitly covered by the stated rules.
 
-#### 10. Leaderboard and Final Evaluation
+##### 10. Leaderboard and Final Evaluation
 Scores and rankings displayed on the leaderboard are provisional. Final evaluation results will be confirmed only after verifying the reproducibility of submissions and their compliance with competition rules.
 
-#### 11. Changes to Competition Rules and Announcements
+##### 11. Changes to Competition Rules and Announcements
 The organizer reserves the right to modify competition rules and evaluation procedures when necessary to ensure fair competition. Any changes and their effective dates will be announced on the official competition website.
 <br>
