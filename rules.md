@@ -69,7 +69,7 @@ excerpt:
     * 요청 파라미터(prompt, max_tokens, temperature) 무시·변경, 스트리밍 타이밍 위조 (더미 첫 토큰 등)
     * GPU 메모리 상한 우회: UVM/managed memory, 별도 프로세스에 메모리 은닉 등
     * 다중 GPU·외부 노드·네트워크 사용, 평가 클라이언트·하네스 조작
-
+<br>
 
 ### 대회 규칙
 **이번 대회에서는 공정한 평가 및 재현 가능한 결과를 보장하는 것을 목표로 합니다. 이를 위해 다음 사항을 준수해야 합니다.**
@@ -177,7 +177,7 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
     * Ignoring or modifying request parameters (prompt, max_tokens, temperature), falsifying streaming timing (dummy first tokens, etc.)
     * Circumventing GPU memory limits: UVM/managed memory, concealing memory usage in separate processes, etc.
     * Using multiple GPUs, external nodes, or networks; manipulating the evaluation client or harness
-
+<br>
 
 ### Competition Rules
 **This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.**
