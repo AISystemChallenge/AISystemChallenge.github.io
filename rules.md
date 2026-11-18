@@ -64,7 +64,7 @@ excerpt:
       * 인용 문장에서 ____로 가려진 고유명사 한 단어, 출력 ≤ 16 토큰
       * 단어 일치로 채점
   * ##### 부하 스케줄
-    * open-loop: 응답과 무관하게 미리 정한 시각에 전송
+    * 요청 방식 (Open-loop): 이전 요청의 응답 완료 여부와 관계없이, 사전에 정의된 시각에 따라 독립적으로 요청을 전송하는 Open-loop 방식 적용.
 
 
 ### 제한 사항
@@ -183,7 +183,7 @@ The provided sample scenario is scenarios/en_sum_sub.json. It generates and send
       * A single-word proper noun masked with ____ in a quoted sentence, output ≤ 16 tokens
       * Evaluated by word matching.
   * ##### Load Schedule
-    * open-loop: Requests are sent at predetermined times regardless of responses.
+    * Request Method (Open-loop): Requests are sent independently at predefined times, regardless of whether previous requests have completed.
 
 
 ### Restrictions
