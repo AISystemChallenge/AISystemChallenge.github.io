@@ -54,19 +54,17 @@ excerpt:
 **※ 본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**<br><br>
 제공되는 샘플 시나리오는 scenarios/en_sum_sub.json입니다. InfiniteBench En.Sum 데이터(ids로 고정)로 ~수십만 토큰 길이의 요청을 만들어 보냅니다.
   * ##### 태스크
-    * kv_retrieval
-        * 약 3.1k 토큰의 key-value 목록에서 값 찾기, 출력 ≤ 24 토큰
-        * 문서 하나를 질문 4개가 공유해 prefix가 재사용됨
-    * arith_chain
-      * 약 110 토큰의 8단계 산술 풀이, 출력 ≤ 768 토큰
-      * 마지막 ANSWER: <n> 으로 채점
-    * longbench_v2
-      * LongBench-v2 장문 4지선다, 컨텍스트를 자르지 않고 전송 (수k ~ 1M 토큰), 출력 ≤ 128 토큰
-      * The correct answer is (X) 로 채점
+    * en_sum
+      * 요약, 출력 ≤ 1,200 토큰
+      * ROUGE-Lsum F1이 임계값 이상이면 정답
+    * en_sum_next
+      * 인용 구절 뒤에 이어지는 문장을 보기 4개(A~D)에서 고르기, 출력 ≤ 16 토큰
+      * 보기 글자 일치로 채점
+    * en_sum_blank
+      * 인용 문장에서 ____로 가린 고유명사 한 단어, 출력 ≤ 16 토큰
+      * 단어 일치로 채점
   * ##### 부하 스케줄
     * open-loop: 응답과 무관하게 미리 정한 시각에 전송
-    * low / mid / high: Poisson 2 / 8 / 24 req/s, 각 60 / 240 / 720건
-    * saturation: 앞 요청이 모두 끝난 뒤 600건 동시 투입
 
 
 ### 제한 사항
