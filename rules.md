@@ -61,7 +61,7 @@ excerpt:
       * 인용 구절 뒤에 이어지는 문장을 보기 4개(A~D)에서 고르기, 출력 ≤ 16 토큰
       * 보기 글자 일치로 채점
     * en_sum_blank
-      * 인용 문장에서 ____로 가린 고유명사 한 단어, 출력 ≤ 16 토큰
+      * 인용 문장에서 ____로 가려진 고유명사 한 단어, 출력 ≤ 16 토큰
       * 단어 일치로 채점
   * ##### 부하 스케줄
     * open-loop: 응답과 무관하게 미리 정한 시각에 전송
@@ -168,23 +168,23 @@ Participating teams submit their serving servers as Docker-images, which are exe
     * Requests contain raw prompts with the chat template already applied, with temperature=0 and max_tokens specified.
 
    
+
 ### Benchmark
-The evaluation client (bench.py) and example scenarios are provided through a GitHub repository. Problems are regenerated using a new seed for each evaluation, so answers cannot be memorized or responses cached.<br>
-※ **The official evaluation uses private seeds and scenarios; scores measured using public scenarios may differ from leaderboard scores.**
+The evaluation client (bench.py) and sample scenario (scenarios/en_sum_sub.json) are provided through a GitHub repository.<br>
+**※ The official evaluation uses private seeds and scenarios, so scores measured using public scenarios may differ from leaderboard scores.**<br><br>
+The provided sample scenario is scenarios/en_sum_sub.json. It generates and sends requests with context lengths of up to several hundred thousand tokens using the InfiniteBench En.Sum dataset (with fixed IDs).
   * ##### Tasks
-    * kv_retrieval
-        * Retrieve values from a key-value list of approximately 3.1k tokens, output ≤ 24 tokens
-        * Four questions share one document, allowing prefix reuse
-    * arith_chain
-      * Approximately 110-token, eight-step arithmetic problem, output ≤ 768 tokens
-      * Evaluated using the final ANSWER: &lt;n&gt; format
-    * longbench_v2
-      * LongBench-v2 long-context four-choice questions, context transmitted without truncation (several thousand to 1M tokens), output ≤ 128 tokens
-      * Evaluated using The correct answer is (X)
+    * en_sum
+      * Summarization, output ≤ 1,200 tokens
+      * A response is considered correct if its ROUGE-Lsum F1 score meets or exceeds the predefined threshold.
+    * en_sum_next
+      * Select the sentence that follows a quoted passage from four options (A–D), output ≤ 16 tokens
+      * Evaluated by matching the selected option letter.
+    * en_sum_blank
+      * Identify a single-word proper noun masked with ____ in a quoted sentence, output ≤ 16 tokens
+      * Evaluated by exact word matching.
   * ##### Load Schedule
-    * open-loop: requests are sent at predetermined times regardless of responses
-    * low / mid / high: Poisson 2 / 8 / 24 req/s, with 60 / 240 / 720 requests, respectively
-    * saturation: 600 requests submitted concurrently after all preceding requests have completed
+    * open-loop: Requests are sent at predetermined times, independently of previous response completion.
 
 
 ### Restrictions
