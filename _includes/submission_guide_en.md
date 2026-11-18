@@ -18,7 +18,7 @@ Once a participating team completes **one-time registration**, a submission noti
 | GHCR image | The image must be hosted at `ghcr.io/<owner>/…` under the **same account** that owns the registered repository and must be **linked** to that repository. |
 
 <h5 style="margin-top: 48px;">Registration Procedure</h5>
-<!-- #### Registration Procedure -->
+<!-- ##### Registration Procedure -->
 
 1. Enter your team information, GitHub repository, and GHCR image address in the registration form. The image address must include a tag or digest (e.g., `ghcr.io/<owner>/<image>:v1.0.0`) and belong to the same account as the registered repository.
 2. Follow the instructions on the registration page to complete the following three tasks.
@@ -35,7 +35,7 @@ Once a participating team completes **one-time registration**, a submission noti
 
 The Payload URL and Secret are **fixed for each repository**. Registering the same repository again will produce the same values. If the competition webhook already exists, leave it unchanged. **Only one webhook is needed.** Creating multiple webhooks will result in duplicate notifications.
 
-#### One-Click Copy Page
+##### One-Click Copy Page
 
 Click the **"Open One-Click Copy Page"** button on the registration page to open `https://aisystemchallenge.github.io/submission-guide/copy/` in a new tab. This page allows you to copy the collaborator username, Payload URL, and Secret with a single click.
 
@@ -43,7 +43,7 @@ Click the **"Open One-Click Copy Page"** button on the registration page to open
 - This page displays only values that match the competition's official format. If a warning appears, do not enter those values into GitHub. Instead, reopen the page using the button on the registration page.
 - Always open this page using the button on the registration page. Opening the URL directly will display empty values.
 
-#### How to Link an Image
+##### How to Link an Image
 
 There are three ways to link an image to the registered repository. **Only one method is required.**
 
@@ -61,7 +61,7 @@ There are three ways to link an image to the registered repository. **Only one m
 
 If the image is not yet available, the system checks again approximately five minutes later. Therefore, it is acceptable if the image push has not finished immediately after the release is published.
 
-#### Image Requirements
+##### Image Requirements
 
 All three conditions must be satisfied: **Same account + Linked repository + Existing tag**.
 
