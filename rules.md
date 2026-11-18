@@ -41,7 +41,7 @@ excerpt:
 평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.<br>
 ※ **본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**
   * ##### 태스크
-    * kv_retrieval
+    * **kv_retrieval**
         * 약 3.1k 토큰의 key-value 목록에서 값 찾기, 출력 ≤ 24 토큰
         * 문서 하나를 질문 4개가 공유해 prefix가 재사용됨
     * arith_chain
