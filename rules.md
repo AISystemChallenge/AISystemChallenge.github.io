@@ -21,7 +21,7 @@ excerpt:
 
 ### 평가 환경
 참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).
-  * &lt;하드웨어 / 격리&gt;
+  * ##### 하드웨어 / 격리
     * GPU 1장: NVIDIA H100 80GB (TBD)
     * **GPU 메모리 사용 상한: XX GiB (모델 weight 포함, TBD)**
     * CPU 8코어 고정 (cpuset), Host 메모리 128 GiB, shm 16 GiB
@@ -29,7 +29,7 @@ excerpt:
     * 모델: Qwen3-8B (BF16). /model 에 읽기 전용으로 마운트
     * 기동 제한 15분: /v1/models 응답과 1토큰 생성이 모두 성공해야 준비 완료로 판정
 
-  * &lt;인터페이스 규약&gt;
+  * ##### 인터페이스 규약
     * 이미지 ENTRYPOINT로 서버 기동 (추가 인자 없음), 0.0.0.0:8000
     * POST /v1/completions : stream=true (SSE) 필수
     * GET /v1/models, 모델 이름 submission
@@ -40,7 +40,7 @@ excerpt:
 ### 벤치마크
 평가 클라이언트(bench.py)와 예제 시나리오는 GitHub repository로 제공됩니다. 문제는 평가 시점마다 seed로 새로 생성하므로 정답을 외우거나 응답을 캐싱할 수 없습니다.<br>
 ※ **본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**
-  * &lt;태스크&gt;
+  * ##### 태스크
     * kv_retrieval
         * 약 3.1k 토큰의 key-value 목록에서 값 찾기, 출력 ≤ 24 토큰
         * 문서 하나를 질문 4개가 공유해 prefix가 재사용됨
@@ -50,7 +50,7 @@ excerpt:
     * longbench_v2
       * LongBench-v2 장문 4지선다, 컨텍스트를 자르지 않고 전송 (수k ~ 1M 토큰), 출력 ≤ 128 토큰
       * The correct answer is (X) 로 채점
-  * &lt;부하 스케줄&gt;
+  * ##### 부하 스케줄
     * open-loop: 응답과 무관하게 미리 정한 시각에 전송
     * low / mid / high: Poisson 2 / 8 / 24 req/s, 각 60 / 240 / 720건
     * saturation: 앞 요청이 모두 끝난 뒤 600건 동시 투입
@@ -58,11 +58,11 @@ excerpt:
 
 ### 제한 사항
 **아래의 제한 사항을 위반하면 실격처리 됩니다.**
-  * &lt;허용&gt;
+  * ##### 허용
     * 서빙 프레임워크의 선택·수정 (스케줄러, 메모리 관리자, attention 백엔드), 커스텀 CUDA/Triton 커널
     * KV cache 관리 기법 일체: paging, prefix caching, CPU offloading, KV 양자화, eviction, chunked prefill, admission control 등 (단, 정확도 조건 충족 필요)
     * 오픈소스 라이브러리 사용 (LMCache, FlashInfer 등). 출처와 라이선스 명기 필요
-  * &lt;금지&gt;
+  * ##### 금지
     * 지정 모델 교체, 추가 학습·증류, 별도 draft/proxy 모델 도입
     * **모델 weight 정밀도 변경 (BF16 고정)**
     * 평가 문제에 의존한 사전 계산: 응답 캐싱, 사전 계산한 KV를 이미지에 포함 (요청 처리 중의 prefix caching은 허용)
@@ -117,7 +117,7 @@ excerpt:
 
 ### Evaluation Criteria
 The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios to measure throughput, latency, and accuracy. Rankings are determined by throughput during the maximum-load (saturation) stage.
-  * &lt;Details&gt;
+  * ##### Details
     * **Formula : Score = saturation-stage req/s** <br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= Number of successful requests / (Stage start time ~ Completion time of the last response)
     * **Ranking eligibility requirements (all must be satisfied)** <br>
@@ -130,7 +130,7 @@ The organizing committee's evaluation client sends requests to participating tea
 
 ### Evaluation Environment
 Participating teams submit their serving servers as Docker-images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).
-  * &lt;Hardware / Isolation&gt;
+  * ##### Hardware / Isolation
     * One GPU: NVIDIA H100 80GB (TBD)
     * **GPU memory usage limit: XX GiB (including model weights, TBD)**
     * 8 dedicated CPU cores (cpuset), 128 GiB host memory, 16 GiB shm
@@ -138,7 +138,7 @@ Participating teams submit their serving servers as Docker-images, which are exe
     * Model: Qwen3-8B (BF16), mounted read-only at /model
     * 15-minute startup limit: both a successful /v1/models response and successful one-token generation are required for readiness
 
-  * &lt;Interface Requirements&gt;
+  * ##### Interface Requirements
     * Start the server using the image ENTRYPOINT (no additional arguments), listening on 0.0.0.0:8000
     * POST /v1/completions : stream=true (SSE) required
     * GET /v1/models, model name submission
@@ -149,7 +149,7 @@ Participating teams submit their serving servers as Docker-images, which are exe
 ### Benchmark
 The evaluation client (bench.py) and example scenarios are provided through a GitHub repository. Problems are regenerated using a new seed for each evaluation, so answers cannot be memorized or responses cached.<br>
 ※ **The official evaluation uses private seeds and scenarios; scores measured using public scenarios may differ from leaderboard scores.**
-  * &lt;Tasks&gt;
+  * ##### Tasks
     * kv_retrieval
         * Retrieve values from a key-value list of approximately 3.1k tokens, output ≤ 24 tokens
         * Four questions share one document, allowing prefix reuse
@@ -159,7 +159,7 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
     * longbench_v2
       * LongBench-v2 long-context four-choice questions, context transmitted without truncation (several thousand to 1M tokens), output ≤ 128 tokens
       * Evaluated using The correct answer is (X)
-  * &lt;Load Schedule&gt;
+  * ##### Load Schedule
     * open-loop: requests are sent at predetermined times regardless of responses
     * low / mid / high: Poisson 2 / 8 / 24 req/s, with 60 / 240 / 720 requests, respectively
     * saturation: 600 requests submitted concurrently after all preceding requests have completed
@@ -167,11 +167,11 @@ The evaluation client (bench.py) and example scenarios are provided through a Gi
 
 ### Restrictions
 **Violations of the following restrictions will result in disqualification.**
-  * &lt;Permitted&gt;
+  * ##### Permitted
     * Selection and modification of serving frameworks (schedulers, memory managers, attention backends), custom CUDA/Triton kernels
     * All KV cache management techniques: paging, prefix caching, CPU offloading, KV quantization, eviction, chunked prefill, admission control, etc. (accuracy requirements must be satisfied)
     * Use of open-source libraries (LMCache, FlashInfer, etc.). Sources and licenses must be acknowledged
-  * &lt;Prohibited&gt;
+  * ##### Prohibited
     * Replacing the designated model, additional training or distillation, introducing separate draft/proxy models
     * **Changing model weight precision (BF16 must be maintained)**
     * Precomputation based on evaluation problems: response caching or including precomputed KV caches in the image (prefix caching during request processing is permitted)
