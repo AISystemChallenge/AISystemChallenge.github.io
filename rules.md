@@ -22,7 +22,7 @@ excerpt:
       * TTFT p95 및 TPOT p95가 각각 사전에 정의된 임계값 이하인 경우 SLO 기준 충족
       * 구체적인 임계값은 추후 확정 예정
     * 처리량 (QPS) 기반 Ranking
-      * <span style="text-decoration: underline;">Accuracy 및 SLO 기준을 모두 충족한 참가팀을 대상</span>으로 최종 순위 산정
+      * <u>Accuracy 및 SLO 기준을 모두 충족한 참가팀을 대상</u>으로 최종 순위 산정
       * QPS가 높은 순서대로 순위 부여
     * 순위 인정 조건 (모두 충족)
       * 오류 0건: HTTP 오류, 연결 끊김, Timeout, OOM(Out of Memory) 등 모든 오류가 발생하지 않아야 함.
