@@ -206,11 +206,11 @@ Individuals representing the organizer who are directly involved in competition 
 
 ##### 8. Prohibition of Evaluation System Circumvention and Misconduct
 Unauthorized modification of evaluation programs or performance measurements, substitution of actual inference, or any other actions that improperly distort evaluation results are prohibited. <br>
-In particular, the following actions are not permitted:<br>
-- Precomputing or hardcoding outputs for evaluation inputs to replace actual inference
-- Manipulating performance measurements, including evaluation time and GPU memory usage
-- Unauthorized modification or circumvention of evaluation programs or measurement logic
-- Using unauthorized computational resources, including external GPUs or APIs
+- **In particular, the following actions are not permitted.**
+  - Precomputing or hardcoding outputs for evaluation inputs to replace actual inference
+  - Manipulating performance measurements, including evaluation time and GPU memory usage
+  - Unauthorized modification or circumvention of evaluation programs or measurement logic
+  - Using unauthorized computational resources, including external GPUs or APIs
 
 ##### 9. Misconduct and Disqualification
 Participants may be disqualified for violating the above rules or engaging in any other conduct that undermines the fairness and integrity of the competition, including manipulation of evaluation results or obtaining unfair advantages, even if such conduct is not explicitly covered by the stated rules.
