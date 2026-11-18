@@ -126,13 +126,8 @@ excerpt:
 <hr />
 
 ### Evaluation Criteria
-
-The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios and measures **throughput (QPS), response latency (SLO), and accuracy**.
-
+The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios and measures **throughput (QPS), response latency (SLO), and accuracy**.<br>
 Final rankings are determined by the measured throughput (QPS) among participating teams that meet the minimum quality requirements for accuracy and response latency.
-
--
-
 ##### Final Ranking Criteria
 - **Core Evaluation Principle:** Priority is given to participating teams that achieve the highest throughput (QPS) under undisclosed LLM serving scenarios while satisfying the minimum quality requirements for accuracy and response latency.
 - Accuracy
