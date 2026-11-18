@@ -39,7 +39,7 @@ excerpt:
 Cooking <br>
 
 ### Eligibility
-* ##### Students currently enrolled as undergraduate and graduate in Korean universities (as of Dec. 1, 2026)
+* ##### Undergraduate and graduate students currently enrolled at universities in Korea (as of Dec. 1, 2026)
   * Must be currently enrolled; students on graduation deferment are not eligible to participate.
   * Those currently employed by an industry or research institute are not eligible for awards (including those on academic training and student researchers affiliated with industry-government-funded research institutes).
   * Finalist teams must submit proof of enrollment or alternative certification documents.
