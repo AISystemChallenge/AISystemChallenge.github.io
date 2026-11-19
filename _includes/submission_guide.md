@@ -20,7 +20,7 @@ Actions가 제출 이미지를 빌드하지 않고, 저장소 루트에 Dockerfi
 | GitHub PAT(classic) | 이미지를 push하는 데 `write:packages` 권한이 필요합니다. `docker login ghcr.io`에만 쓰고 저장소에 commit하지 마세요(아래 「4. 제출하는 방법」). |
 | Docker | 이미지를 직접 빌드하고 `docker push`할 수 있는 환경입니다. |
 
-<h5 style="margin-top: 48px;">등록 절차</h5>
+<h3 style="margin-top: 48px;">등록 절차</h3>
 <!-- #### 등록 절차 -->
 
 1. 등록 Form에 팀 정보, GitHub 저장소 주소, GHCR 이미지 이름을 입력합니다. 이미지 이름은 **마지막 부분만** 적습니다(예: `my-server`). 전체 이름은 시스템이 `ghcr.io/<owner>/my-server`로 만듭니다.
@@ -74,7 +74,7 @@ commit message는 `chore: add AI System Challenge submission workflow (image ghc
 | **link** | 이 파일이 commit(push)될 때(등록 때 시스템의 commit, 나중에 파일을 고쳐 push할 때)와 Actions 탭에서 **Run workflow**를 누를 때. 파일이 이미 있는 저장소를 등록할 때는 시스템이 같은 실행(`workflow_dispatch`)을 요청합니다. 패키지 이벤트로는 실행되지 않습니다. | 자리표시 이미지 `aisc-registration`을 push해 이미지 패키지를 만들고 이 저장소에 연결합니다. 제출이 아닙니다. |
 | **release** | 패키지 이벤트(`registry_package`)가 올 때 | push된 tag 이름의 정식 release를 만듭니다. 이것이 제출입니다. |
 
-<h5 style="margin-top: 48px;">link job: 등록 때 패키지를 저장소에 연결합니다</h5>
+<h3 style="margin-top: 48px;">link job: 등록 때 패키지를 저장소에 연결합니다</h3>
 <!-- ### link job: 등록 때 패키지를 저장소에 연결합니다 -->
 
 이미지 패키지를 이 저장소에 연결하는 것은 이미지의 `LABEL`이 아니라 이 job입니다. 아래를 차례로 합니다.
