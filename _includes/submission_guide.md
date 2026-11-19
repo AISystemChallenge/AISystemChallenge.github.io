@@ -74,7 +74,8 @@ commit message는 `chore: add AI System Challenge submission workflow (image ghc
 | **link** | 이 파일이 commit(push)될 때(등록 때 시스템의 commit, 나중에 파일을 고쳐 push할 때)와 Actions 탭에서 **Run workflow**를 누를 때. 파일이 이미 있는 저장소를 등록할 때는 시스템이 같은 실행(`workflow_dispatch`)을 요청합니다. 패키지 이벤트로는 실행되지 않습니다. | 자리표시 이미지 `aisc-registration`을 push해 이미지 패키지를 만들고 이 저장소에 연결합니다. 제출이 아닙니다. |
 | **release** | 패키지 이벤트(`registry_package`)가 올 때 | push된 tag 이름의 정식 release를 만듭니다. 이것이 제출입니다. |
 
-##### link job: 등록 때 패키지를 저장소에 연결합니다
+<h5 style="margin-top: 48px;">link job: 등록 때 패키지를 저장소에 연결합니다</h5>
+<!-- ### link job: 등록 때 패키지를 저장소에 연결합니다 -->
 
 이미지 패키지를 이 저장소에 연결하는 것은 이미지의 `LABEL`이 아니라 이 job입니다. 아래를 차례로 합니다.
 
