@@ -152,6 +152,7 @@ Final rankings are determined by the measured throughput (QPS) among participati
       * Accuracy requirement: Accuracy Score ≥ 95%.
       * SLO requirement: Both TTFT p95 and TPOT p95 must be at or below their respective predefined thresholds.
   * All timing measurements are based on client-side wall-clock time, and output token counts are calculated using the client-side tokenizer (server-reported usage values are not used).
+
 <br>
 
 ### Evaluation Environment
@@ -171,6 +172,7 @@ Participating teams submit their serving servers as Docker-images, which are exe
     * Environment variables MODEL_PATH, SERVED_MODEL_NAME, PORT are provided
     * Requests contain raw prompts with the chat template already applied, with temperature=0 and max_tokens specified.
 
+<br>
    
 ### Benchmark
 The evaluation client (bench.py) and example scenario (scenarios/en_sum_sub.json) are provided through a GitHub repository.<br>
@@ -189,6 +191,7 @@ The provided sample scenario is scenarios/en_sum_sub.json. It generates and send
   * ##### Load Schedule
     * Request Method (Open-loop): Requests are sent independently at predefined times, regardless of whether previous requests have completed.
 
+<br>
 
 ### Restrictions
 **Violations of the following restrictions will result in disqualification.**
