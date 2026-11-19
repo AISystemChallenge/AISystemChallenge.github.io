@@ -16,8 +16,13 @@ excerpt:
 
 <hr />
 
+With the rapid advancement of generative AI, large language models (LLMs) are evolving beyond simple question-and-answer tasks into AI agents capable of understanding vast amounts of information and handling complex tasks. As a result, the ability to process long contexts and handle multiple user requests simultaneously is becoming increasingly important. However, as context lengths and the number of concurrent requests grow, so do GPU memory usage and computational demands. Achieving both high accuracy and fast response times with limited hardware resources has therefore become a key technical challenge.
 
-The popularization of large-scale language models is increasingly revealing systemic limitations such as memory bandwidth. Recently, with the emergence of “Compound AI” systems, in which multiple AI models are dynamically combined with existing software rather than a single model, the complexity of the computing systems that run them is also rapidly increasing.
+At Samsung Electronics SAIT, we recognize the importance of efficient memory utilization and software optimization in overcoming these performance limitations. This year's AI System Challenge focuses on building an LLM inference system that can process long contexts while maintaining accuracy and efficiently serving multiple requests in a GPU memory-constrained environment. We have designed this challenge to encourage participants to explore various system-level techniques, including memory management, computational optimization, and request scheduling, to improve LLM serving performance.
+
+The main goal of this year's AI System Challenge is to maximize system throughput while reliably supporting long contexts under limited GPU memory capacity and meeting accuracy and response latency requirements. Participants are encouraged to design and implement a wide range of algorithms and techniques, such as KV cache management, memory hierarchy optimization, inference computation optimization, and request scheduling. Beyond improving individual algorithms, this challenge offers an opportunity to gain hands-on experience in optimizing overall system performance by considering memory, computation, and scheduling together.
+
+The AI System Challenge also provides a great opportunity to turn creative ideas into practical solutions by developing and validating algorithms on real systems, supported by a deeper understanding of how modern AI models operate and the constraints of computing systems. We hope this challenge will help participants deepen their understanding of AI system software and further strengthen their problem-solving skills in achieving the best possible performance with limited resources. We look forward to welcoming everyone who is passionate about AI systems and high-performance computing to this year's challenge!
 
 <div class="layerPopup" id="layer_popup0" style="visibility: visible;">
     <div class="layerBox" style="width:40%;">
