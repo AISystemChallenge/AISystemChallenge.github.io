@@ -152,7 +152,7 @@ Final rankings are determined by the measured throughput (QPS) among participati
       * Accuracy requirement: Accuracy Score ≥ 95%.
       * SLO requirement: Both TTFT p95 and TPOT p95 must be at or below their respective predefined thresholds.
   * All timing measurements are based on client-side wall-clock time, and output token counts are calculated using the client-side tokenizer (server-reported usage values are not used).
-
+<br>
 
 ### Evaluation Environment
 Participating teams submit their serving servers as Docker-images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).
