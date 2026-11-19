@@ -206,6 +206,7 @@ The provided sample scenario is scenarios/en_sum_sub.json. It generates and send
     * Ignoring or modifying request parameters (prompt, max_tokens, temperature), falsifying streaming timing (dummy first tokens, etc.)
     * Circumventing GPU memory limits: UVM/managed memory, concealing memory usage in separate processes, etc.
     * Using multiple GPUs, external nodes, or networks; manipulating the evaluation client or harness
+
 <br>
 
 ### Competition Rules
