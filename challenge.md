@@ -7,8 +7,9 @@ excerpt:
 ---
 
 ### 참가 등록
-준비 중 <br>
+준비 중
 
+<br>
 
 ### 참가 자격
 * ##### 현재 국내 대학에 재학 중인 대학생 및 대학원생 ('26년 12월 1일 기준) 
@@ -18,25 +19,30 @@ excerpt:
 * ##### 개인 또는 팀으로 참여 가능하며, 팀 당 최대 3명까지 구성**
   * 개인/팀은 1개 결과물만 제출 가능 (동일인이 개인 또는 복수팀에 중복하여 참여 불가).
 
+<br>
 
 ### 대회 운영
-준비 중 <br>
+준비 중 
 
+<br>
 
 ### Leaderboard 제출물
 ※ 리더보드 제출 세부 사항은 8/1일 안내 예정입니다.
 * ##### 리더보드 제출 가이드
   * Leaderboard의 제출 횟수는 0시(KST)를 기준으로 초기화 됩니다.
   * 최종 평가는 대회 종료 일시인 2027년 1월 2일(토) 23:59 이전 가장 최신 submission을 기준으로 진행됩니다.
- 
+
+<br> 
 
 ### 최종 제출물
-준비 중 <br>
+준비 중
 
 <hr>
 
 ### Registration
-Cooking <br>
+Cooking
+
+<br>
 
 ### Eligibility
 * ##### Undergraduate and graduate students currently enrolled at universities in Korea (as of Dec. 1, 2026)
@@ -47,14 +53,17 @@ Cooking <br>
 * ##### Individual or team participation is possible, with maximum of three members per team
   * Individuals/teams may submit only one result (same person cannot participate as multiple teams or individual).
 
+<br>
 
 ### Competition Operation
-Cooking <br>
+Cooking 
 
+<br>
 
 ### Leaderboard Submission Guide
-Cooking <br>
+Cooking
 
+<br>
 
 ### Final Submission
-Cooking <br>
+Cooking
