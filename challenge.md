@@ -21,7 +21,6 @@ excerpt:
 
 ### 대회 운영
 준비 중 
-
 <br>
 
 ### Leaderboard 제출물
@@ -29,17 +28,14 @@ excerpt:
 * ##### 리더보드 제출 가이드
   * Leaderboard의 제출 횟수는 0시(KST)를 기준으로 초기화 됩니다.
   * 최종 평가는 대회 종료 일시인 2027년 1월 2일(토) 23:59 이전 가장 최신 submission을 기준으로 진행됩니다.
-
 <br> 
 
 ### 최종 제출물
 준비 중
-
 <hr>
 
 ### Registration
 Cooking
-
 <br>
 
 ### Eligibility
