@@ -32,6 +32,7 @@ excerpt:
 
 ### 최종 제출물
 준비 중
+
 <hr>
 
 ### Registration
@@ -43,20 +44,16 @@ Cooking
   * Must be currently enrolled; students on graduation deferment are not eligible to participate.
   * Those currently employed by an industry or research institute are not eligible for awards (including those on academic training and student researchers affiliated with industry-government-funded research institutes).
   * Finalist teams must submit proof of enrollment or alternative certification documents.
-
 * ##### Individual or team participation is possible, with maximum of three members per team
   * Individuals/teams may submit only one result (same person cannot participate as multiple teams or individual).
 
-<br>
 
 ### Competition Operation
 Cooking 
-
 <br>
 
 ### Leaderboard Submission Guide
 Cooking
-
 <br>
 
 ### Final Submission
