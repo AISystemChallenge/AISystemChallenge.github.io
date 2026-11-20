@@ -33,8 +33,7 @@ excerpt:
         }
 
         .table-header .col-2, 
-        .table-header .col-6, 
-        .table-header .col-4 {
+        .table-header .col-10 {
             padding: 0 15px;
         }
         
@@ -53,22 +52,10 @@ excerpt:
         .team-name {
             font-weight: 600;
             font-size: 1.1rem;
+            overflow-wrap: anywhere;
         }
         
-        .score {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .medal {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-        
-        .gold { color: #FFD700; }
-        .silver { color: #C0C0C0; }
-        .bronze { color: #CD7F32; }
+
         
         .preparing-card {
             background: white;
@@ -185,8 +172,7 @@ excerpt:
                 <div id="leaderboard-header" class="table-header mb-2 d-none">
                     <div class="row text-muted small">
                         <div class="col-2 text-center"><strong>Rank</strong></div>
-                        <div class="col-6"><strong>Team</strong></div>
-                        <div class="col-4 text-end"><strong>Score</strong></div>
+                        <div class="col-10"><strong>Team</strong></div>
                     </div>
                 </div>
 
@@ -207,179 +193,108 @@ excerpt:
     </div>
 
     <script>
-        // 웹훅 URL 설정 (실제 URL로 변경하세요)
-        //const WEBHOOK_URL = 'https://raw.githubusercontent.com/cechallenge/2025_cechallenge_data/refs/heads/main/rank.csv';
-        const WEBHOOK_URL = '/rank/rank2026.csv';
-        
-        // 오픈 시간 설정 (2026년 12월 10일 10:00:00 KST)
+        const RANK_CSV = '/rank/rank2026.csv';
         const OPEN_TIME = new Date('2026-12-10T10:00:00+09:00');
-        
         let countdownInterval;
         let refreshInterval;
 
-        // 카운트다운 업데이트 함수
         function updateCountdown() {
-            const now = new Date();
-            const difference = OPEN_TIME.getTime() - now.getTime();
-            
-            if (difference <= 0) {
-                // 오픈 시간이 지난 경우
-                document.getElementById('time-display').textContent = '00:00:00.000';
-                document.getElementById('dday-display').textContent = 'D-Day';
+            const remaining = OPEN_TIME.getTime() - Date.now();
+            if (remaining <= 0) {
                 clearInterval(countdownInterval);
-                
-                // 오픈 시간이 되면 리더보드 가져오기
-                fetchLeaderboard();
+                openLeaderboard();
                 return;
             }
-            
-            // 시간 계산
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-            const milliseconds = Math.floor((difference % 1000));
-            
-            // 총 시간으로 표시 (일*24 + 시간)
-            const totalHours = days * 24 + hours;
-            
-            // 시:분:초.밀리초 형식으로 표시
-            const timeString = `${totalHours.toString().padStart(3, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
-            const ddayString = `D-${days + 1}`;
-            
-            document.getElementById('time-display').textContent = timeString;
-            document.getElementById('dday-display').textContent = ddayString;
+
+            const hours = Math.floor(remaining / 3600000);
+            const minutes = Math.floor(remaining / 60000) % 60;
+            const seconds = Math.floor(remaining / 1000) % 60;
+            const milliseconds = remaining % 1000;
+            const time = [hours, minutes, seconds].map((part, index) =>
+                String(part).padStart(index === 0 ? 3 : 2, '0')
+            ).join(':');
+            document.getElementById('time-display').textContent =
+                time + '.' + String(milliseconds).padStart(3, '0');
+            document.getElementById('dday-display').textContent = 'D-' + Math.ceil(remaining / 86400000);
         }
 
-        // 리더보드 데이터 가져오기
+        function parseRankCsv(csv) {
+            const [header, ...rows] = csv.replace(/\r?\n$/, '').split(/\r?\n/);
+            if (header !== 'rank,team' || rows.length > 10) {
+                throw new Error('Invalid leaderboard CSV');
+            }
+            const seen = new Set();
+            return rows.map((row, index) => {
+                const match = /^([1-9]|10),"((?:[^"]|"")*)"$/.exec(row);
+                const rank = index + 1;
+                const team = match?.[2].replace(/""/g, '"');
+                if (Number(match?.[1]) !== rank || !team?.trim() || seen.has(team)) {
+                    throw new Error('Invalid leaderboard row');
+                }
+                seen.add(team);
+                return { rank, team };
+            });
+        }
+
+        function renderLeaderboard(rows) {
+            const leaderboard = document.getElementById('leaderboard');
+            const cards = rows.map(({ rank, team }) => {
+                const card = document.createElement('div');
+                card.className = 'leaderboard-card row align-items-center mx-0';
+                const rankLabel = document.createElement('span');
+                rankLabel.className = 'rank-number col-2';
+                rankLabel.textContent = rank;
+                const teamLabel = document.createElement('span');
+                teamLabel.className = 'team-name col-10';
+                teamLabel.textContent = team;
+                card.append(rankLabel, teamLabel);
+                return card;
+            });
+            if (!cards.length) {
+                const empty = document.createElement('p');
+                empty.className = 'text-muted text-center mt-4';
+                empty.textContent = '공개할 순위가 아직 없습니다.';
+                cards.push(empty);
+            }
+            leaderboard.replaceChildren(...cards);
+            leaderboard.classList.remove('d-none');
+            document.getElementById('leaderboard-header').classList.toggle('d-none', !rows.length);
+            document.getElementById('error').classList.add('d-none');
+        }
+
         async function fetchLeaderboard() {
             try {
-                //const response = await fetch(WEBHOOK_URL);
-                const response = await fetch(`${WEBHOOK_URL}?v=${Date.now()}`, {
-                  cache: 'no-store'
-                });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                
-                const data = await response.json();
-                
-                if (!data || !Array.isArray(data)) {
-                    throw new Error('Invalid data format');
-                }
-                
-                renderLeaderboard(data);
+                const response = await fetch(RANK_CSV + '?v=' + Date.now(), { cache: 'no-store' });
+                if (!response.ok) throw new Error('Leaderboard request failed');
+                renderLeaderboard(parseRankCsv(await response.text()));
             } catch (error) {
                 console.error('Error fetching leaderboard:', error);
-                showError();
+                document.getElementById('error').classList.remove('d-none');
+            } finally {
+                document.getElementById('loading').classList.add('d-none');
             }
         }
 
-        // 시간 체크 및 적절한 화면 표시
-        function checkTimeAndDisplay() {
-            const now = new Date();
-            
-            if (now.getTime() >= OPEN_TIME.getTime()) {
-                // 오픈 시간이 지난 경우 리더보드 표시
-                fetchLeaderboard();
-                
-                // 리더보드 자동 갱신 설정
-                //if (!refreshInterval) {
-                //    refreshInterval = setInterval(fetchLeaderboard, 30000);
-                //}
-            } else {
-                // 오픈 시간 전이면 카운트다운 표시
-                showCountdown();
-            }
+        function openLeaderboard() {
+            document.getElementById('preparing').classList.add('d-none');
+            fetchLeaderboard();
+            refreshInterval = setInterval(fetchLeaderboard, 60000);
         }
 
-        // 카운트다운 표시
-        function showCountdown() {
+        document.addEventListener('DOMContentLoaded', () => {
+            if (Date.now() >= OPEN_TIME.getTime()) {
+                openLeaderboard();
+                return;
+            }
             document.getElementById('loading').classList.add('d-none');
             document.getElementById('preparing').classList.remove('d-none');
-            document.getElementById('leaderboard').classList.add('d-none');
-            document.getElementById('leaderboard-header').classList.add('d-none');
-            document.getElementById('error').classList.add('d-none');
-            
-            // 카운트다운 시작
-            updateCountdown(); // 즉시 한번 실행
-            if (!countdownInterval) {
-                countdownInterval = setInterval(updateCountdown, 100); // 100ms마다 업데이트
-            }
-        }
-
-        // 리더보드 렌더링
-        function renderLeaderboard(data) {
-            const leaderboard = document.getElementById('leaderboard');
-            const leaderboard_header = document.getElementById('leaderboard-header');
-            const loading = document.getElementById('loading');
-            const preparing = document.getElementById('preparing');
-
-            // 로딩과 준비중 숨기기
-            loading.classList.add('d-none');
-            preparing.classList.add('d-none');
-            
-            // 리더보드 보이기
-            leaderboard_header.classList.remove('d-none');
-            leaderboard.classList.remove('d-none');
-
-            // 리더보드 내용 생성
-            leaderboard.innerHTML = data.map((item, index) => {
-                let medalHtml = '';
-                let rankClass = '';
-                
-                if (index === 0) {
-                    medalHtml = '<span class="medal">🥇</span>';
-                    rankClass = 'gold';
-                } else if (index === 1) {
-                    medalHtml = '<span class="medal">🥈</span>';
-                    rankClass = 'silver';
-                } else if (index === 2 || index === 3) {
-                    medalHtml = '<span class="medal">🥉</span>';
-                    rankClass = 'bronze';
-                }
-                
-                const rank = index + 1;
-                
-                return `
-                    <div class="leaderboard-card">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center">
-                                ${medalHtml}
-                                <span class="rank-number ${rankClass}">${rank}</span>
-                                <span class="team-name ms-3">${item.name}</span>
-                            </div>
-                            <span class="score">${item.score.toFixed(3)}</span>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // 에러 표시
-        function showError() {
-            document.getElementById('loading').classList.add('d-none');
-            document.getElementById('preparing').classList.add('d-none');
-            document.getElementById('error').classList.remove('d-none');
-        }
-
-        // 페이지 로드 시 실행
-        document.addEventListener('DOMContentLoaded', function() {
-            // 시간 체크 및 적절한 화면 표시
-            checkTimeAndDisplay();
-            
-            // 1초마다 시간 체크 (카운트다운에서 리더보드로 전환을 위해)
-            // setInterval(checkTimeAndDisplay, 1000);
+            countdownInterval = setInterval(updateCountdown, 100);
+            updateCountdown();
         });
 
-        // 페이지를 벗어날 때 인터벌 정리
-        window.addEventListener('beforeunload', function() {
-            if (countdownInterval) {
-                clearInterval(countdownInterval);
-            }
-            if (refreshInterval) {
-                clearInterval(refreshInterval);
-            }
+        window.addEventListener('beforeunload', () => {
+            clearInterval(countdownInterval);
+            clearInterval(refreshInterval);
         });
     </script>
 </body>
