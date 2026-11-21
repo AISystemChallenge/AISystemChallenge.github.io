@@ -164,7 +164,7 @@ excerpt:
                             <span id="time-display">00:00:00.000</span>
                             <span class="dday" id="dday-display">D-0</span>
                         </div>
-                        <div class="open-info">12/10 10시 오픈</div>
+                        <div class="open-info">11/21 00시 오픈</div>
                         <p class="text-muted">Coming soon!</p>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ excerpt:
 
     <script>
         const RANK_CSV = '/rank/rank2026.csv';
-        const OPEN_TIME = new Date('2026-12-10T10:00:00+09:00');
+        const OPEN_TIME = new Date('2026-11-21T00:00:00+09:00');
         let countdownInterval;
         let refreshInterval;
 
