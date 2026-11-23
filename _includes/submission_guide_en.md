@@ -23,8 +23,8 @@ GitHub Actions does not build submission images, and a Dockerfile is not require
 <h5 style="margin-top: 48px;">Registration Procedure</h5>
 
 1. In the registration form, agree to the collection and use of personal information and **verify the team leader's email address**. Then enter your team information, GitHub repository URL, and GHCR image name. Enter **only the final component** of the image name (e.g., `my-server`). The system constructs the full name as `ghcr.io/<owner>/my-server`.
-   - **Team leader email verification**: Click **"Agree and Verify Email"** to enter the team leader's email address. A six-digit verification code will be sent to that address. Enter the code on the next screen. Once verified, you will proceed to the team information form, and the verified address will be used as the team leader's email address. There is no separate email field on the team information form.
-   - The verification code must be entered within **10 minutes**. If you do not see the email, check your spam folder. If you did not receive the code or entered the wrong email address, select **"Other Actions"** on the same screen and choose **"Resend Code"** or **"Change Email Address"**.
+   - **Team leader email verification**: Click **"Agree and Verify Email (동의하고 이메일 인증)"** to enter the team leader's email address. A six-digit verification code will be sent to that address. Enter the code on the next screen. Once verified, you will proceed to the team information form, and the verified address will be used as the team leader's email address. There is no separate email field on the team information form.
+   - The verification code must be entered within **10 minutes**. If you do not see the email, check your spam folder. If you did not receive the code or entered the wrong email address, select **"Other Actions (다른 동작)"** on the same screen and choose **"Resend Code (코드 다시 받기)"** or **"Change Email Address (이메일 주소 고치기)"**.
    - You can enter an incorrect code up to **5 times**, and a maximum of **4 verification emails** can be sent per registration attempt (including resending codes and changing the email address). If either limit is reached, the verification process ends, and you must start registration again.
 2. Follow the instructions on the registration page to complete the following tasks.
    - **Invite a collaborator**: Invite `AISystemChallenge` to your repository with Write access or higher.
@@ -256,11 +256,11 @@ Enter only the final component (e.g., `my-server`). The system constructs the fu
 
 **I haven't received the verification code email. What should I do?**
 
-First, check your spam folder. The email subject ends with "Email Verification Code," and the message contains a six-digit code and its expiration time. Make sure the email address shown on the verification screen is correct. If the email has not arrived, select **"Other Actions"** on the same screen and choose **"Resend Code"**. A new code will be sent, and the previous code will no longer be valid. If the email address is incorrect, choose **"Change Email Address"**. A maximum of four verification emails can be sent per registration attempt.
+First, check your spam folder. The email subject ends with "Email Verification Code," and the message contains a six-digit code and its expiration time. Make sure the email address shown on the verification screen is correct. If the email has not arrived, select **"Other Actions (다른 동작)"** on the same screen and choose **"Resend Code (코드 다시 받기)"**. A new code will be sent, and the previous code will no longer be valid. If the email address is incorrect, choose **"Change Email Address (이메일 주소 고치기)"**. A maximum of four verification emails can be sent per registration attempt.
 
 **What happens if I enter the wrong verification code?**
 
-You can enter an incorrect code up to five times, and the remaining attempts are displayed on the screen. If you enter an incorrect code for the fifth time, verification ends, and you must start registration again. Entries that are not six-digit numbers (including empty entries) do not count toward the limit. The code expires after 10 minutes. If it expires, select **"Resend Code"** to receive a new one.
+You can enter an incorrect code up to five times, and the remaining attempts are displayed on the screen. If you enter an incorrect code for the fifth time, verification ends, and you must start registration again. Entries that are not six-digit numbers (including empty entries) do not count toward the limit. The code expires after 10 minutes. If it expires, select **"Resend Code (코드 다시 받기)"** to receive a new one.
 
 **Does pushing the `latest` tag count as a submission?**
 
