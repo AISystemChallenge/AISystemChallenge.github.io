@@ -12,7 +12,7 @@ excerpt:
  * 우수상 상금: ₩5,000,000원  
  * 장려상 상금: 각 ₩3,000,000원
 
-**※ 상금은 수상팀 대표에게 지급되며, 상금에 대한 세금은 주최 측에서 부담합니다. 상금과 세금은 수상팀 대표의 과세 대상 소득입니다.**
+※ 상금에 대한 세금은 주최 측에서 부담합니다. 상금과 세금은 과세 대상 소득입니다.
 
 <hr />
 
@@ -24,8 +24,4 @@ The competition will award the top four teams as follows:
  * Excellence Prize: ₩5,000,000  
  * Encouragement Prize (2 teams): ₩3,000,000 each  
 
-**※ NOTE:**
-
- * The prize money is awarded to the team representative, and taxes on the prize money are covered by the organizer.   
- * Prize money and taxes are taxable income for the winning team representative  
-
+※ Prize tax is covered by the organizer. Both the prize and the tax covered by the organizer are taxable income.
