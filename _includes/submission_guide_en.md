@@ -1,11 +1,10 @@
-
 ### Competition Submission Guide: GitHub Releases and GHCR Images
 
 Once a participating team completes **one-time registration**, an official release is automatically created and a submission notification is sent to the organizing team **each time the team pushes a self-built image using `docker push` under the registered image name**. During registration, participants enter **only the final component** of the image name. If a package with that name does not exist, a workflow installed in the repository during registration creates a package using a `hello-world` placeholder image and links it to the repository. Registration is completed after the system verifies the connection. This document explains what participants need to prepare and what the system verifies and installs.
 
 ### 1. Overall Process
 
-1. **One-time registration**: Enter your team information, GitHub repository, and **the final component of the GHCR image name** (e.g., `my-server`) through the registration link in the competition announcement. Configure your repository as instructed and pass the automatic connection test. During this test, the system commits a submission workflow file to the repository. If a package with the same name does not exist, the commit triggers the workflow's **link job** (if the file already has identical content, no commit is made, so the system requests an execution equivalent to **Run workflow**). The link job pushes a `hello-world` placeholder image (tagged `aisc-registration`) to create the image package and link it to the repository. The system verifies that the package is linked before proceeding. The placeholder tag is not a submission, and this process normally completes within one minute.
+1. **One-time registration**: Through the registration link in the competition announcement, agree to the collection and use of personal information and **verify the team leader's email address** by entering the six-digit verification code sent by email. Then enter your team information, GitHub repository, and **the final component of the GHCR image name** (e.g., `my-server`). Configure your repository as instructed and pass the automatic connection test. During this test, the system commits a submission workflow file to the repository. If a package with the same name does not exist, the commit triggers the workflow's **link job** (if the file already has identical content, no commit is made, so the system requests an execution equivalent to **Run workflow**). The link job pushes a `hello-world` placeholder image (tagged `aisc-registration`) to create the image package and link it to the repository. The system verifies that the package is linked before proceeding. The placeholder tag is not a submission, and this process normally completes within one minute.
 2. **`docker push` for each subsequent submission**: **Build the image yourself**, assign a **new tag** under the registered image name, and run `docker push`. Push only after completing registration. The process then proceeds as follows: push → automatic release creation → submission email (notification to the organizing team). This normally completes within one minute. There is no distinction between test and official submissions: every new tag other than `latest` and `aisc-registration` is treated as a submission (see "4. How to Submit" below).
 
 GitHub Actions does not build submission images, and a Dockerfile is not required in the repository root. No `LABEL` is required in the image. Participants only need to run `docker push` for their locally built images. The repository workflow is responsible solely for linking the package during registration (link job) and creating releases for pushed tags (release job).
@@ -23,7 +22,10 @@ GitHub Actions does not build submission images, and a Dockerfile is not require
 
 <h5 style="margin-top: 48px;">Registration Procedure</h5>
 
-1. Enter your team information, GitHub repository URL, and GHCR image name in the registration form. Enter **only the final component** of the image name (e.g., `my-server`). The system constructs the full name as `ghcr.io/<owner>/my-server`.
+1. In the registration form, agree to the collection and use of personal information and **verify the team leader's email address**. Then enter your team information, GitHub repository URL, and GHCR image name. Enter **only the final component** of the image name (e.g., `my-server`). The system constructs the full name as `ghcr.io/<owner>/my-server`.
+   - **Team leader email verification**: Click **"Agree and Verify Email"** to enter the team leader's email address. A six-digit verification code will be sent to that address. Enter the code on the next screen. Once verified, you will proceed to the team information form, and the verified address will be used as the team leader's email address. There is no separate email field on the team information form.
+   - The verification code must be entered within **10 minutes**. If you do not see the email, check your spam folder. If you did not receive the code or entered the wrong email address, select **"Other Actions"** on the same screen and choose **"Resend Code"** or **"Change Email Address"**.
+   - You can enter an incorrect code up to **5 times**, and a maximum of **4 verification emails** can be sent per registration attempt (including resending codes and changing the email address). If either limit is reached, the verification process ends, and you must start registration again.
 2. Follow the instructions on the registration page to complete the following tasks.
    - **Invite a collaborator**: Invite `AISystemChallenge` to your repository with Write access or higher.
    - **Add a webhook**: Go to **Settings → Webhooks → Add webhook** in your repository and configure the following:
@@ -148,7 +150,7 @@ Treat the PAT like a password. Do not include it in a repository, image, or publ
    docker push ghcr.io/<owner>/<name>:v1.0.0
    ```
 
-   A package created by a direct push (before registration or after deleting the package) may not be linked to the repository. In that case, the `registry_package` event is not delivered to this repository, and no release or submission is created (see "6. Linking an Image to the Repository").
+   A package created by a direct push (before registration or after deleting the package) is not linked to the repository. As a result, the `registry_package` event is not delivered to this repository, and no release or submission is created (see "6. Linking an Image to the Repository").
 3. Shortly afterward, a release with the same name as the tag appears under **Releases** in the repository, and a submission notification is sent to the organizing team. This normally completes within one minute of the push.
 
 ##### Submission Rules
@@ -244,59 +246,86 @@ If an address included in the release description meets any of the following con
 
 ### 10. FAQ
 
-**Does the image need to exist at registration time?**  
+**Does the image need to exist at registration time?**
+
 No. You only register the final component of the image name. If no package with the same name exists, the check passes, and the workflow's link job committed during registration pushes a `hello-world` placeholder image (`aisc-registration`) to create the package and link it to the repository. Registration is completed after the system verifies the connection. Build and push your submission image yourself after registration.
 
-**What should I enter as the image name?**  
+**What should I enter as the image name?**
+
 Enter only the final component (e.g., `my-server`). The system constructs the full name as `ghcr.io/<repository owner>/my-server`. Use lowercase letters and numbers, with separator characters (`.`, `_`, `__`, `-`) only between characters, and a maximum length of 100 characters. Uppercase letters are converted to lowercase. Tags (such as `:v1.0.0`), digests, hierarchical names such as `a/b/c`, and names belonging to another account are not allowed. Even if you enter a full name such as `ghcr.io/<owner>/my-server`, only the final component is used.
 
-**Does pushing the `latest` tag count as a submission?**  
+**I haven't received the verification code email. What should I do?**
+
+First, check your spam folder. The email subject ends with "Email Verification Code," and the message contains a six-digit code and its expiration time. Make sure the email address shown on the verification screen is correct. If the email has not arrived, select **"Other Actions"** on the same screen and choose **"Resend Code"**. A new code will be sent, and the previous code will no longer be valid. If the email address is incorrect, choose **"Change Email Address"**. A maximum of four verification emails can be sent per registration attempt.
+
+**What happens if I enter the wrong verification code?**
+
+You can enter an incorrect code up to five times, and the remaining attempts are displayed on the screen. If you enter an incorrect code for the fifth time, verification ends, and you must start registration again. Entries that are not six-digit numbers (including empty entries) do not count toward the limit. The code expires after 10 minutes. If it expires, select **"Resend Code"** to receive a new one.
+
+**Does pushing the `latest` tag count as a submission?**
+
 No. The `latest` tag is not submitted. If `docker push` is used without an explicit tag, `latest` is pushed. This rule prevents accidental submissions. Use a version tag (e.g., `v1.0.0`) when pushing.
 
-**Does pushing the same tag again create another submission?**  
+**Does pushing the same tag again create another submission?**
+
 No. If a release with that tag already exists, the workflow skips it. To submit again, push a new tag (e.g., `v1.0.1`).
 
-**Are test pushes and official submission pushes handled differently?**  
+**Are test pushes and official submission pushes handled differently?**
+
 No. There is no distinction. Every new tag other than `latest` and `aisc-registration` is treated as a submission.
 
-**What is the `aisc-registration` tag?**  
+**What is the `aisc-registration` tag?**
+
 It is a **placeholder** tag pushed by the workflow's link job during registration. This push creates the image package and links it to the repository. `aisc-registration` is not a submission. Pushing this tag does not create a release or notification because the release job skips it. Use a different version tag (e.g., `v1.0.0`) for submissions.
 
-**Do I need to add a LABEL?**  
+**Do I need to add a LABEL?**
+
 No. A `LABEL` is not required. Including one is acceptable, but the package is linked to the repository by the workflow's link job, not by a `LABEL`. A package created by a direct push remains unlinked even if the image contains a `LABEL`.
 
-**How can I verify that the package is linked to the repository?**  
+**How can I verify that the package is linked to the repository?**
+
 If registration passes, the package is linked. To verify manually, check whether the package appears in the **Packages** list on the right side of the repository's main page or whether the repository name appears on the package page. If the package was deleted or is not linked, open `AI System Challenge submission` under the repository's **Actions** tab and click **Run workflow** to rerun the link job. If it is still not linked, connect it under **Package settings → Connect repository** on the package page, then push again using a new tag. See "6. Linking an Image to the Repository" above for details.
 
-**The link job failed during registration. What should I do?**  
+**The link job failed during registration. What should I do?**
+
 Check the `::error::` message in the Actions run logs. There are two possible causes. If a package with the same name already exists but is not linked to this repository (e.g., a package created by a direct push), link this repository under **Package settings → Connect repository** on the package page. If the package is already linked, the failure can be ignored, and pushing a new tag will create a submission. If an organization policy prevents Actions from writing packages using `GITHUB_TOKEN`, correct the policy and rerun the job using **Run workflow**. If you are still in the registration process, clicking **"Retry Test"** on the registration page also reruns the link job.
 
-**I see "The image package is not linked to the repository" during registration. What does this mean?**  
+**I see "The image package is not linked to the repository" during registration. What does this mean?**
+
 It means the system waited several minutes but the package was still not linked to the repository. Possible causes include disabled Actions, organization policies preventing package writes through `GITHUB_TOKEN`, or an existing unlinked package with the same name (such as one created by a direct push), which caused the link job's push to be rejected. Check the `::error::` message in the link job logs under `AI System Challenge submission` in the Actions tab. After resolving the issue, click **"Retry Test"**. If a package with the same name already exists, link it under **Package settings → Connect repository** or register again using a different name.
 
-**I pushed an image, but no release was created.**  
+**I pushed an image, but no release was created.**
+
 First, check the `AI System Challenge submission` runs under the repository's Actions tab. If no run exists, the package may not be linked to the repository (e.g., a package created by a direct push before registration), or Actions may be disabled. If a run exists, check the logs for the reason it was skipped (`latest`, `aisc-registration`, an existing release with the same tag, or an unregistered image name) or for a tag naming error.
 
-**What happens if Actions is disabled?**  
+**What happens if Actions is disabled?**
+
 The system does not directly detect whether Actions is enabled. However, if Actions is disabled, the link job will not run and the package will not be linked during registration. Registration will fail after several minutes, and the registration page will explain the cause. Actions cannot remain disabled. The release job will also not run, so no release or submission will be created. Enable Actions under **Settings → Actions → General**, then click **"Retry Test"**. If the package was deleted after registration, rerun the link job using **Run workflow**.
 
-**Does the image have to be public?**  
+**Does the image have to be public?**
+
 No. What matters is whether the image is linked to the repository, not whether it is public.
 
-**Do I have to include the pull address in the release description?**  
+**Do I have to include the pull address in the release description?**
+
 No. The release is created automatically by the release job, and the system searches packages linked to the repository for a tag matching the release tag.
 
-**Are there any rules for pushed tags?**  
+**Are there any rules for pushed tags?**
+
 Tags must follow Docker tag naming rules. They may contain only letters, numbers, `_`, `.`, and `-`, must be no longer than 128 characters, and must begin with a letter, number, or `_`. Example: `v1.0.0`. Invalid tags cause the workflow to stop with an error without creating a release.
 
-**Can I modify the workflow file?**  
+**Can I modify the workflow file?**
+
 Modifying the file is not recommended. Do not change `AISC_IMAGE`, as the workflow will no longer be able to find the submission image. Modifying other parts may prevent releases from being created according to the submission rules. Editing and pushing the file triggers the link job again (which pushes only the placeholder image, not a submission). Registering again restores the file to the common version.
 
-**Is manually adding the submission workflow sufficient?**  
+**Is manually adding the submission workflow sufficient?**
+
 No. One-time registration (collaborator invitation, webhook setup, and automatic connection test) must be completed separately. Manual installation is intended only for cases where branch protection rules prevent the system from committing the workflow file.
 
-**What if branch protection rules are enabled?**  
+**What if branch protection rules are enabled?**
+
 Allow `AISystemChallenge` to bypass the protection rules or manually add the public template. See "When Branch Protection Rules Prevent Commits" above for detailed instructions.
 
-**What should teams registered under the previous instructions do?**  
+**What should teams registered under the previous instructions do?**
+
 Repositories registered under the previous instructions (where publishing a release triggered a workflow to build the image, or where adding a `LABEL` was described as sufficient to link the package) may still contain the previous workflow file. **Register again** using the same repository and image name. The automatic connection test updates the file with the new content, and the resulting commit triggers the link job to connect the package to the repository. The new workflow does not build submission images, so build your image yourself and run `docker push`. If a package has already been pushed, check whether it is linked in the Packages list. If it is not linked, follow "6. Linking an Image to the Repository" above.
