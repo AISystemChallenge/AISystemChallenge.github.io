@@ -35,7 +35,7 @@ GitHub Actions does not build submission images, and a Dockerfile is not require
      - **Events**: Select `Let me select individual events` and check **Releases only**. Uncheck **Pushes**, which is selected by default.
      - **Active**: Checked
    - **Check the following**: Verify that GitHub Actions is enabled for the repository (see "5. Enabling Actions and Usage Limits"). If a package with the same name already exists, verify that it is linked to the repository (see "6. Linking an Image to the Repository").
-3. Click **"Setup Complete · Start Automatic Connection Test"**. Do not refresh the page or close the browser window while the test is running.
+3. Click **"Setup Complete · Start Automatic Connection Test (설정 완료 · 자동 연결 테스트 시작)"**. Do not refresh the page or close the browser window while the test is running.
 4. The system automatically performs the following steps in order.
    1. **Accept invitation**: `AISystemChallenge` accepts the repository invitation.
    2. **Verify Write access**: The system confirms that it has Write access or higher.
@@ -51,7 +51,7 @@ The Payload URL and Secret are **fixed for each repository**. Registering the sa
 
 ##### One-Click Copy Page
 
-Click the **"Open One-Click Copy Page"** button on the registration page to open `https://aisystemchallenge.github.io/submission-guide/copy/` in a new tab. This page allows you to copy the collaborator username, Payload URL, and Secret with a single click.
+Click the **"Open One-Click Copy Page (원클릭 복사 화면 열기)"** button on the registration page to open `https://aisystemchallenge.github.io/submission-guide/copy/` in a new tab. This page allows you to copy the collaborator username, Payload URL, and Secret with a single click.
 
 - The values are passed in the URL fragment after `#`. The fragment is not sent to the server.
 - This page displays only values that match the competition's official format. If a warning appears, do not enter those values into GitHub. Instead, reopen the page using the button on the registration page.
@@ -188,7 +188,7 @@ If no package with the same name exists, the link job in the workflow committed 
 
 ##### If the Package Is Not Linked
 
-1. If the message "The image package is not linked to the repository" appears during registration, the package has not been linked after several minutes. Open the latest run of `AI System Challenge submission` under the repository's **Actions** tab and check the link job logs. Possible causes include disabled Actions (see "5. Enabling Actions and Usage Limits"), organization policies blocking package writes through `GITHUB_TOKEN`, or an existing unlinked package with the same name. After resolving the issue, click **"Retry Test"** on the registration page to run the link job again.
+1. If the message "The image package is not linked to the repository" appears during registration, the package has not been linked after several minutes. Open the latest run of `AI System Challenge submission` under the repository's **Actions** tab and check the link job logs. Possible causes include disabled Actions (see "5. Enabling Actions and Usage Limits"), organization policies blocking package writes through `GITHUB_TOKEN`, or an existing unlinked package with the same name. After resolving the issue, click **"Retry Test (다시 테스트)"** on the registration page to run the link job again.
 2. If you deleted the package or its connection was removed after registration, open `AI System Challenge submission` under the repository's **Actions** tab and click **Run workflow** to rerun the link job. Actions must be enabled.
 3. If the execution fails, follow the `::error::` message in the logs. The cause is either an existing package with the same name (see "Linking Manually" below) or an organization policy. After correcting the policy, rerun the job using **Run workflow**.
 4. After linking the package, push using a **new tag**. Tags pushed before the package was linked did not generate events for this repository.
@@ -288,11 +288,11 @@ If registration passes, the package is linked. To verify manually, check whether
 
 **The link job failed during registration. What should I do?**
 
-Check the `::error::` message in the Actions run logs. There are two possible causes. If a package with the same name already exists but is not linked to this repository (e.g., a package created by a direct push), link this repository under **Package settings → Connect repository** on the package page. If the package is already linked, the failure can be ignored, and pushing a new tag will create a submission. If an organization policy prevents Actions from writing packages using `GITHUB_TOKEN`, correct the policy and rerun the job using **Run workflow**. If you are still in the registration process, clicking **"Retry Test"** on the registration page also reruns the link job.
+Check the `::error::` message in the Actions run logs. There are two possible causes. If a package with the same name already exists but is not linked to this repository (e.g., a package created by a direct push), link this repository under **Package settings → Connect repository** on the package page. If the package is already linked, the failure can be ignored, and pushing a new tag will create a submission. If an organization policy prevents Actions from writing packages using `GITHUB_TOKEN`, correct the policy and rerun the job using **Run workflow**. If you are still in the registration process, clicking **"Retry Test (다시 테스트)"** on the registration page also reruns the link job.
 
 **I see "The image package is not linked to the repository" during registration. What does this mean?**
 
-It means the system waited several minutes but the package was still not linked to the repository. Possible causes include disabled Actions, organization policies preventing package writes through `GITHUB_TOKEN`, or an existing unlinked package with the same name (such as one created by a direct push), which caused the link job's push to be rejected. Check the `::error::` message in the link job logs under `AI System Challenge submission` in the Actions tab. After resolving the issue, click **"Retry Test"**. If a package with the same name already exists, link it under **Package settings → Connect repository** or register again using a different name.
+It means the system waited several minutes but the package was still not linked to the repository. Possible causes include disabled Actions, organization policies preventing package writes through `GITHUB_TOKEN`, or an existing unlinked package with the same name (such as one created by a direct push), which caused the link job's push to be rejected. Check the `::error::` message in the link job logs under `AI System Challenge submission` in the Actions tab. After resolving the issue, click **"Retry Test (다시 테스트)"**. If a package with the same name already exists, link it under **Package settings → Connect repository** or register again using a different name.
 
 **I pushed an image, but no release was created.**
 
@@ -300,7 +300,7 @@ First, check the `AI System Challenge submission` runs under the repository's Ac
 
 **What happens if Actions is disabled?**
 
-The system does not directly detect whether Actions is enabled. However, if Actions is disabled, the link job will not run and the package will not be linked during registration. Registration will fail after several minutes, and the registration page will explain the cause. Actions cannot remain disabled. The release job will also not run, so no release or submission will be created. Enable Actions under **Settings → Actions → General**, then click **"Retry Test"**. If the package was deleted after registration, rerun the link job using **Run workflow**.
+The system does not directly detect whether Actions is enabled. However, if Actions is disabled, the link job will not run and the package will not be linked during registration. Registration will fail after several minutes, and the registration page will explain the cause. Actions cannot remain disabled. The release job will also not run, so no release or submission will be created. Enable Actions under **Settings → Actions → General**, then click **"Retry Test (다시 테스트)"**. If the package was deleted after registration, rerun the link job using **Run workflow**.
 
 **Does the image have to be public?**
 
