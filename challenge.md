@@ -11,7 +11,8 @@ excerpt:
 <br>
 
 ### 참가 자격
-* ##### 현재 국내 대학에 재학 중인 대학생 및 대학원생 (만 14세 이상) ※ 수상은 아래 조건을 충족해야 합니다. (‘26년 12월 1일 기준)
+* ##### 현재 국내 대학에 재학 중인 대학생 및 대학원생 (만 14세 이상)
+  * ※ 수상은 아래 조건을 충족해야 합니다. (‘26년 12월 1일 기준)
   * 학적 상태가 재학 상태이어야 하고, 졸업유예생은 참여불가.
   * 산업체, 연구소 등에 재직 중인 사람은 수상 불가 (학술 연수중인 사람, 산업정부출연연구소 소속 학생연구원 포함).
   * 최종 수상후보 팀은 재학증명서 또는 대체인증서류 제출 필수.
@@ -40,7 +41,8 @@ Cooking
 <br>
 
 ### Eligibility
-* ##### Undergraduate and graduate students currently enrolled at universities in South Korea (aged 14 or older) ※ To be eligible for an award, participants must meet the following requirements (as of December 1, 2026).
+* ##### Undergraduate and graduate students currently enrolled at universities in South Korea (aged 14 or older)
+  * ※ To be eligible for an award, participants must meet the following requirements (as of December 1, 2026).
   * Must be currently enrolled; students on graduation deferment are not eligible to participate.
   * Those currently employed by an industry or research institute are not eligible for awards (including those on academic training and student researchers affiliated with industry-government-funded research institutes).
   * Finalist teams must submit proof of enrollment or alternative certification documents.
