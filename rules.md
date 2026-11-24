@@ -29,7 +29,7 @@ excerpt:
       * 정확도 기준 충족: Accuracy Score ≥ 95%
       * SLO 기준 충족: TTFT p95 및 TPOT p95가 각각 설정된 임계값 이하
   * 모든 시간은 클라이언트 측 wall-clock으로 측정하며, 출력 토큰 수는 클라이언트 토크나이저로 계산합니다 (서버 usage 값 미사용).
-
+<hr>
 
 ### 평가 환경
 참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).
@@ -47,7 +47,7 @@ excerpt:
     * GET /v1/models, 모델 이름 submission
     * 환경변수 MODEL_PATH, SERVED_MODEL_NAME, PORT 제공
     * 요청은 채팅 템플릿이 이미 적용된 raw prompt이며, temperature=0, max_tokens가 지정되어 들어옵니다.
-
+<hr>
    
 ### 벤치마크
 평가 클라이언트(bench.py)와 예제 시나리오(scenarios/en_sum_sub.json)는 GitHub repository로 제공됩니다.<br>
@@ -65,7 +65,7 @@ excerpt:
       * 단어 일치로 채점
   * ##### 부하 스케줄
     * 요청 방식 (Open-loop): 이전 요청의 응답 완료 여부와 관계없이, 사전에 정의된 시각에 따라 독립적으로 요청을 전송하는 Open-loop 방식 적용.
-
+<hr>
 
 ### 제한 사항
 **아래의 제한 사항을 위반하면 실격처리 됩니다.**
@@ -80,7 +80,7 @@ excerpt:
     * 요청 파라미터(prompt, max_tokens, temperature) 무시·변경, 스트리밍 타이밍 위조 (더미 첫 토큰 등)
     * GPU 메모리 상한 우회: UVM/managed memory, 별도 프로세스에 메모리 은닉 등
     * 다중 GPU·외부 노드·네트워크 사용, 평가 클라이언트·하네스 조작
-
+<hr>
 
 ### 대회 규칙
 **이번 대회에서는 공정한 평가 및 재현 가능한 결과를 보장하는 것을 목표로 합니다. 이를 위해 다음 사항을 준수해야 합니다.**
@@ -148,7 +148,7 @@ Final rankings are determined by the measured throughput (QPS) among participati
       * Accuracy requirement: Accuracy Score ≥ 95%.
       * SLO requirement: Both TTFT p95 and TPOT p95 must be at or below their respective predefined thresholds.
   * All timing measurements are based on client-side wall-clock time, and output token counts are calculated using the client-side tokenizer (server-reported usage values are not used).
-
+<hr>
 
 ### Evaluation Environment
 Participating teams submit their serving servers as Docker-images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).
@@ -166,7 +166,7 @@ Participating teams submit their serving servers as Docker-images, which are exe
     * GET /v1/models, model name submission
     * Environment variables MODEL_PATH, SERVED_MODEL_NAME, PORT are provided
     * Requests contain raw prompts with the chat template already applied, with temperature=0 and max_tokens specified.
-
+<hr>
    
 ### Benchmark
 The evaluation client (bench.py) and example scenario (scenarios/en_sum_sub.json) are provided through a GitHub repository.<br>
@@ -184,7 +184,7 @@ The provided sample scenario is scenarios/en_sum_sub.json. It generates and send
       * Evaluated by word matching.
   * ##### Load Schedule
     * Request Method (Open-loop): Requests are sent independently at predefined times, regardless of whether previous requests have completed.
-
+<hr>
 
 ### Restrictions
 **Violations of the following restrictions will result in disqualification.**
@@ -199,7 +199,7 @@ The provided sample scenario is scenarios/en_sum_sub.json. It generates and send
     * Ignoring or modifying request parameters (prompt, max_tokens, temperature), falsifying streaming timing (dummy first tokens, etc.)
     * Circumventing GPU memory limits: UVM/managed memory, concealing memory usage in separate processes, etc.
     * Using multiple GPUs, external nodes, or networks; manipulating the evaluation client or harness
-
+<hr>
 
 ### Competition Rules
 **This competition aims to ensure fair evaluation and reproducible results. All participants must comply with the following rules.**
