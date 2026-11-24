@@ -22,10 +22,6 @@ excerpt:
   ※ 개인/팀은 1개 결과물만 제출 가능 (동일인이 개인 또는 복수팀에 중복하여 참여 불가).
 <hr>
 
-### 대회 운영
-준비 중 
-<hr>
-
 ### Leaderboard 제출물
 ※ 리더보드 제출 세부 사항은 12/10일 안내 예정입니다.
 * ##### 리더보드 제출 가이드
@@ -52,10 +48,6 @@ excerpt:
   * Finalist teams must submit proof of enrollment or alternative certification documents.
 * ##### Individual or team participation is possible, with maximum of three members per team
   ※ Individuals/teams may submit only one result (same person cannot participate as another team or individual).
-<hr>
-
-### Competition Operation
-Cooking 
 <hr>
 
 ### Leaderboard Submission
