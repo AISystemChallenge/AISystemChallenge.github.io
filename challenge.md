@@ -22,10 +22,9 @@ excerpt:
   ※ 개인/팀은 1개 결과물만 제출 가능 (동일인이 개인 또는 복수팀에 중복하여 참여 불가).
 <hr>
 
-### Leaderboard 제출물
-※ 리더보드 제출 세부 사항은 12/10일 안내 예정입니다.
-* ##### 리더보드 제출 가이드
-  * Leaderboard의 제출 횟수는 0시(KST)를 기준으로 초기화 됩니다.
+### 성능 평가 제출 가이드
+  * 성능 평가 결과는 Leaderboard 에서 확인 가능합니다.
+  * 성능 평가 제출 횟수는 매일 0시(KST)를 기준으로 초기화 됩니다.
   * 최종 평가는 대회 종료 일시인 2027년 1월 2일(토) 23:59 이전 가장 최신 submission을 기준으로 진행됩니다.
 <hr>
 
@@ -50,11 +49,10 @@ excerpt:
   ※ Individuals/teams may submit only one result (same person cannot participate as another team or individual).
 <hr>
 
-### Leaderboard Submission
-※ Detailed leaderboard submission guidelines will be announced on December 10.
-* ##### Leaderboard Submission Guidelines
-  * The leaderboard submission count resets daily at 00:00 KST.
-  * The final evaluation will be based on the most recent submission made before the competition ends on Jan. 2, 2027 (Sat) at 23:59 KST.
+### Evaluation Submission Guidelines
+  * Evaluation results are available on the Leaderboard.
+  * The performance evaluation submission count resets daily at 00:00 KST.
+  * The final evaluation will be based on the most recent submission made before the competition ends on January 2, 2027 (Sat), at 23:59 KST.
 <hr>
 
 ### Final Submission
