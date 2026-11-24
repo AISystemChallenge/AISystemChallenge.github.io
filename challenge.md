@@ -58,7 +58,7 @@ Cooking
 ※ Detailed leaderboard submission guidelines will be announced on December 10.
 * ##### Leaderboard Submission Guidelines
   * The leaderboard submission count resets daily at 00:00 KST.
-  * The final evaluation will be based on the most recent submission made before the competition ends on Jan. 2 (Sat), 2027, at 23:59 KST.
+  * The final evaluation will be based on the most recent submission made before the competition ends on Jan. 2, 2027 (Sat) at 23:59 KST.
 <hr>
 
 ### Final Submission
