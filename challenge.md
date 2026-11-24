@@ -6,11 +6,11 @@ feature_image: "/assets/logos/banner_AISC2026_20.png"
 excerpt:
 ---
 
-### 참가 등록
+### 1. 참가 등록
 준비 중
 <br>
 
-### 참가 자격
+### 2. 참가 자격
 * ##### 현재 국내 대학에 재학 중인 대학생 및 대학원생 (만 14세 이상)
   ※ 수상은 아래 조건을 충족해야 합니다. (‘26년 12월 1일 기준)
   * 학적 상태가 재학 상태이어야 하고, 졸업유예생은 참여불가.
@@ -20,27 +20,27 @@ excerpt:
   ※ 개인/팀은 1개 결과물만 제출 가능 (동일인이 개인 또는 복수팀에 중복하여 참여 불가).
 
 
-### 대회 운영
+### 3. 대회 운영
 준비 중 
 <br>
 
-### Leaderboard 제출물
+### 4. Leaderboard 제출물
 ※ 리더보드 제출 세부 사항은 8/1일 안내 예정입니다.
 * ##### 리더보드 제출 가이드
   * Leaderboard의 제출 횟수는 0시(KST)를 기준으로 초기화 됩니다.
   * 최종 평가는 대회 종료 일시인 2027년 1월 2일(토) 23:59 이전 가장 최신 submission을 기준으로 진행됩니다.
 
 
-### 최종 제출물
+### 5. 최종 제출물
 준비 중
 
 <hr>
 
-### Registration
+### 1. Registration
 Cooking
 <br>
 
-### Eligibility
+### 2. Eligibility
 * ##### Undergraduate and graduate students currently enrolled at universities in South Korea (aged 14 or older)
   ※ To be eligible for an award, participants must meet the following requirements (as of December 1, 2026).
   * Must be currently enrolled; students on graduation deferment are not eligible to participate.
@@ -50,13 +50,13 @@ Cooking
   ※ Individuals/teams may submit only one result (same person cannot participate as another team or individual).
 
 
-### Competition Operation
+### 3. Competition Operation
 Cooking 
 <br>
 
-### Leaderboard Submission Guide
+### 4. Leaderboard Submission Guide
 Cooking
 <br>
 
-### Final Submission
+### 5. Final Submission
 Cooking
