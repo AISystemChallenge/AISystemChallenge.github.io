@@ -21,8 +21,7 @@ excerpt:
         <td colspan="1"> 2027년 1월 8일(금) </td>
     </tr>
     <tr>
-        <td colspan="1"> &emsp;※ 중간 평가 <br>
-						 &emsp;&emsp;(<a href="https://aisystemchallenge.github.io/leaderboard/">리더보드</a>) </td>
+        <td colspan="1"> &emsp;※ 중간 평가 (<a href="https://aisystemchallenge.github.io/leaderboard/">리더보드</a>) </td>
         <td colspan="1"> 공  개 : 2026년 12월 10일(목) 10:00 ~ 2026년 12월 20일(일) 23:59 <br>
  						 비공개 : 2026년 12월 21일(월) 00:00 ~ 2027년 1월 2일(토) 23:59 </td>
     </tr>
