@@ -29,7 +29,8 @@ The AI System Challenge also provides a great opportunity to turn creative ideas
         <h5 class="title"> <b> &lt;Samsung AI System Challenge 2026&gt; </b></h5>
         <div class="cont">
         <p>
-	       업데이트 중비중입니다.<br>
+			업데이트 중비중입니다.<br>
+			12월 1일(화) 10시 오픈!
         </p>
         <form name="pop_form0">
           <div id="check">
