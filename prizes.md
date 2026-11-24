@@ -4,6 +4,7 @@ feature_text: |
   <!--# Samsung AI System Challenge 2026-->
 feature_image: "/assets/logos/banner_AISC2026_20.png"
 excerpt:
+** Grand Prize **
 ---
 ### 상금
 ##### 대회 시상은 상위 4개 팀을 대상으로 진행됩니다: 최우수상, 우수상, 장려상(2팀)  
