@@ -62,7 +62,8 @@ excerpt:
         <td colspan="1"> Stage 2 Offline <br>
 						&emsp;Team Presentations </td>
         <td colspan="1"> Jan. 17, 2027 (Sun) <br>
-						@ Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
+						* Final Evaluation : Presentation of optimization techniques and implementation details.
+						* Location : Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
     </tr>
     </table>
 </P>
