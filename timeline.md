@@ -21,7 +21,7 @@ excerpt:
         <td colspan="1"> 2027년 1월 8일(금) </td>
     </tr>
     <tr>
-        <td colspan="1"> &emsp;※ <a href="https://aisystemchallenge.github.io/leaderboard/">중간 평가</a> </td>
+        <td colspan="1"> &emsp;※ <a href="https://aisystemchallenge.github.io/leaderboard/">사전 평가</a> </td>
         <td colspan="1"> 공  개 : 2026년 12월 10일(목) 10:00 ~ 2026년 12월 20일(일) 23:59 <br>
  						 비공개 : 2026년 12월 21일(월) 00:00 ~ 2027년 1월 2일(토) 23:59 </td>
     </tr>
@@ -53,7 +53,7 @@ excerpt:
         <td colspan="1"> Jan. 8, 2027 (Fri) </td>
     </tr>
     <tr>
-        <td colspan="1"> &emsp;※ <a href="https://aisystemchallenge.github.io/leaderboard/">Interim Evaluation</a> </td>
+        <td colspan="1"> &emsp;※ <a href="https://aisystemchallenge.github.io/leaderboard/">Pre-Evaluation</a> </td>
         <td colspan="1"> Public: Dec. 10, 2026 (Thu) 10:00 ~ Dec. 20, 2026 (Sun) 23:59 <br>
                          Private: Dec. 21, 2026 (Mon) 00:00 ~ Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
