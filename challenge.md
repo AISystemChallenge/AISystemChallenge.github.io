@@ -7,7 +7,10 @@ excerpt:
 ---
 
 ### 참가 등록
-준비 중
+* ##### Samsung AI System Challenge 참가하시려면, Submssion 페이지에서 참가 신청서를 작성해주시기 바랍니다. 
+  * <a href="https://aisystemchallenge.app.n8n.cloud/form/register">Submssion 페이지로 이동</a>
+  ※ 참가 접수는 운영 상황에 따라 조기 마감될 수 있습니다.
+
 <hr>
 
 ### 참가 자격
