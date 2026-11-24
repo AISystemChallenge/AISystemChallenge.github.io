@@ -22,7 +22,7 @@ excerpt:
     </tr>
     <tr>
         <td colspan="1"> &emsp;※ 중간 평가 <br>
-						 &emsp;[리더보드](https://aisystemchallenge.github.io/leaderboard/) </td>
+						 &emsp;[리더보드](/leaderboard/) </td>
         <td colspan="1"> 공  개 : 2026년 12월 10일(목) 10:00 ~ 2026년 12월 20일(일) 23:59 <br>
  						 비공개 : 2026년 12월 21일(월) 00:00 ~ 2027년 1월 2일(토) 23:59 </td>
     </tr>
