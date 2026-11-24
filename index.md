@@ -26,7 +26,7 @@ The AI System Challenge also provides a great opportunity to turn creative ideas
 
 <div class="layerPopup" id="layer_popup0" style="visibility: visible;">
     <div class="layerBox" style="width:40%;">
-        <h5 class="title"> <b> &lt;Samsung AI System Challenge 2026&gt; </b></h5>
+        <h5 class="title"> <b> &lt;Samsung AI System Challenge 26/27&gt; </b></h5>
         <div class="cont">
         <p>
 			업데이트 중비중입니다.<br>
