@@ -23,7 +23,7 @@ excerpt:
 <hr>
 
 ### 성능 평가 제출 가이드
-  * 성능 평가 결과는 Leaderboard 에서 확인 가능합니다.
+  * 성능 평가 결과는 <a href="https://aisystemchallenge.github.io/leaderboard/">Leaderboard</a>에서 확인 가능합니다.
   * 성능 평가 제출 횟수는 매일 0시(KST)를 기준으로 초기화 됩니다.
   * 최종 평가는 대회 종료 일시인 2027년 1월 2일(토) 23:59 이전 가장 최신 submission을 기준으로 진행됩니다.
 <hr>
@@ -50,7 +50,7 @@ excerpt:
 <hr>
 
 ### Evaluation Submission Guidelines
-  * Evaluation results are available on the Leaderboard.
+  * Evaluation results are available on the <a href="https://aisystemchallenge.github.io/leaderboard/">Leaderboard</a>.
   * The performance evaluation submission count resets daily at 00:00 KST.
   * The final evaluation will be based on the most recent submission made before the competition ends on January 2, 2027 (Sat), at 23:59 KST.
 <hr>
