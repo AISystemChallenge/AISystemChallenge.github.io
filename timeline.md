@@ -9,7 +9,7 @@ excerpt:
 <p>
     <table class="table table-sm" width="100%">
     <tr>
-        <td colspan="1"> ##### 1차 온라인 </td>
+        <td colspan="1"> 1차 온라인 </td>
         <td colspan="1"> 2026년 12월 1일 (화) 10:00 ~ 2027년 1월 2일 (토) 23:59 </td>
     </tr>
     <tr>
