@@ -60,8 +60,8 @@ excerpt:
     </tr>
     <tr>
         <td colspan="1"> Stage 2 (Offline) <br>
-						&emsp;Team Presentation </td>
-        <td colspan="1"> Jan. 17, 2026 (Sun) <br>
+						&emsp;Team Presentations </td>
+        <td colspan="1"> Jan. 17, 2027 (Sun) <br>
 						@ Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
     </tr>
     </table>
