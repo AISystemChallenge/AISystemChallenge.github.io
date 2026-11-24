@@ -10,24 +10,24 @@ excerpt:
     <table class="table table-sm" width="100%">
     <tr>
         <td colspan="1"> 1차 온라인 </td>
-        <td colspan="1"> 2026년 12월 1일(화) 10:00 ~ 2027년 1월 2일(토) 23:59 </td>
+        <td colspan="1"> 2026년 12월 1일 (화) 10:00 ~ 2027년 1월 2일 (토) 23:59 </td>
     </tr>
     <tr>
         <td colspan="1"> &emsp;1차 제출 마감 </td>
-        <td colspan="1"> 2027년 1월 2일(토) 23:59 </td>
+        <td colspan="1"> 2027년 1월 2일 (토) 23:59 </td>
     </tr>
     <tr>
         <td colspan="1"> &emsp;1차 결과 발표 </td>
-        <td colspan="1"> 2027년 1월 8일(금) </td>
+        <td colspan="1"> 2027년 1월 8일 (금) </td>
     </tr>
     <tr>
         <td colspan="1"> &emsp;※ <a href="https://aisystemchallenge.github.io/leaderboard/">사전 평가</a> </td>
-        <td colspan="1"> 공  개 : 2026년 12월 10일(목) 10:00 ~ 2026년 12월 20일(일) 23:59 <br>
- 						 비공개 : 2026년 12월 21일(월) 00:00 ~ 2027년 1월 2일(토) 23:59 </td>
+        <td colspan="1"> 공  개 : 2026년 12월 10일 (목) 10:00 ~ 2026년 12월 20일 (일) 23:59 <br>
+ 						 비공개 : 2026년 12월 21일 (월) 00:00 ~ 2027년 1월 2일 (토) 23:59 </td>
     </tr>
     <tr>
         <td colspan="1"> 2차 오프라인 </td>
-        <td colspan="1"> 2027년 1월 17일(일) <br>
+        <td colspan="1"> 2027년 1월 17일 (일) <br>
 						팀별 발표 <br>
 						@ 컴퓨터시스템 소사이어티 동계학술대회 (평창 모나용평 그린피아콘도) </td>
     </tr>
@@ -61,7 +61,7 @@ excerpt:
     <tr>
         <td colspan="1"> Stage 2 (Offline) </td>
         <td colspan="1"> Jan. 17, 2026 (Sun) <br>
-						Team Presentation <br>
+						## Team Presentation ## <br>
 						@ Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
     </tr>
     </table>
