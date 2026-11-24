@@ -10,7 +10,7 @@ excerpt:
 준비 중
 <hr>
 
-### 2. 참가 자격
+### 참가 자격
 * ##### 현재 국내 대학에 재학 중인 대학생 및 대학원생 (만 14세 이상)
   ※ 수상은 아래 조건을 충족해야 합니다. (‘26년 12월 1일 기준)
   * 학적 상태가 재학 상태이어야 하고, 졸업유예생은 참여불가.
@@ -20,27 +20,27 @@ excerpt:
   ※ 개인/팀은 1개 결과물만 제출 가능 (동일인이 개인 또는 복수팀에 중복하여 참여 불가).
 <hr>
 
-### 3. 대회 운영
+### 대회 운영
 준비 중 
 <hr>
 
-### 4. Leaderboard 제출물
+### Leaderboard 제출물
 ※ 리더보드 제출 세부 사항은 8/1일 안내 예정입니다.
 * ##### 리더보드 제출 가이드
   * Leaderboard의 제출 횟수는 0시(KST)를 기준으로 초기화 됩니다.
   * 최종 평가는 대회 종료 일시인 2027년 1월 2일(토) 23:59 이전 가장 최신 submission을 기준으로 진행됩니다.
 <hr>
 
-### 5. 최종 제출물
+### 최종 제출물
 준비 중
 
 <hr>
 
-### 1. Registration
+### Registration
 Cooking
 <hr>
 
-### 2. Eligibility
+### Eligibility
 * ##### Undergraduate and graduate students currently enrolled at universities in South Korea (aged 14 or older)
   ※ To be eligible for an award, participants must meet the following requirements (as of December 1, 2026).
   * Must be currently enrolled; students on graduation deferment are not eligible to participate.
@@ -50,13 +50,13 @@ Cooking
   ※ Individuals/teams may submit only one result (same person cannot participate as another team or individual).
 <hr>
 
-### 3. Competition Operation
+### Competition Operation
 Cooking 
 <hr>
 
-### 4. Leaderboard Submission Guide
+### Leaderboard Submission Guide
 Cooking
 <hr>
 
-### 5. Final Submission
+### Final Submission
 Cooking
