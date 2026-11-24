@@ -26,9 +26,9 @@ excerpt:
  						 비공개 : 2026년 12월 21일 (월) 00:00 ~ 2027년 1월 2일 (토) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> 2차 오프라인 </td>
+        <td colspan="1"> 2차 오프라인 <br>
+						&emsp;팀별 발표 </td>
         <td colspan="1"> 2027년 1월 17일 (일) <br>
-						팀별 발표 <br>
 						@ 컴퓨터시스템 소사이어티 동계학술대회 (평창 모나용평 그린피아콘도) </td>
     </tr>
     </table>
@@ -59,9 +59,9 @@ excerpt:
                          Private: Dec. 21, 2026 (Mon) 00:00 ~ Jan. 2, 2027 (Sat) 23:59 </td>
     </tr>
     <tr>
-        <td colspan="1"> Stage 2 (Offline) </td>
+        <td colspan="1"> Stage 2 (Offline) <br>
+						&emsp;Team Presentation </td>
         <td colspan="1"> Jan. 17, 2026 (Sun) <br>
-						## Team Presentation ## <br>
 						@ Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
     </tr>
     </table>
