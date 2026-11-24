@@ -16,7 +16,7 @@ excerpt:
 
 ### Prizes
 ##### The top four teams will receive the following awards:
-###### Grand Prize: ₩10,000,000  
+** Grand Prize ** ###### Grand Prize: ₩10,000,000  
 ###### Excellence Prize: ₩5,000,000  
 ###### Encouragement Prize (2 teams): ₩3,000,000 each  
 ###### ※ The organizer covers the prize tax. Both the prize and the covered tax are taxable income.
