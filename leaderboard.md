@@ -146,9 +146,9 @@ excerpt:
     </style>
 </head>
 <body class="bg-light">
-    <div class="container mt-4">
+    <div class="container-fluid mt-4" style="max-width: 1400px;">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-12">
                 <h1 class="text-center mb-4">🏆 Leaderboard</h1>
                 
                 <div id="loading" class="text-center">
