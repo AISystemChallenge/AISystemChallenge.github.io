@@ -27,8 +27,8 @@ excerpt:
     </tr>
     <tr>
         <td colspan="1"> 2차 오프라인 </td>
-        <td colspan="1"> 2027년 1월 17일(일) <br>
-						컴퓨터시스템 소사이어티 동계학술대회 (평창 모나용평 그린피아콘도) </td>
+        <td colspan="1"> 팀별 발표 : 2027년 1월 17일(일) <br>						
+						@ 컴퓨터시스템 소사이어티 동계학술대회 (평창 모나용평 그린피아콘도) </td>
     </tr>
     </table>
 </P>
@@ -59,8 +59,8 @@ excerpt:
     </tr>
     <tr>
         <td colspan="1"> Stage 2 (Offline) </td>
-        <td colspan="1"> Jan. 17, 2026 (Sun) <br>
-                        Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
+        <td colspan="1"> Team Presentation : Jan. 17, 2026 (Sun) <br>
+                        @ Winter Conference of the Computer Systems Society (Mona Yongpyong Greenpia Condominium, Pyeongchang) </td>
     </tr>
     </table>
 </P>
