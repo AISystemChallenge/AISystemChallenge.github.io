@@ -118,6 +118,8 @@ navigation_header:
   url: /
 - title: Challenge
   url: /challenge/
+- title: Submission-Guide
+  url: /submission/
 - title: Rules
   url: /rules/
 - title: Timeline
@@ -126,8 +128,6 @@ navigation_header:
   url: /prizes/
 - title: Leaderboard
   url: /leaderboard/
-- title: Submission-Guide
-  url: /submission/
 #- title: Notice
 #  url: /Notice/
 - title: Q&A
