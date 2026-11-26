@@ -32,7 +32,7 @@ excerpt:
 ### Registration
 * ##### To participate in the Samsung AI System Challenge, please complete the registration form on the Submission page.
   ※ Registration may close early depending on operational circumstances.
-  * <a href="https://aisystemchallenge.app.n8n.cloud/form/register">Go to the Submission Page</a>
+  * <a href="https://flat-river-ab49.samsung-aisc.workers.dev/form/register">Go to the Submission Page</a>
 <hr>
 
 ### Eligibility
