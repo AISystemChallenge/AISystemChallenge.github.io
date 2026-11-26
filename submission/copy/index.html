@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-eMVN36eV69FGc2bn3FnRr20LAnysa89iHnDXgFUjEks='; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>원클릭 복사 · 대회 GitHub 저장소 연결</title>
+<style>
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  padding: 16px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+}
+h1 { margin: 0 0 8px; font-size: 24px; line-height: 1.3; }
+h2 { margin: 28px 0 8px; font-size: 20px; line-height: 1.35; }
+p, li { margin: 0 0 12px; overflow-wrap: anywhere; }
+ol { margin: 0; padding-left: 22px; }
+li { margin-bottom: 8px; }
+.lead { color: #475569; }
+.notice, .warn {
+  padding: 12px 14px;
+  border-left: 4px solid #2563eb;
+  border-radius: 0 8px 8px 0;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+.warn { border-left-color: #dc2626; background: #fef2f2; color: #7f1d1d; font-weight: 700; }
+.row { margin: 18px 0 22px; }
+label { display: block; margin-bottom: 6px; font-weight: 700; }
+input, textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border: 1px solid #94a3b8;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #0f172a;
+  font: 16px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+textarea { min-height: 128px; resize: vertical; overflow-wrap: anywhere; word-break: break-all; }
+button {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+button:hover { background: #1d4ed8; }
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+.status { min-height: 1.6em; margin: 6px 0 0; font-weight: 700; }
+.status.ok { color: #15803d; }
+.status.fail { color: #b45309; }
+@media (max-width: 480px) {
+  body { padding: 8px; }
+  main { padding: 16px; border-radius: 14px; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>원클릭 복사</h1>
+<p class="lead">대회 등록 화면(GitHub 저장소 연결)의 값을 버튼 한 번으로 복사합니다. 등록 화면의 「원클릭 복사 화면 열기」로 이 화면을 열면 값이 채워집니다.</p>
+<noscript><p class="warn">복사 버튼은 JavaScript가 켜져 있어야 동작합니다. 등록 화면에 보이는 값을 직접 선택해 복사하세요.</p></noscript>
+<p id="empty" class="notice" hidden>표시할 값이 없습니다. 대회 등록 화면의 「원클릭 복사 화면 열기」로 이 화면을 여세요. 주소만 직접 열면 값이 비어 있습니다.</p>
+<p id="warn" class="warn" role="alert" hidden>이 링크의 값이 대회 공식 형식과 다릅니다. 등록 화면의 '원클릭 복사 화면 열기'로 다시 여세요. 이 값을 GitHub에 입력하지 마세요.</p>
+<p id="partial" class="notice" hidden>링크에 일부 값이 없습니다. 등록 화면의 '원클릭 복사 화면 열기'로 다시 여세요.</p>
+<section id="values" aria-label="복사할 값" hidden>
+<div class="row" id="row-u" hidden>
+<label for="val-u">Collaborator 사용자명</label>
+<input id="val-u" type="text" readonly autocomplete="off" spellcheck="false">
+<button type="button" id="btn-u" aria-label="Collaborator 사용자명 복사">복사</button>
+<p class="status" id="st-u" aria-live="polite"></p>
+</div>
+<div class="row" id="row-p" hidden>
+<label for="val-p">Payload URL</label>
+<textarea id="val-p" rows="8" readonly spellcheck="false"></textarea>
+<button type="button" id="btn-p" aria-label="Payload URL 복사">복사</button>
+<p class="status" id="st-p" aria-live="polite"></p>
+</div>
+<div class="row" id="row-s" hidden>
+<label for="val-s">Secret</label>
+<input id="val-s" type="text" readonly autocomplete="off" spellcheck="false">
+<button type="button" id="btn-s" aria-label="Secret 복사">복사</button>
+<p class="status" id="st-s" aria-live="polite"></p>
+</div>
+</section>
+<section>
+<h2>GitHub 설정 체크리스트</h2>
+<ol>
+<li>저장소 <strong>Settings → Collaborators → Add people</strong>에서 위 Collaborator 사용자명을 Write 이상 권한으로 초대합니다. 조직 저장소는 <strong>Collaborators and teams</strong>에서 초대합니다.</li>
+<li><strong>Settings → Webhooks → Add webhook</strong>을 선택합니다. 이미 대회 webhook을 만들어 두었다면 그대로 두고 새로 만들지 않아도 됩니다.</li>
+<li><strong>Payload URL</strong>과 <strong>Secret</strong>에 위 값을 붙여넣습니다. 값은 바꾸지 않습니다.</li>
+<li><strong>Content type</strong>은 <code>application/json</code>, <strong>SSL verification</strong>은 <strong>Enable SSL verification</strong>(활성)으로 둡니다.</li>
+<li><strong>Which events would you like to trigger this webhook?</strong>에서 <strong>Let me select individual events</strong>를 선택하고 <strong>Releases</strong>만 체크합니다. 기본으로 체크되어 있는 <strong>Pushes</strong>는 체크를 해제합니다. <strong>Active</strong>는 체크한 채로 둡니다.</li>
+<li><strong>Add webhook</strong>으로 저장한 뒤 등록 화면으로 돌아가 「설정 완료 · 자동 연결 테스트 시작」을 누릅니다.</li>
+</ol>
+</section>
+</main>
+<script>
+(function () {
+  'use strict';
+
+  // Only the official values are shown and can be copied. Anything else (a forged or damaged link) is not displayed and gets no copy button.
+  var COLLABORATOR = 'AISystemChallenge';
+  var PAYLOAD_URL = /^https:\/\/aisystemchallenge\.app\.n8n\.cloud\/webhook\/[A-Za-z0-9_-]+\?token=[A-Za-z0-9._~%-]+$/;
+  var SECRET = /^[0-9a-f]{64}$/;
+  var MAX_PAYLOAD_URL = 2048;
+  var MAX_HASH = 4096;
+  var COPIED = '복사됨';
+  var MANUAL = '복사하지 못했습니다. 값을 길게 눌러 직접 복사하세요.';
+
+  var ITEMS = [
+    { key: 'u', row: 'row-u', field: 'val-u', button: 'btn-u', status: 'st-u', valid: function (v) { return v === COLLABORATOR; } },
+    { key: 'p', row: 'row-p', field: 'val-p', button: 'btn-p', status: 'st-p', valid: function (v) { return v.length <= MAX_PAYLOAD_URL && PAYLOAD_URL.test(v); } },
+    { key: 's', row: 'row-s', field: 'val-s', button: 'btn-s', status: 'st-s', valid: function (v) { return SECRET.test(v); } }
+  ];
+
+  function byId(id) {
+    return document.getElementById(id);
+  }
+
+  // The link is copy_page#u=<name>&p=<url>&s=<secret>, each value percent-encoded once. All three values must be present and in the official form.
+  // If one is missing, repeated, or not official (the link is damaged or forged), none of them is shown and nothing can be copied.
+  function readHash(hash) {
+    var raw = String(hash || '');
+    if (raw.charAt(0) === '#') { raw = raw.slice(1); }
+    var result = { state: 'empty', values: {} };
+    if (raw === '') { return result; }
+    if (raw.length > MAX_HASH) { result.state = 'invalid'; return result; }
+    var params = new URLSearchParams(raw);
+    var present = 0;
+    var invalid = false;
+    ITEMS.forEach(function (item) {
+      var all = params.getAll(item.key);
+      if (all.length === 0) { return; }
+      present += 1;
+      if (all.length === 1 && item.valid(all[0])) { result.values[item.key] = all[0]; } else { invalid = true; }
+    });
+    if (present === 0) { result.state = 'empty'; }
+    else if (invalid) { result.state = 'invalid'; }
+    else if (present < ITEMS.length) { result.state = 'partial'; }
+    else { result.state = 'ok'; }
+    if (result.state !== 'ok') { result.values = {}; }
+    return result;
+  }
+
+  function selectAll(field) {
+    try {
+      field.focus();
+      field.select();
+      if (field.setSelectionRange) { field.setSelectionRange(0, field.value.length); }
+    } catch (e) { /* the field stays as it is */ }
+  }
+
+  function render() {
+    var result = readHash(window.location.hash);
+    var shown = 0;
+    ITEMS.forEach(function (item) {
+      var value = Object.prototype.hasOwnProperty.call(result.values, item.key) ? result.values[item.key] : null;
+      var status = byId(item.status);
+      status.textContent = '';
+      status.className = 'status';
+      if (value === null) {
+        byId(item.field).value = '';
+        byId(item.row).hidden = true;
+      } else {
+        byId(item.field).value = value;
+        byId(item.row).hidden = false;
+        shown += 1;
+      }
+    });
+    byId('values').hidden = shown === 0;
+    byId('empty').hidden = result.state !== 'empty';
+    byId('warn').hidden = result.state !== 'invalid';
+    byId('partial').hidden = result.state !== 'partial';
+  }
+
+  function copy(item) {
+    var field = byId(item.field);
+    var value = field.value;
+    var status = byId(item.status);
+    ITEMS.forEach(function (other) {
+      byId(other.status).textContent = '';
+      byId(other.status).className = 'status';
+    });
+    if (value === '') { return; }
+    function done() { status.textContent = COPIED; status.className = 'status ok'; }
+    function manual() { status.textContent = MANUAL; status.className = 'status fail'; }
+    function legacy() {
+      var copied = false;
+      try {
+        selectAll(field);
+        copied = document.execCommand('copy') === true;
+      } catch (e) { copied = false; }
+      if (copied) { done(); } else { manual(); }
+    }
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try { navigator.clipboard.writeText(value).then(done, legacy); } catch (e) { legacy(); }
+    } else {
+      legacy();
+    }
+  }
+
+  ITEMS.forEach(function (item) {
+    byId(item.button).addEventListener('click', function () { copy(item); });
+    byId(item.field).addEventListener('focus', function () { selectAll(byId(item.field)); });
+    byId(item.field).addEventListener('click', function () { selectAll(byId(item.field)); });
+  });
+  window.addEventListener('hashchange', render);
+  render();
+})();
+</script>
+</body>
+</html>
