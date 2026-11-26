@@ -28,11 +28,6 @@ excerpt:
   * 최종 평가는 대회 종료 일시인 2027년 1월 2일(토) 23:59 이전 가장 최신 submission을 기준으로 진행됩니다.
 <hr>
 
-### 최종 제출물
-준비 중
-
-<hr>
-
 ### Registration
 * ##### To participate in the Samsung AI System Challenge, please complete the registration form on the Submission page.
   ※ Registration may close early depending on operational circumstances.
@@ -53,7 +48,3 @@ excerpt:
   * Evaluation results are available on the <a href="https://aisystemchallenge.github.io/leaderboard/">Leaderboard</a>.
   * The performance evaluation submission count resets daily at 00:00 KST.
   * The final evaluation will be based on the most recent submission made before the competition ends on January 2, 2027 (Sat), at 23:59 KST.
-<hr>
-
-### Final Submission
-Cooking
