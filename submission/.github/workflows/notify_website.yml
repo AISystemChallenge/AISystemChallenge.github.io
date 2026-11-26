@@ -1,1 +1,20 @@
+name: Notify Website
 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger website sync
+        env:
+          GH_TOKEN: ${{ secrets.WEBSITE_SYNC_TOKEN }}
+        run: |
+          gh workflow run sync_submission_guide.yml \
+            --repo AISystemChallenge/AISystemChallenge.github.io \
+            --ref AISystemChallenge2026
