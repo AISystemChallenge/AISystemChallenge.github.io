@@ -34,24 +34,26 @@ excerpt:
 ### 평가 환경
 참가팀은 서빙 서버를 Docker 이미지로 제출하고, 사무국 평가 서버가 아래 격리 조건에서 실행합니다. 서빙 프레임워크는 자유입니다 (vLLM, SGLang, llama.cpp, 직접 구현 등).
   * ##### 하드웨어 / 격리
-    * GPU 1장: NVIDIA H100 80GB (TBD)
-    * **GPU 메모리 사용 상한: XX GiB (모델 weight 포함, TBD)**
+    * GPU 1장: NVIDIA A100 40GB (PCI-E)
+    * **GPU 메모리 사용 상한: 24GiB (모델 weight 포함)**
     * CPU 8코어 고정 (cpuset), Host 메모리 128 GiB, shm 16 GiB
-    * 인터넷 차단, 평가 클라이언트 접속만 허용, 컨테이너 권한 제한 (--cap-drop ALL)
-    * 모델: Qwen3-8B (BF16). /model 에 읽기 전용으로 마운트
+    * 테스트 환경 내 인터넷 차단, 평가 클라이언트 접속만 허용, 컨테이너 권한 제한 (--cap-drop ALL)
+    * 모델: Qwen3-8B (BF16). /model 에 읽기 전용으로 마운트 (모델은 도커 내 포함 금지. 평가 시스템에서 마운트)
     * 기동 제한 15분: /v1/models 응답과 1토큰 생성이 모두 성공해야 준비 완료로 판정
 
   * ##### 인터페이스 규약
-    * 이미지 ENTRYPOINT로 서버 기동 (추가 인자 없음), 0.0.0.0:8000
+    * 0.0.0.0:${PORT}에 GET /v1/models, POST /v1/completions (SSE 스트리밍)
     * POST /v1/completions : stream=true (SSE) 필수
-    * GET /v1/models, 모델 이름 submission
-    * 환경변수 MODEL_PATH, SERVED_MODEL_NAME, PORT 제공
-    * 요청은 채팅 템플릿이 이미 적용된 raw prompt이며, temperature=0, max_tokens가 지정되어 들어옵니다.
+    * GET /v1/models, 모델 이름 SERVED_MODEL_NAME
+    * 환경변수
+      * MODEL_PATH="/model"
+      * SERVED_MODEL_NAME="submission"
+      * PORT=8000
 <hr>
    
 ### 벤치마크
 평가 클라이언트(bench.py)와 예제 시나리오(scenarios/en_sum_sub.json)는 GitHub repository로 제공됩니다.<br>
-**※ 본 평가는 비공개 seed·시나리오를 사용하므로, 공개 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**<br><br>
+**※ 본 평가는 비공개 시나리오를 사용하므로, 제공된 샘플 시나리오로 측정한 점수는 리더보드 점수와 다를 수 있습니다.**<br><br>
 제공되는 샘플 시나리오는 scenarios/en_sum_sub.json입니다. InfiniteBench En.Sum 데이터(ids로 고정)로 ~수십만 토큰 길이의 요청을 만들어 보냅니다.
   * ##### 태스크
     * en_sum
@@ -153,24 +155,26 @@ Final rankings are determined by the measured throughput (QPS) among participati
 ### Evaluation Environment
 Participating teams submit their serving servers as Docker images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).
   * ##### Hardware / Isolation
-    * One GPU: NVIDIA H100 80GB (TBD)
-    * **GPU memory usage limit: XX GiB (including model weights, TBD)**
+    * One GPU: NVIDIA A100 40GB (PCI-E)
+    * **GPU memory usage limit: 24GiB (including model weights)**
     * 8 dedicated CPU cores (cpuset), 128 GiB host memory, 16 GiB shm
-    * Internet access disabled, only evaluation-client connections permitted, restricted container privileges (--cap-drop ALL)
-    * Model: Qwen3-8B (BF16), mounted read-only at /model
+    * Internet access disabled within the test environment, only evaluation-client connections permitted, restricted container privileges (--cap-drop ALL)
+    * Model: Qwen3-8B (BF16), mounted read-only at /model (the model must not be included in the Docker image. It will be mounted by the evaluation system)
     * 15-minute startup limit: both a successful /v1/models response and successful one-token generation are required for readiness
 
   * ##### Interface Requirements
-    * Start the server using the image ENTRYPOINT (no additional arguments), listening on 0.0.0.0:8000
+    * GET /v1/models and POST /v1/completions (SSE streaming) at 0.0.0.0:${PORT}
     * POST /v1/completions : stream=true (SSE) required
-    * GET /v1/models, model name submission
-    * Environment variables MODEL_PATH, SERVED_MODEL_NAME, PORT are provided
-    * Requests contain raw prompts with the chat template already applied, with temperature=0 and max_tokens specified.
+    * GET /v1/models, model name SERVED_MODEL_NAME
+    * Environment variables
+      * MODEL_PATH="/model"
+      * SERVED_MODEL_NAME="submission"
+      * PORT=8000
 <hr>
    
 ### Benchmark
 The evaluation client (bench.py) and example scenario (scenarios/en_sum_sub.json) are provided through a GitHub repository.<br>
-**※ This evaluation uses private seeds and scenarios, so scores measured using public scenarios may differ from leaderboard scores.**<br><br>
+**※ This evaluation uses private scenarios, so scores measured using the provided sample scenario may differ from leaderboard scores.**<br><br>
 The provided sample scenario is scenarios/en_sum_sub.json. It generates and sends requests with lengths of approximately up to hundreds of thousands of tokens using the InfiniteBench En.Sum dataset (fixed ids).
   * ##### Tasks
     * en_sum
