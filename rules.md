@@ -151,7 +151,7 @@ Final rankings are determined by the measured throughput (QPS) among participati
 <hr>
 
 ### Evaluation Environment
-Participating teams submit their serving servers as Docker-images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).
+Participating teams submit their serving servers as Docker images, which are executed by the organizing committee's evaluation server under the following isolated conditions. Teams may freely choose their serving framework (vLLM, SGLang, llama.cpp, custom implementations, etc.).
   * ##### Hardware / Isolation
     * One GPU: NVIDIA H100 80GB (TBD)
     * **GPU memory usage limit: XX GiB (including model weights, TBD)**
