@@ -8,14 +8,14 @@ excerpt:
 
 ### 평가 기준
 사무국 평가 클라이언트가 사전 정의된 시나리오에 따라 참가팀 서버에 요청을 전송하고, **처리량(QPS), 응답 지연시간(SLO), 정확도(Accuracy)** 를 측정합니다.<br>
-정확도와 응답 지연시간에 대한 최소 품질 기준을 충족한 참가팀을 대상으로 측정한 처리량(QPS) 을 기준으로 최종 순위를 결정합니다.
+정확도와 응답 지연시간에 대한 최소 품질 기준을 충족한 참가팀을 대상으로 측정한 처리량(QPS)을 기준으로 최종 순위를 결정합니다.
   * ##### 최종 순위 산정 기준
     * **핵심 평가 원칙:** 정확도와 응답 지연시간에 대한 최소 품질 기준을 보장하면서, 해당 조건을 충족하는 시스템 중 비공개 LLM serving 시나리오에서 가장 높은 처리량(QPS)을 달성한 참가팀을 우선 평가함.
     * 정확도 (Accuracy)
       * 각 Query의 정답 여부를 Pass / Fail로 판정
         * 객관식: 정답 일치 여부에 따라 Pass / Fail 판정
         * 서술형: F1 score 기준으로 사무국에서 설정한 임계값 이상인 경우 Pass 판정
-      * 전체 Query 중 Pass로 판정 된 비율을 Accuracy Score로 산정
+      * 전체 Query 중 Pass로 판정된 비율을 Accuracy Score로 산정
       * Accuracy Score가 95% 이상인 경우 정확도 기준 충족
     * 서비스 수준 목표 (SLO)
       * 응답 지연시간은 TTFT(Time To First Token)와 TPOT(Time Per Output Token)를 기준으로 평가
@@ -129,7 +129,7 @@ excerpt:
 The organizing committee's evaluation client sends requests to participating teams' servers according to predefined scenarios and measures **throughput (QPS), response latency (SLO), and accuracy**.<br>
 Final rankings are determined by the measured throughput (QPS) among participating teams that meet the minimum quality requirements for accuracy and response latency.
   * ##### Final Ranking Criteria
-    * **Core Evaluation Principle:** Priority is given to participating teams that achieve the highest throughput (QPS) under undisclosed LLM serving scenarios while satisfying the minimum quality requirements for accuracy and response latency.
+    * **Core Evaluation Principle:** Priority is given to participating teams that achieve the highest throughput (QPS) in undisclosed LLM serving scenarios while satisfying the minimum quality requirements for accuracy and response latency.
     * Accuracy
       * Each query is evaluated as Pass or Fail based on the correctness of its response.
         * Multiple-choice questions: Pass or Fail is determined by whether the response matches the correct answer.
@@ -141,7 +141,7 @@ Final rankings are determined by the measured throughput (QPS) among participati
       * The SLO requirement is satisfied when both TTFT p95 and TPOT p95 are at or below their respective predefined thresholds.
       * Specific threshold values will be determined later.
     * Throughput (QPS) Based Ranking
-      * Final rankings are determined only among participating <u>teams that satisfy both the Accuracy and SLO requirements</u>.
+      * Final rankings are determined among participating <u>teams that satisfy both the Accuracy and SLO requirements</u>.
       * Teams are ranked in descending order of QPS.
     * Ranking Eligibility Requirements (all must be satisfied)
       * Zero errors: No errors of any kind, including HTTP errors, connection failures, timeouts, or OOM (Out of Memory), are permitted.
