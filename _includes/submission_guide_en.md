@@ -256,7 +256,7 @@ Enter only the final component (e.g., `my-server`). The system constructs the fu
 
 **I haven't received the verification code email. What should I do?**
 
-First, check your spam folder. The email subject ends with "Email Verification Code," and the message contains a six-digit code and its expiration time. Make sure the email address shown on the verification screen is correct. If the email has not arrived, select **"Other Actions (다른 동작)"** on the same screen and choose **"Resend Code (코드 다시 받기)"**. A new code will be sent, and the previous code will no longer be valid. If the email address is incorrect, choose **"Change Email Address (이메일 주소 고치기)"**. A maximum of four verification emails can be sent per registration attempt.
+First, check your spam folder. The email subject ends with "이메일 인증 코드" (Email Verification Code), and the message contains a six-digit code and its expiration time. Make sure the email address shown on the verification screen is correct. If the email has not arrived, select **"Other Actions (다른 동작)"** on the same screen and choose **"Resend Code (코드 다시 받기)"**. A new code will be sent, and the previous code will no longer be valid. If the email address is incorrect, choose **"Change Email Address (이메일 주소 고치기)"**. A maximum of four verification emails can be sent per registration attempt.
 
 **What happens if I enter the wrong verification code?**
 
